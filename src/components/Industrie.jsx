@@ -3,11 +3,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "./Footer";
 import { useLocation } from "react-router-dom";
+import { Cog, Factory,Anchor,Building2,Leaf } from "lucide-react";
 const industrie = [
   {
     id: 1,
     name: "Automotive",
-    icon: "🏭",
+    icon: <Factory color="#6B7280" size={50} strokeWidth={1.5}></Factory>,
     description: "Esperienza produttiva in stabilimenti e linee di assemblaggio.",
     text: "L'automotive è il settore da cui tutto è partito. Abbiamo maturato un'esperienza solida e profonda all'interno di stabilimenti produttivi e linee di assemblaggio, dove la qualità del dato e la velocità di reazione fanno la differenza tra efficienza e fermo macchina. Ogni secondo conta. Ogni dato conta.",
     accent: "#E63946",
@@ -15,7 +16,7 @@ const industrie = [
   {
     id: 2,
     name: "Industriale",
-    icon: "⚙️",
+    icon: <Cog size={50} color="#1D4ED8" strokeWidth={1.5}></Cog>,
     description: "Soluzioni per linee di processo e ottimizzazione dei flussi.",
     text: "Dall'automotive abbiamo naturalmente esteso il nostro perimetro verso altri settori manifatturieri. Produzioni diverse per mercato e prodotto, ma accomunate dalla stessa complessità operativa: linee di processo, controllo qualità, gestione dei dati di produzione, ottimizzazione dei flussi.",
     accent: "#2A9D8F",
@@ -23,7 +24,7 @@ const industrie = [
   {
     id: 3,
     name: "Agromeccanica",
-    icon: "🌾",
+    icon: <Leaf color="#16A34A" size={50} strokeWidth={1.5}/>,
     description: "Trasformiamo macchine tradizionali in sistemi intelligenti.",
     text: "L'agromeccanica rappresenta uno dei fronti più interessanti su cui stiamo lavorando. Operiamo sia nella filiera dei componenti, sia integrando tecnologie AI direttamente sui macchinari. Tradizione e innovazione si incontrano nel campo.",
     accent: "#F4A261",
@@ -31,7 +32,7 @@ const industrie = [
   {
     id: 4,
     name: "Nautico",
-    icon: "⚓",
+    icon: <Anchor color="#0EA5E9" size={50} strokeWidth={1.5}/>,
     description: "Tecnologie AI per cantieristica e nautica di eccellenza.",
     text: "Siamo persone di mondo, con un network internazionale consolidato. Il nostro cuore batte a Viareggio, uno dei poli di riferimento più importanti a livello globale per la cantieristica e la nautica di eccellenza. Il mare chiama, noi rispondiamo con intelligenza.",
     accent: "#457B9D",
@@ -39,7 +40,7 @@ const industrie = [
   {
     id: 5,
     name: "PMI",
-    icon: "🏢",
+    icon: <Building2 color="#374151" size={50} strokeWidth={1.5} />,
     description: "AI accessibile per piccole e medie imprese.",
     text: "Le piccole e medie imprese sono la spina dorsale dell'economia italiana. Una piccola impresa dotata degli strumenti giusti può eliminare inefficienze, automatizzare attività ripetitive e liberare il personale per concentrarsi su ciò che crea davvero valore.",
     accent: "#8338EC",

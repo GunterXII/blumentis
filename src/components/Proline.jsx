@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 import video from "../assets/proline.mp4";
 import Footer from './Footer';
-
+import { Link } from "react-router-dom";
 const css = `
   .pla-root {
     --orange:      oklch(68% 0.26 50);
@@ -619,8 +619,8 @@ export default function ProLineAnalytics() {
           </div>
           <div className="pla-footer-links">
             <a href="#">↓ Scarica Brochure PDF</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Contatti</a>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/contatti" >Contatti</Link>
           </div>
         </div>
         <div className="pla-footer-bottom">

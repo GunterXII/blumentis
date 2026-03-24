@@ -12,6 +12,7 @@ import {
   Computer,
   FolderCode,
   Settings,
+  Wrench
 } from "lucide-react";
 
 const PRODUCTS = [
@@ -114,7 +115,7 @@ const PRODUCTS = [
       { value: "AI", label: "Native by design" },
       { value: "100%", label: "Personalizzato" },
     ],
-    icon: "🔧",
+    icon: <Wrench   strokeWidth={1.5} />,
     badge: "Su richiesta",
     href: "/prodotti/custom",
   },

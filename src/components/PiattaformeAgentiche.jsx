@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import Footer from './Footer';
+import { Users, CheckCircle, ArrowUpRight, Globe, Link, Lock } from "lucide-react";
 
 const css = `
   .aga-root {
@@ -426,14 +427,38 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
           <h2>Funzionalità <span className="aga-accent">principali</span></h2>
         </div>
         <div className="aga-features">
-          {[
-            { icon: "🤝", title: "Orchestrazione multi-agente",    desc: "Più agenti collaborano in parallelo per gestire scenari complessi e ad alto volume.", tag: null },
-            { icon: "✅", title: "Contenuti approvati",            desc: "Ogni informazione viene validata prima di essere memorizzata. Nessuna risposta non autorizzata.", tag: null },
-            { icon: "↗",  title: "Escalation intelligente",        desc: "Quando l'agente non conosce la risposta, coinvolge il personale competente e apprende dall'interazione.", tag: null },
-            { icon: "🌐", title: "Multilingua nativo",             desc: "Comprende e risponde in qualsiasi lingua, adattandosi automaticamente all'interlocutore.", tag: null },
-            { icon: "🔗", title: "Integrazione sistemi aziendali", desc: "Si connette ai software esistenti per eseguire azioni concrete: ordini, offerte, notifiche.", tag: "Su richiesta" },
-            { icon: "🔒", title: "Sicurezza e privacy",            desc: "Dati residenti su cloud privato aziendale. Le informazioni non escono mai dal tuo perimetro.", tag: null },
-          ].map((f) => (
+          { [
+  { icon: <Users color="#2563EB" size={24} />, 
+    title: "Orchestrazione multi-agente",    
+    desc: "Più agenti collaborano in parallelo per gestire scenari complessi e ad alto volume.", 
+    tag: null 
+  },
+  { icon: <CheckCircle color="#16A34A" size={24} />, 
+    title: "Contenuti approvati",            
+    desc: "Ogni informazione viene validata prima di essere memorizzata. Nessuna risposta non autorizzata.", 
+    tag: null 
+  },
+  { icon: <ArrowUpRight color="#F59E0B" size={24} />,  
+    title: "Escalation intelligente",        
+    desc: "Quando l'agente non conosce la risposta, coinvolge il personale competente e apprende dall'interazione.", 
+    tag: null 
+  },
+  { icon: <Globe color="#0EA5E9" size={24} />, 
+    title: "Multilingua nativo",             
+    desc: "Comprende e risponde in qualsiasi lingua, adattandosi automaticamente all'interlocutore.", 
+    tag: null 
+  },
+  { icon: <Link color="#F97316" size={24} />, 
+    title: "Integrazione sistemi aziendali", 
+    desc: "Si connette ai software esistenti per eseguire azioni concrete: ordini, offerte, notifiche.", 
+    tag: "Su richiesta" 
+  },
+  { icon: <Lock color="#374151" size={24} />, 
+    title: "Sicurezza e privacy",            
+    desc: "Dati residenti su cloud privato aziendale. Le informazioni non escono mai dal tuo perimetro.", 
+    tag: null 
+  },
+].map((f) => (
             <div className="aga-feature" key={f.title}>
               <div className="aga-feature-icon">{f.icon}</div>
               <h3>{f.title}</h3>
@@ -582,8 +607,8 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
           </div>
           <div className="aga-footer-links">
             <a href="#">↓ Scarica Brochure PDF</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Contatti</a>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/contatti" >Contatti</Link>
           </div>
         </div>
         <div className="aga-footer-bottom">

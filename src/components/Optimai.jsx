@@ -2,6 +2,7 @@ import { useState,useEffect } from "react";
 import video from "../assets/optimal.mp4";
 import Footer from './Footer';
 import { Link } from "react-router-dom";
+import { Zap, Thermometer, Droplet, Factory, Wrench, Satellite } from "lucide-react";
 
 const css = `
   /* ── TRUSTED BY (shared styles) ── */
@@ -592,13 +593,31 @@ export default function Optimai() {
         </div>
         <div className="opa-cases">
           {[
-            { icon: "⚡", title: "Motori ibridi ed elettrici",            desc: "Ottimizzazione della gestione energetica e delle prestazioni in tempo reale." },
-            { icon: "🌡", title: "Climatizzazione ambienti chiusi",       desc: "Controllo continuo di temperatura, umidità e consumo energetico." },
-            { icon: "⛽", title: "Ottimizzazione combustibile",           desc: "Riduzione dei consumi e delle emissioni su motori termici e sistemi di propulsione." },
-            { icon: "🏭", title: "Ottimizzazione energetica industriale", desc: "Gestione efficiente di impianti e macchinari con molte variabili operative." },
-            { icon: "🔩", title: "Macchinari su misura",                 desc: "Qualsiasi sistema con numerose variabili da controllare e una funzione obiettivo complessa." },
-            { icon: "📡", title: "Sistemi di controllo embedded",        desc: "Integrazione diretta su hardware compatto per applicazioni IoT e dispositivi autonomi." },
-          ].map((c) => (
+            { icon: <Zap color="#F59E0B" size={24} />, 
+    title: "Motori ibridi ed elettrici",            
+    desc: "Ottimizzazione della gestione energetica e delle prestazioni in tempo reale." 
+  },
+  { icon: <Thermometer color="#3B82F6" size={24} />, 
+    title: "Climatizzazione ambienti chiusi",       
+    desc: "Controllo continuo di temperatura, umidità e consumo energetico." 
+  },
+  { icon: <Droplet color="#F97316" size={24} />, 
+    title: "Ottimizzazione combustibile",           
+    desc: "Riduzione dei consumi e delle emissioni su motori termici e sistemi di propulsione." 
+  },
+  { icon: <Factory color="#6B7280" size={24} />, 
+    title: "Ottimizzazione energetica industriale", 
+    desc: "Gestione efficiente di impianti e macchinari con molte variabili operative." 
+  },
+  { icon: <Wrench color="#2563EB" size={24} />, 
+    title: "Macchinari su misura",                 
+    desc: "Qualsiasi sistema con numerose variabili da controllare e una funzione obiettivo complessa." 
+  },
+  { icon: <Satellite color="#22C55E" size={24} />, 
+    title: "Sistemi di controllo embedded",        
+    desc: "Integrazione diretta su hardware compatto per applicazioni IoT e dispositivi autonomi." 
+  },
+].map((c) => (
             <div className="opa-case" key={c.title}>
               <div className="opa-case-icon">{c.icon}</div>
               <h3>{c.title}</h3>
@@ -685,8 +704,8 @@ export default function Optimai() {
           </div>
           <div className="opa-footer-links">
             <a href="#">↓ Scarica Brochure PDF</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Contatti</a>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/contatti" >Contatti</Link>
           </div>
         </div>
         <div className="opa-footer-bottom">

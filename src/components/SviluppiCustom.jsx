@@ -394,8 +394,8 @@ export default function SviluppiCustom() {
           <div className="svc-footer-links">
             <a href="#">↓ Scarica Brochure PDF</a>
 
-            <a href="#">Privacy Policy</a>
-            <a href="#">Contatti</a>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/contatti" >Contatti</Link>
           </div>
         </div>
         <div className="svc-footer-bottom">

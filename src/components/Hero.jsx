@@ -4,7 +4,9 @@ import "aos/dist/aos.css";
 import {
   Globe, Building, Telescope,
   Star, ShieldCheck, Users, Scale,
-  Lightbulb, Eye, Handshake, Leaf
+  Lightbulb, Eye, Handshake, Leaf,
+  Zap,
+  Sparkles
 } from "lucide-react";
 import Footer from "./Footer";
 
@@ -478,7 +480,7 @@ const ChiSiamo = () => {
                 {sec.body && <p className="cs-body">{sec.body}</p>}
                 {sec.highlight && (
                   <div className={`cs-highlight ${sec.accent}`}>
-                    <span style={{ flexShrink: 0 }}>{sec.accent === "orange" ? "⚡" : "✦"}</span>
+                    <span style={{ flexShrink: 0 }}>{sec.accent === "orange" ? <Zap size={20}></Zap> : <Sparkles size={20}></Sparkles>}</span>
                     {sec.highlight}
                   </div>
                 )}

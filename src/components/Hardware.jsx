@@ -1,5 +1,7 @@
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
+import { Users, CheckCircle, DollarSign, Cpu } from "lucide-react";
+
 const css = `
   .hw-root {
     --steel:      oklch(58% 0.08 220);
@@ -303,11 +305,27 @@ export default function Hardware() {
         </div>
         <div className="hw-why">
           {[
-            { icon: "🤝", title: "Connessioni dirette",  desc: "Rapporti personali ventennali con fornitori selezionati in Europa, Cina e nel resto del mondo. Nessun intermediario.", ai: false },
-            { icon: "✅", title: "Qualità verificata",   desc: "Ogni fornitore è selezionato per standard tecnologici elevati e affidabilità consolidata nel tempo.", ai: false },
-            { icon: "💰", title: "Costi competitivi",    desc: "L'accesso diretto ai mercati di produzione ci permette di offrire condizioni difficilmente replicabili sul mercato.", ai: false },
-            { icon: "🤖", title: "Integrazione AI",      desc: "L'hardware può essere selezionato e configurato per supportare direttamente le nostre tecnologie.", ai: true },
-          ].map((w) => (
+  { icon: <Users color="#2563EB" size={24} />, 
+    title: "Connessioni dirette",  
+    desc: "Rapporti personali ventennali con fornitori selezionati in Europa, Cina e nel resto del mondo. Nessun intermediario.", 
+    ai: false 
+  },
+  { icon: <CheckCircle color="#16A34A" size={24} />, 
+    title: "Qualità verificata",   
+    desc: "Ogni fornitore è selezionato per standard tecnologici elevati e affidabilità consolidata nel tempo.", 
+    ai: false 
+  },
+  { icon: <DollarSign color="#F59E0B" size={24} />, 
+    title: "Costi competitivi",    
+    desc: "L'accesso diretto ai mercati di produzione ci permette di offrire condizioni difficilmente replicabili sul mercato.", 
+    ai: false 
+  },
+  { icon: <Cpu color="#A855F7" size={24} />, 
+    title: "Integrazione AI",      
+    desc: "L'hardware può essere selezionato e configurato per supportare direttamente le nostre tecnologie.", 
+    ai: true
+  },
+].map((w) => (
             <div className={`hw-why-card${w.ai ? " hw-why-ai" : ""}`} key={w.title}>
               <div className="hw-why-icon">{w.icon}</div>
               <h3>{w.title}</h3>
@@ -343,9 +361,9 @@ export default function Hardware() {
             <span className="hw-footer-tag">Europa · Cina · Worldwide</span>
           </div>
           <div className="hw-footer-links">
-            <a href="#">Cookie policy</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Contatti</a>
+            <Link to="/cookie">Cookie Policy</Link>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/contatti" >Contatti</Link>
           </div>
         </div>
         <div className="hw-footer-bottom">

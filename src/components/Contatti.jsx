@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -266,6 +267,23 @@ const style = `
     font-size: 12px;
   }
 }
+  .ct-hero-title.glow {
+  animation: glowIn 1.2s ease forwards;
+}
+
+@keyframes glowIn {
+  0% {
+    text-shadow: 0 0 0px #fff;
+    transform: translateY(10px);
+  }
+  60% {
+    text-shadow: 0 0 25px #ffffff, 0 0 50px #E63946;
+  }
+  100% {
+    text-shadow: 0 0 0px transparent; /* torna normale */
+    transform: translateY(0);
+  }
+}
 `;
 
 const TIPI = [
@@ -284,7 +302,15 @@ export default function Contatti() {
   const [privacy, setPrivacy] = useState(false);
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [glow, setGlow] = useState(false);
+  useEffect(() => {
+  AOS.init({ duration: 700, easing: "ease-out-cubic", once: true, offset: 60 });
 
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  setGlow(false);
+  setTimeout(() => setGlow(true), 100); // trigger animazione
+
+}, []);
   useEffect(() => {
     AOS.init({ duration: 700, easing: "ease-out-cubic", once: true, offset: 60 });
   }, []);
@@ -329,7 +355,8 @@ export default function Contatti() {
         {/* HERO */}
         <section className="ct-hero">
           <p className="ct-hero-kicker" data-aos="fade-right">Parliamo</p>
-          <h1 className="ct-hero-title" data-aos="fade-up" data-aos-delay="100">
+          <h1 className={`ct-hero-title glow`} data-aos="fade-up" data-aos-delay="100">
+
             Inizia la conversazione
             <em>Crediamo nel potere del dialogo e della collaborazione.</em>
           </h1>
