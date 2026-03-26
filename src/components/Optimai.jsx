@@ -1,11 +1,11 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import video from "../assets/optimal.mp4";
 import Footer from './Footer';
 import { Link } from "react-router-dom";
 import { Zap, Thermometer, Droplet, Factory, Wrench, Satellite } from "lucide-react";
 
 const css = `
-  /* ── TRUSTED BY (shared styles) ── */
   .pla-trusted {
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -58,7 +58,6 @@ const css = `
   .opa-root *, .opa-root *::before, .opa-root *::after { box-sizing: border-box; margin: 0; padding: 0; }
   .opa-root h1,.opa-root h2,.opa-root h3,.opa-root h4 { font-family: 'Syne', sans-serif; }
 
-  /* ── HERO ── */
   .opa-hero {
     position: relative;
     height: 100vh; min-height: 620px;
@@ -105,10 +104,8 @@ const css = `
     line-height: 1.75; font-weight: 300;
   }
 
-  /* ── PAGE ── */
   .opa-page { max-width: 1100px; margin: 0 auto; padding: 80px 32px; }
 
-  /* ── SECTION HEAD ── */
   .opa-head { margin-bottom: 48px; }
   .opa-head h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.025em; }
   .opa-head h2 .opa-accent { color: var(--blue-hi); }
@@ -119,17 +116,14 @@ const css = `
   }
   @keyframes barPulse { 0%,100% { opacity:1; } 50% { opacity:.28; } }
 
-  /* ── DIVIDER ── */
   .opa-divider {
     border: none; height: 1px; margin: 0 32px;
     background: linear-gradient(90deg, transparent, var(--border), transparent);
   }
 
-  /* ── STATS ── */
   .opa-stats { display: flex; gap: 18px; margin-bottom: 64px; flex-wrap: wrap; }
   .opa-stat {
-    width: 300px; height: 200px;
-    background: var(--surface); border: 1px solid var(--border);
+    width: 300px; height: 200px; background: var(--surface); border: 1px solid var(--border);
     border-radius: 20px; box-shadow: var(--shadow);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     transition: .28s; cursor: default;
@@ -138,7 +132,6 @@ const css = `
   .opa-stat-val { font-size: 30px; font-weight: 800; font-family: 'Syne', sans-serif; color: var(--blue-hi); }
   .opa-stat-lbl { color: var(--text-3); margin-top: 6px; font-size: 13px; text-align: center; padding: 0 8px; }
 
-  /* ── PER CHI ── */
   .opa-perchi { display: flex; gap: 60px; margin-top: 32px; flex-wrap: wrap; }
   .opa-perchi-text { max-width: 420px; color: var(--text-2); line-height: 1.8; font-size: 15px; }
   .opa-checks { display: flex; flex-direction: column; gap: 14px; }
@@ -150,7 +143,6 @@ const css = `
     font-size: 11px; font-weight: 700;
   }
 
-  /* ── PILLS ── */
   .opa-pills { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 44px; }
   .opa-pill {
     background: var(--blue-dim); border: 1px solid var(--blue-bdr);
@@ -167,7 +159,6 @@ const css = `
   .opa-d1{animation-delay:0s;} .opa-d2{animation-delay:.5s;} .opa-d3{animation-delay:1s;}
   .opa-d4{animation-delay:1.5s;} .opa-d5{animation-delay:2s;}
 
-  /* ── STEPS ── */
   .opa-steps { display: flex; align-items: center; gap: 28px; margin-top: 40px; flex-wrap: wrap; }
   .opa-step-card {
     background: var(--surface); border: 1px solid var(--border);
@@ -192,10 +183,8 @@ const css = `
   }
   .opa-next-btn:hover { filter: brightness(1.12); transform: translateX(3px); }
 
-  /* ── BENEFITS ── */
   .opa-benefits {
-    list-style: none; display: flex; flex-direction: column; gap: 0;
-    width: 460px;
+    list-style: none; display: flex; flex-direction: column; gap: 0; width: 460px;
   }
   .opa-benefits li {
     background: var(--surface); border: 1px solid var(--border);
@@ -206,23 +195,20 @@ const css = `
   .opa-benefits li p  { font-size: 13px; color: var(--text-3); }
   .opa-benefits li:hover { border-color: oklch(62% 0.22 240 / 0.40); background: oklch(62% 0.22 240 / 0.08); }
   .opa-benefit-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-  .opa-benefit-arrow { color: var(--text-3); font-size: 11px; flex-shrink: 0; margin-top: 2px; transition: .2s; }
+  .opa-benefit-arrow { color: var(--text-3); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
   .opa-benefit-detail {
     font-size: 13px; color: var(--text-2); line-height: 1.7;
-    margin-top: 10px; padding-top: 10px;
-    border-top: 1px solid var(--border);
+    margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);
     animation: fadeInDetail .2s ease;
   }
   @keyframes fadeInDetail { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* Bolla desktop */
   .opa-benefits li .opa-bubble {
     position: absolute; left: calc(100% + 18px); top: 50%; transform: translateY(-50%) scale(0.85);
     width: 260px; background: oklch(62% 0.22 240 / 0.13);
     border: 1px solid oklch(62% 0.22 240 / 0.40); border-radius: 16px;
     padding: 20px 22px; pointer-events: none;
-    opacity: 0; transition: opacity .22s, transform .28s cubic-bezier(.34,1.56,.64,1);
-    z-index: 10;
+    opacity: 0; transition: opacity .22s, transform .28s cubic-bezier(.34,1.56,.64,1); z-index: 10;
   }
   .opa-benefits li:hover .opa-bubble { opacity: 1; transform: translateY(-50%) scale(1); }
   .opa-bubble::before {
@@ -232,7 +218,6 @@ const css = `
   .opa-bubble h4 { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 800; color: var(--blue-hi); margin-bottom: 8px; }
   .opa-bubble p  { font-size: 13px; color: #8fa3c0; line-height: 1.7; }
 
-  /* ── USE CASES ── */
   .opa-cases { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
   .opa-case {
     background: var(--surface); border: 1px solid var(--border);
@@ -248,7 +233,6 @@ const css = `
   .opa-case h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
   .opa-case p  { font-size: 13px; color: var(--text-3); line-height: 1.65; }
 
-  /* ── SPEC CARDS ── */
   .opa-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .opa-spec-card {
     background: var(--surface); border: 1px solid var(--border);
@@ -283,7 +267,6 @@ const css = `
   .opa-spec-card:hover .opa-spec-item:nth-child(2) { transition-delay: .2s; }
   .opa-spec-card:hover .opa-spec-item:nth-child(3) { transition-delay: .34s; }
 
-  /* ── FAQ ── */
   .opa-faq { display: flex; flex-direction: column; gap: 12px; }
   .opa-faq-item {
     background: var(--surface); border: 1px solid var(--border);
@@ -304,7 +287,6 @@ const css = `
   }
   .opa-faq-item.open .opa-faq-a { max-height: 200px; padding: 0 24px 20px; }
 
-  /* ── CTA ── */
   .opa-cta {
     background: linear-gradient(135deg, #060910 0%, oklch(14% 0.12 240) 100%);
     border-top: 1px solid var(--border);
@@ -331,7 +313,6 @@ const css = `
   }
   .opa-cta-secondary:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.5); }
 
-  /* ── FOOTER ── */
   .opa-footer {
     background: #040608; border-top: 1px solid rgba(255,255,255,.05);
     padding: 60px 32px 36px; color: var(--text-3);
@@ -346,8 +327,7 @@ const css = `
     display: inline-block; margin-top: 14px;
     background: var(--blue-dim); border: 1px solid var(--blue-bdr);
     color: var(--blue-hi); font-size: 11px; font-weight: 600;
-    letter-spacing: .1em; text-transform: uppercase;
-    padding: 4px 12px; border-radius: 999px;
+    letter-spacing: .1em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px;
   }
   .opa-footer-links { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
   .opa-footer-links a { color: var(--text-3); text-decoration: none; font-size: 14px; font-weight: 500; transition: .2s; }
@@ -359,81 +339,73 @@ const css = `
     flex-wrap: wrap; font-size: 12px; opacity: .4;
   }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .opa-cases { grid-template-columns: 1fr 1fr; }
-  }
+  @media (max-width: 900px) { .opa-cases { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 700px) {
     .opa-hero { min-height: 100svh; }
     .opa-hero-sub { font-size: 15px; }
-
     .opa-stats { flex-direction: column; gap: 10px; }
     .opa-stat { width: 100%; height: auto; padding: 20px; flex-direction: row; justify-content: flex-start; gap: 16px; }
     .opa-stat-val { font-size: 24px; }
-
     .opa-steps { flex-direction: column; align-items: stretch; gap: 16px; }
     .opa-step-card { width: 100%; min-width: unset; padding: 24px 20px; }
     .opa-next-btn { width: 100%; text-align: center; }
-
     .opa-benefits { width: 100%; }
     .opa-benefits li .opa-bubble { display: none; }
-
     .opa-specs { grid-template-columns: 1fr; }
     .opa-cases { grid-template-columns: 1fr; }
     .opa-perchi { flex-direction: column; }
     .opa-page { padding: 60px 20px; }
-
     .opa-faq-q { font-size: 14px; padding: 16px 18px; }
     .opa-faq-a { padding: 0 18px; }
     .opa-faq-item.open .opa-faq-a { padding: 0 18px 16px; }
-
     .opa-cta { padding: 64px 20px; }
     .opa-cta-btns { flex-direction: column; align-items: center; }
     .opa-cta-primary, .opa-cta-secondary { width: 100%; text-align: center; justify-content: center; }
-
     .opa-footer-inner { grid-template-columns: 1fr; }
     .opa-footer-links { align-items: flex-start; }
     .opa-footer-bottom { flex-direction: column; gap: 4px; }
   }
 `;
 
-const STEPS = [
-  { label: "STEP 1", title: "DEFINIZIONE",    desc: "Il cliente identifica cosa vuole ottimizzare e fornisce le funzioni che descrivono l'evoluzione delle variabili del sistema." },
-  { label: "STEP 2", title: "PROGETTAZIONE",  desc: "Il team traduce i requisiti in parametri tecnici, progettando e addestrando una ANN su misura tramite Reinforcement Learning su Digital Twin." },
-  { label: "STEP 3", title: "INTEGRAZIONE",   desc: "OptimAl viene installato a bordo su un piccolo computer di bordo, leggero e facilmente integrabile. I sensori raccolgono i dati in tempo reale." },
-  { label: "STEP 4", title: "OTTIMIZZAZIONE", desc: "L'algoritmo lavora in autonomia senza necessità di connessione Internet: legge le variabili istante per istante e prende la decisione ottimale in tempo reale, continuamente." },
-];
+const LOGOS = [{ icon: "🏭", name: "Barbieri Group" }];
 
-const BENEFITS = [
-  { title: "Prestazioni al massimo",  desc: "Sempre al limite ottimale possibile",   detail: "Il sistema si adatta in tempo reale alle condizioni operative e ambientali, lavorando sempre al punto di ottimo senza intervento umano." },
-  { title: "Obiettivi multipli",       desc: "Tutti sotto controllo simultaneamente", detail: "Riduci consumi, emissioni e costi operativi senza rinunciare alle prestazioni. OptimAl bilancia tutti i parametri in ogni istante." },
-  { title: "Sicurezza dei dati",      desc: "Elaborazione 100% locale",              detail: "Nessun dato viene trasmesso all'esterno. Elaborazione completamente onboard, piena conformità normativa garantita." },
-  { title: "AI trasparente",          desc: "Auditabile e tracciabile",              detail: "Ogni decisione dell'algoritmo è tracciata e consultabile nella dashboard dedicata, in linea con i requisiti dell'AI Act europeo." },
-  { title: "Integrazione semplice",   desc: "Hardware compatto e non invasivo",      detail: "Richiede solo un Single Board Computer leggero. Il team BluMentis supporta il cliente in tutte le fasi di installazione." },
-];
-
-const FAQS = [
-  { q: "I dati vengono trasmessi all'esterno?", a: "No. OptimAl elabora tutti i dati interamente in locale, a bordo del dispositivo. Nessuna connessione Internet richiesta, nessun dato condiviso con terzi." },
-  { q: "Che hardware serve per installare OptimAl?", a: "Un piccolo computer di bordo compatto e leggero, facilmente integrabile su macchine e dispositivi (Single Board Computer). BluMentis fornisce supporto tecnico dedicato." },
-  { q: "Posso scegliere io cosa ottimizzare?", a: "Sì. Sei tu a definire i parametri e gli obiettivi di ottimizzazione. Il team di BluMentis li traduce nella progettazione della rete neurale richiesta per il tuo caso." },
-  { q: "Quanto tempo richiede la messa in opera?", a: "I tempi dipendono dalla complessità del sistema. Grazie al training su Digital Twin e al simulatore proprietario, i tempi di adattamento sono ridotti al minimo." },
-  { q: "È conforme all'AI Act?", a: "Sì. OptimAl è progettato nel rispetto dell'AI Act europeo e delle normative vigenti in materia di intelligenza artificiale." },
+const CASE_ICONS = [
+  <Zap color="#F59E0B" size={24} />,
+  <Thermometer color="#3B82F6" size={24} />,
+  <Droplet color="#F97316" size={24} />,
+  <Factory color="#6B7280" size={24} />,
+  <Wrench color="#2563EB" size={24} />,
+  <Satellite color="#22C55E" size={24} />,
 ];
 
 export default function Optimai() {
-  const [step, setStep] = useState(0);
-  const [openFaq, setOpenFaq] = useState(null);
+  const { t } = useTranslation();
+  const [step, setStep]               = useState(0);
+  const [openFaq, setOpenFaq]         = useState(null);
   const [openBenefit, setOpenBenefit] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-     useEffect(() => {
-        function handleResize() {
-          setIsMobile(window.innerWidth <= 768);
-        }
-    
-        window.addEventListener("resize", handleResize);
-    
-        return () => window.removeEventListener("resize", handleResize);
-      }, []);
+  const [isMobile, setIsMobile]       = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const fn = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", fn);
+    return () => window.removeEventListener("resize", fn);
+  }, []);
+
+  // Array tradotti
+  const steps    = t("optimai.steps",    { returnObjects: true });
+  const benefits = t("optimai.benefits", { returnObjects: true });
+  const checks   = t("optimai.checks",   { returnObjects: true });
+  const pills    = t("optimai.pills",    { returnObjects: true });
+  const specs    = t("optimai.specs",    { returnObjects: true });
+  const cases    = t("optimai.cases",    { returnObjects: true });
+  const faqs     = t("optimai.faqs",     { returnObjects: true });
+
+  const heroStats = [
+    { val: "100%",      lbl: t("optimai.heroStats.local") },
+    { val: "Real-time", lbl: t("optimai.heroStats.realtime") },
+    { val: "50+",       lbl: t("optimai.heroStats.variables") },
+  ];
+
   return (
     <div className="opa-root">
       <style>{css}</style>
@@ -445,46 +417,33 @@ export default function Optimai() {
         <div className="opa-hero-content">
           <div className="opa-hero-badge">
             <span className="opa-badge-dot" />
-            AI Embedded · Real-time Optimization
+            {t("optimai.badge")}
           </div>
           <h1 className="opa-hero-title">
-            Decisioni ottimali.<br />
-            <span className="opa-accent">In ogni istante.</span>
+            {t("optimai.heroLine1")}<br />
+            <span className="opa-accent">{t("optimai.heroAccent")}</span>
           </h1>
-          <p className="opa-hero-sub">
-            L'algoritmo AI embedded che ottimizza in tempo reale il funzionamento
-            di macchine e dispositivi, gestendo simultaneamente tutte le variabili
-            in gioco — in modo continuo, autonomo e sicuro.
-          </p>
+          <p className="opa-hero-sub">{t("optimai.heroSub")}</p>
         </div>
       </section>
 
       {/* ── TRUSTED BY ── */}
-      {(() => {
-        const logos = [{ icon: "🏭", name: "Barbieri Group" }];
-        return (
-          <div className="pla-trusted">
-            <div className="pla-trusted-label">Già scelto da</div>
-            <div className="pla-trusted-track">
-              {logos.map((l, i) => (
-                <div className="pla-logo-pill" key={i}>
-                  <div className="pla-logo-icon">{l.icon}</div>
-                  <span className="pla-logo-name">{l.name}</span>
-                </div>
-              ))}
+      <div className="pla-trusted">
+        <div className="pla-trusted-label">{t("optimai.trustedLabel")}</div>
+        <div className="pla-trusted-track">
+          {LOGOS.map((l, i) => (
+            <div className="pla-logo-pill" key={i}>
+              <div className="pla-logo-icon">{l.icon}</div>
+              <span className="pla-logo-name">{l.name}</span>
             </div>
-          </div>
-        );
-      })()}
+          ))}
+        </div>
+      </div>
 
       {/* ── STATS + PER CHI ── */}
       <div className="opa-page">
         <div className="opa-stats">
-          {[
-            { val: "100%",     lbl: "Dati elaborati in locale" },
-            { val: "Real-time",lbl: "Decisioni istante per istante" },
-            { val: "50+",      lbl: "Variabili gestite simultaneamente" },
-          ].map((s) => (
+          {heroStats.map((s) => (
             <div className="opa-stat" key={s.lbl}>
               <span className="opa-stat-val">{s.val}</span>
               <span className="opa-stat-lbl">{s.lbl}</span>
@@ -493,24 +452,18 @@ export default function Optimai() {
         </div>
 
         <div className="opa-head">
-          <h2>Per chi è <span className="opa-accent">OptimAl</span>?</h2>
+          <h2>
+            {t("optimai.perchiTitle.0")}
+            <span className="opa-accent">{t("optimai.perchiTitle.1")}</span>
+            {t("optimai.perchiTitle.2")}
+          </h2>
           <div className="opa-bar" />
         </div>
         <div className="opa-perchi">
-          <p className="opa-perchi-text">
-            Progettato per sistemi complessi in cui le variabili in gioco sono numerose,
-            la funzione da ottimizzare è troppo articolata per un approccio tradizionale
-            e impossibile da gestire manualmente in tempo reale.
-          </p>
+          <p className="opa-perchi-text">{t("optimai.perchiText")}</p>
           <div className="opa-checks">
-            {[
-              "Funzionamento completamente offline",
-              "Integrazione onboard su hardware leggero",
-              "Decisioni trasparenti e tracciabili",
-              "Parametri di ottimizzazione definiti dal cliente",
-              "Conforme AI Act e normative vigenti",
-            ].map((f) => (
-              <div className="opa-check" key={f}>
+            {Array.isArray(checks) && checks.map((f, i) => (
+              <div className="opa-check" key={i}>
                 <span className="opa-check-ico">✓</span>
                 <span>{f}</span>
               </div>
@@ -518,14 +471,8 @@ export default function Optimai() {
           </div>
         </div>
         <div className="opa-pills">
-          {[
-            ["Ottimizzazione Real-time","opa-d1"],
-            ["100% Locale","opa-d2"],
-            ["AI Trasparente","opa-d3"],
-            ["AI Act Compliant","opa-d4"],
-            ["Multi-obiettivo","opa-d5"],
-          ].map(([label, d]) => (
-            <div className={`opa-pill ${d}`} key={label}>{label}</div>
+          {Array.isArray(pills) && pills.map((label, i) => (
+            <div className={`opa-pill opa-d${i + 1}`} key={i}>{label}</div>
           ))}
         </div>
       </div>
@@ -535,21 +482,26 @@ export default function Optimai() {
       {/* ── COME FUNZIONA ── */}
       <div className="opa-page">
         <div className="opa-head">
-          <h2>Come <span className="opa-accent">funziona?</span></h2>
+          <h2>
+            {t("optimai.comeTitle.0")}
+            <span className="opa-accent">{t("optimai.comeTitle.1")}</span>
+          </h2>
         </div>
         <div className="opa-steps">
-          <div className="opa-step-card">
-            <div className="opa-step-num">{STEPS[step].label}</div>
-            <h3 className="opa-step-title">{STEPS[step].title}</h3>
-            <p className="opa-step-desc">{STEPS[step].desc}</p>
-            <div className="opa-dots">
-              {STEPS.map((_, i) => (
-                <div key={i} className={`opa-dot${i === step ? " active" : ""}`} onClick={() => setStep(i)} />
-              ))}
+          {Array.isArray(steps) && (
+            <div className="opa-step-card">
+              <div className="opa-step-num">{steps[step]?.label}</div>
+              <h3 className="opa-step-title">{steps[step]?.title}</h3>
+              <p className="opa-step-desc">{steps[step]?.desc}</p>
+              <div className="opa-dots">
+                {steps.map((_, i) => (
+                  <div key={i} className={`opa-dot${i === step ? " active" : ""}`} onClick={() => setStep(i)} />
+                ))}
+              </div>
             </div>
-          </div>
-          <button className="opa-next-btn" onClick={() => setStep((s) => (s + 1) % STEPS.length)}>
-            Prossimo →
+          )}
+          <button className="opa-next-btn" onClick={() => setStep((s) => (s + 1) % (Array.isArray(steps) ? steps.length : 4))}>
+            {t("optimai.next")}
           </button>
         </div>
       </div>
@@ -559,18 +511,22 @@ export default function Optimai() {
       {/* ── BENEFICI ── */}
       <div className="opa-page">
         <div className="opa-head">
-          <h2>Benefici <span className="opa-accent">Concreti</span></h2>
+          <h2>
+            {t("optimai.beneficiTitle.0")}
+            <span className="opa-accent">{t("optimai.beneficiTitle.1")}</span>
+          </h2>
         </div>
         <ul className="opa-benefits">
-          {BENEFITS.map((b, i) => (
-            <li key={b.title} onClick={() => setOpenBenefit(openBenefit === i ? null : i)}>
+          {Array.isArray(benefits) && benefits.map((b, i) => (
+            <li key={i} onClick={() => setOpenBenefit(openBenefit === i ? null : i)}>
               <div className="opa-benefit-header">
                 <div>
                   <h3>{b.title}</h3>
                   <p>{b.desc}</p>
-                </div>{
-                  isMobile&&
-                <span className="opa-benefit-arrow">{openBenefit === i ? "▲" : "▼"}</span>}
+                </div>
+                {isMobile && (
+                  <span className="opa-benefit-arrow">{openBenefit === i ? "▲" : "▼"}</span>
+                )}
               </div>
               <div className="opa-bubble">
                 <h4>{b.title}</h4>
@@ -589,37 +545,15 @@ export default function Optimai() {
       {/* ── CASI D'USO ── */}
       <div className="opa-page">
         <div className="opa-head">
-          <h2>Casi d'<span className="opa-accent">uso</span></h2>
+          <h2>
+            {t("optimai.casiTitle.0")}
+            <span className="opa-accent">{t("optimai.casiTitle.1")}</span>
+          </h2>
         </div>
         <div className="opa-cases">
-          {[
-            { icon: <Zap color="#F59E0B" size={24} />, 
-    title: "Motori ibridi ed elettrici",            
-    desc: "Ottimizzazione della gestione energetica e delle prestazioni in tempo reale." 
-  },
-  { icon: <Thermometer color="#3B82F6" size={24} />, 
-    title: "Climatizzazione ambienti chiusi",       
-    desc: "Controllo continuo di temperatura, umidità e consumo energetico." 
-  },
-  { icon: <Droplet color="#F97316" size={24} />, 
-    title: "Ottimizzazione combustibile",           
-    desc: "Riduzione dei consumi e delle emissioni su motori termici e sistemi di propulsione." 
-  },
-  { icon: <Factory color="#6B7280" size={24} />, 
-    title: "Ottimizzazione energetica industriale", 
-    desc: "Gestione efficiente di impianti e macchinari con molte variabili operative." 
-  },
-  { icon: <Wrench color="#2563EB" size={24} />, 
-    title: "Macchinari su misura",                 
-    desc: "Qualsiasi sistema con numerose variabili da controllare e una funzione obiettivo complessa." 
-  },
-  { icon: <Satellite color="#22C55E" size={24} />, 
-    title: "Sistemi di controllo embedded",        
-    desc: "Integrazione diretta su hardware compatto per applicazioni IoT e dispositivi autonomi." 
-  },
-].map((c) => (
-            <div className="opa-case" key={c.title}>
-              <div className="opa-case-icon">{c.icon}</div>
+          {Array.isArray(cases) && cases.map((c, i) => (
+            <div className="opa-case" key={i}>
+              <div className="opa-case-icon">{CASE_ICONS[i]}</div>
               <h3>{c.title}</h3>
               <p>{c.desc}</p>
             </div>
@@ -632,22 +566,18 @@ export default function Optimai() {
       {/* ── SPECIFICHE ── */}
       <div className="opa-page">
         <div className="opa-head">
-          <h2>Dettagli <span className="opa-accent">Tecnici</span></h2>
+          <h2>
+            {t("optimai.specTitle.0")}
+            <span className="opa-accent">{t("optimai.specTitle.1")}</span>
+          </h2>
         </div>
         <div className="opa-specs">
-          {[
-            { title: "Algoritmo ▼",            items: ["Rete neurale artificiale complessa", "Progettata su specifiche del cliente", "Parametrizzata dal team AI BluMentis"] },
-            { title: "Training ▼",             items: ["Reinforcement Learning", "Digital Twin del dispositivo", "Simulatore proprietario BluMentis"] },
-            { title: "Hardware richiesto ▼",   items: ["Single Board Computer compatto", "Nessun requisito computazionale elevato", "Installazione supportata da BluMentis"] },
-            { title: "Acquisizione dati ▼",    items: ["Lettura real-time via sensori", "Non necessaria connessione Internet", "Latenza minima garantita"] },
-            { title: "Sicurezza ▼",            items: ["Elaborazione 100% locale", "Nessun dato trasmesso all'esterno", "Conforme normative vigenti"] },
-            { title: "Conformità normativa ▼", items: ["Progettato secondo AI Act europeo", "Normative di settore applicabili", "Decisioni auditabili e tracciabili"] },
-          ].map((card) => (
-            <div className="opa-spec-card" key={card.title}>
+          {Array.isArray(specs) && specs.map((card, i) => (
+            <div className="opa-spec-card" key={i}>
               <button className="opa-spec-btn">{card.title}</button>
               <ul className="opa-spec-tree">
-                {card.items.map((item) => (
-                  <li className="opa-spec-item" key={item}>{item}</li>
+                {card.items.map((item, j) => (
+                  <li className="opa-spec-item" key={j}>{item}</li>
                 ))}
               </ul>
             </div>
@@ -660,11 +590,14 @@ export default function Optimai() {
       {/* ── FAQ ── */}
       <div className="opa-page">
         <div className="opa-head">
-          <h2>Domande <span className="opa-accent">frequenti</span></h2>
+          <h2>
+            {t("optimai.faqTitle.0")}
+            <span className="opa-accent">{t("optimai.faqTitle.1")}</span>
+          </h2>
         </div>
         <div className="opa-faq">
-          {FAQS.map((f, i) => (
-            <div className={`opa-faq-item${openFaq === i ? " open" : ""}`} key={f.q}>
+          {Array.isArray(faqs) && faqs.map((f, i) => (
+            <div className={`opa-faq-item${openFaq === i ? " open" : ""}`} key={i}>
               <button className="opa-faq-q" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
                 <span>{f.q}</span>
                 <span className="opa-faq-arrow">▾</span>
@@ -679,17 +612,13 @@ export default function Optimai() {
       <section className="opa-cta">
         <div className="opa-cta-inner">
           <h2 className="opa-cta-title">
-            Vuoi ottimizzare le prestazioni<br />
-            <span className="opa-accent">del tuo sistema?</span>
+            {t("optimai.ctaTitle.0")}<br />
+            <span className="opa-accent">{t("optimai.ctaTitle.1")}</span>
           </h2>
-          <p className="opa-cta-sub">
-            Contattaci per scoprire come <strong>OptimAl</strong> può essere integrato
-            nel tuo dispositivo o macchinario. Il team di BluMentis analizzerà il tuo
-            caso d'uso e ti proporrà la soluzione più idonea.
-          </p>
+          <p className="opa-cta-sub">{t("optimai.ctaSub")}</p>
           <div className="opa-cta-btns">
-            <button className="opa-cta-primary">Richiedi una Consulenza</button>
-            <Link to="/contatti" className="opa-cta-secondary">Contattaci</Link>
+            <button className="opa-cta-primary">{t("optimai.ctaPrimary")}</button>
+            <Link to="/contatti" className="opa-cta-secondary">{t("optimai.ctaSecondary")}</Link>
           </div>
         </div>
       </section>
@@ -698,19 +627,19 @@ export default function Optimai() {
       <footer className="opa-footer">
         <div className="opa-footer-inner">
           <div className="opa-footer-brand">
-            <h3>OptimAl</h3>
-            <p>Algoritmo AI embedded per l'ottimizzazione continua e autonoma di macchine e dispositivi complessi, in tempo reale.</p>
-            <span className="opa-footer-tag">Offline · Real-time · AI Act Compliant</span>
+            <h3>OptimAI</h3>
+            <p>{t("optimai.footerDesc")}</p>
+            <span className="opa-footer-tag">{t("optimai.footerTag")}</span>
           </div>
           <div className="opa-footer-links">
-            <a href="#">↓ Scarica Brochure PDF</a>
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/contatti" >Contatti</Link>
+            <a href="#">{t("optimai.footerBrochure")}</a>
+            <Link to="/privacy">{t("footer.policy.privacy")}</Link>
+            <Link to="/contatti">{t("nav.contatti")}</Link>
           </div>
         </div>
         <div className="opa-footer-bottom">
-          <span>© {new Date().getFullYear()} OptimAl · BluMentis. Tutti i diritti riservati.</span>
-          <span>Made in Italy 🇮🇹</span>
+          <span>© {new Date().getFullYear()} OptimAI · BluMentis. {t("footer.legal.rights")}</span>
+          <span>{t("optimai.madeIn")}</span>
         </div>
       </footer>
       <Footer />

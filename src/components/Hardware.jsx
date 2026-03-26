@@ -1,6 +1,7 @@
-import Footer from './Footer';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Users, CheckCircle, DollarSign, Cpu } from "lucide-react";
+import { Users, CheckCircle, DollarSign, Cpu } from 'lucide-react';
+import Footer from './Footer';
 
 const css = `
   .hw-root {
@@ -202,27 +203,30 @@ const css = `
     .hw-footer-links { align-items: flex-start; }
     .hw-hero { padding: 100px 20px 70px; }
   }
-    @media (max-width: 700px) {
-  .hw-hero { padding: 80px 20px 60px; }
-  .hw-hero h1 { font-size: clamp(28px, 8vw, 44px); }
-  .hw-hero-sub { font-size: 14px; }
-  .hw-hero-cta { flex-direction: column; }
-  .hw-btn-primary { width: 100%; }
-
-  .hw-sectors { grid-template-columns: 1fr; }
-  .hw-why { grid-template-columns: 1fr; }
-  .hw-page { padding: 48px 16px; }
-
-  .hw-cta { padding: 56px 16px; }
-  .hw-cta-btn { width: 100%; }
-
-  .hw-footer-inner { grid-template-columns: 1fr; }
-  .hw-footer-links { align-items: flex-start; }
-  .hw-footer-bottom { flex-direction: column; gap: 4px; }
-}
+  @media (max-width: 700px) {
+    .hw-hero { padding: 80px 20px 60px; }
+    .hw-hero h1 { font-size: clamp(28px, 8vw, 44px); }
+    .hw-hero-sub { font-size: 14px; }
+    .hw-hero-cta { flex-direction: column; }
+    .hw-btn-primary { width: 100%; }
+    .hw-sectors { grid-template-columns: 1fr; }
+    .hw-why { grid-template-columns: 1fr; }
+    .hw-page { padding: 48px 16px; }
+    .hw-cta { padding: 56px 16px; }
+    .hw-cta-btn { width: 100%; }
+    .hw-footer-inner { grid-template-columns: 1fr; }
+    .hw-footer-links { align-items: flex-start; }
+    .hw-footer-bottom { flex-direction: column; gap: 4px; }
+  }
 `;
 
 export default function Hardware() {
+  const { t } = useTranslation();
+
+  // Recupero dati con returnObjects: true
+  const sectors = t('hardware.sectors.items', { returnObjects: true }) || [];
+  const whyItems = t('hardware.why.items', { returnObjects: true }) || [];
+
   return (
     <div className="hw-root">
       <style>{css}</style>
@@ -232,17 +236,18 @@ export default function Hardware() {
         <div className="hw-hero-inner">
           <div className="hw-hero-badge">
             <span className="hw-badge-dot" />
-            Hardware & Supply Chain
+            {t('hardware.hero.badge')}
           </div>
-          <h1>Il componente giusto.<br /><span className="hw-accent">Dove serve. Quando serve.</span></h1>
-          <p className="hw-hero-sub">
-            Trovare hardware industriale di qualità, a prezzi competitivi e con fornitori affidabili
-            non è semplice. Noi lo facciamo da oltre vent'anni — con una rete diretta in Europa,
-            Cina e nel resto del mondo, costruita sui rapporti personali dei nostri fondatori.
-          </p>
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: t('hardware.hero.title', { interpolation: { escapeValue: false } }),
+            }}
+          />
+          <p className="hw-hero-sub">{t('hardware.hero.sub')}</p>
           <div className="hw-hero-cta">
-            <Link to="/contatti" className="hw-btn-primary"> Hai un'esigenza? Scrivici</Link>
-           
+            <Link to="/contatti" className="hw-btn-primary">
+              {t('hardware.hero.cta')}
+            </Link>
           </div>
         </div>
       </section>
@@ -252,23 +257,21 @@ export default function Hardware() {
       {/* ── INTRO ── */}
       <div className="hw-page">
         <div className="hw-head">
-          <h2>Componenti Hardware</h2>
+          <h2>{t('hardware.intro.title')}</h2>
           <div className="hw-bar" />
         </div>
         <div className="hw-intro">
-          <p>
-            I nostri fondatori hanno costruito nel tempo una <strong>rete commerciale internazionale
-            solida e diversificata</strong>. Oggi quella rete è al servizio di forniture per i nostri clienti
-             — con un focus su automotive e agromeccanica, e la capacità
-            di operare su un ampio ventaglio di componenti industriali.
-          </p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: t('hardware.intro.text', { interpolation: { escapeValue: false } }),
+            }}
+          />
           <div className="hw-intro-highlight">
-            <p>
-              Recentemente abbiamo intrapreso un nuovo percorso che ci entusiasma particolarmente:
-              <strong> soluzioni integrate che combinano hardware selezionato e software AI proprietario</strong> —
-              prodotti ad alto impatto tecnologico che renderemo disponibili nei prossimi mesi.
-              <br /> <span className='mt-10'><strong>Non perderti le prossime novità!</strong></span>
-            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: t('hardware.intro.highlight', { interpolation: { escapeValue: false } }),
+              }}
+            />
           </div>
         </div>
       </div>
@@ -278,15 +281,15 @@ export default function Hardware() {
       {/* ── SETTORI ── */}
       <div className="hw-page">
         <div className="hw-head">
-          <h2>Settori di <span className="hw-accent">riferimento</span></h2>
+          <h2
+            dangerouslySetInnerHTML={{
+              __html: t('hardware.sectors.title', { interpolation: { escapeValue: false } }),
+            }}
+          />
           <div className="hw-bar" />
         </div>
         <div className="hw-sectors">
-          {[
-            { title: "Automotive",    desc: "Componentistica e hardware per linee di produzione, testing e sistemi embedded nel settore automotive." },
-            { title: "Agromeccanica", desc: "Hardware dedicato a macchine agricole e sistemi di automazione per il settore agromeccanico." },
-            { title: "Altri settori", desc: "La nostra rete copre un'ampia gamma di categorie merceologiche. Se hai un'esigenza specifica, contattaci." },
-          ].map((s) => (
+          {Array.isArray(sectors) && sectors.map((s) => (
             <div className="hw-sector" key={s.title}>
               <h3>{s.title}</h3>
               <p>{s.desc}</p>
@@ -300,75 +303,78 @@ export default function Hardware() {
       {/* ── PERCHÉ ── */}
       <div className="hw-page">
         <div className="hw-head">
-          <h2>Perché <span className="hw-accent">sceglierci</span></h2>
+          <h2
+            dangerouslySetInnerHTML={{
+              __html: t('hardware.why.title', { interpolation: { escapeValue: false } }),
+            }}
+          />
           <div className="hw-bar" />
         </div>
         <div className="hw-why">
-          {[
-  { icon: <Users color="#2563EB" size={24} />, 
-    title: "Connessioni dirette",  
-    desc: "Rapporti personali ventennali con fornitori selezionati in Europa, Cina e nel resto del mondo. Nessun intermediario.", 
-    ai: false 
-  },
-  { icon: <CheckCircle color="#16A34A" size={24} />, 
-    title: "Qualità verificata",   
-    desc: "Ogni fornitore è selezionato per standard tecnologici elevati e affidabilità consolidata nel tempo.", 
-    ai: false 
-  },
-  { icon: <DollarSign color="#F59E0B" size={24} />, 
-    title: "Costi competitivi",    
-    desc: "L'accesso diretto ai mercati di produzione ci permette di offrire condizioni difficilmente replicabili sul mercato.", 
-    ai: false 
-  },
-  { icon: <Cpu color="#A855F7" size={24} />, 
-    title: "Integrazione AI",      
-    desc: "L'hardware può essere selezionato e configurato per supportare direttamente le nostre tecnologie.", 
-    ai: true
-  },
-].map((w) => (
-            <div className={`hw-why-card${w.ai ? " hw-why-ai" : ""}`} key={w.title}>
-              <div className="hw-why-icon">{w.icon}</div>
-              <h3>{w.title}</h3>
-              <p>{w.desc}</p>
-            </div>
-          ))}
+          {Array.isArray(whyItems) && whyItems.map((w) => {
+            let IconComponent = null;
+            switch (w.icon) {
+              case 'Users':
+                IconComponent = Users;
+                break;
+              case 'CheckCircle':
+                IconComponent = CheckCircle;
+                break;
+              case 'DollarSign':
+                IconComponent = DollarSign;
+                break;
+              case 'Cpu':
+                IconComponent = Cpu;
+                break;
+              default:
+                IconComponent = Users;
+            }
+            return (
+              <div className={`hw-why-card${w.ai ? ' hw-why-ai' : ''}`} key={w.title}>
+                <div className="hw-why-icon">
+                  <IconComponent size={24} />
+                </div>
+                <h3>{w.title}</h3>
+                <p>{w.desc}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
 
       {/* ── CTA ── */}
       <section className="hw-cta">
         <div className="hw-cta-inner">
-          <h2 className="hw-cta-title">
-            Hai un'esigenza<br /><span className="hw-accent">di fornitura?</span>
-          </h2>
-          <p className="hw-cta-sub">
-            Raccontaci cosa ti serve. Valutiamo insieme tempi, specifiche
-            e condizioni — senza impegno.
-          </p>
-          <Link className="hw-cta-btn" to="/contatti">Contattaci</Link>
+          <h2
+            className="hw-cta-title"
+            dangerouslySetInnerHTML={{
+              __html: t('hardware.cta.title', { interpolation: { escapeValue: false } }),
+            }}
+          />
+          <p className="hw-cta-sub">{t('hardware.cta.sub')}</p>
+          <Link className="hw-cta-btn" to="/contatti">
+            {t('hardware.cta.button')}
+          </Link>
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
+      {/* ── FOOTER (locale della pagina) ── */}
       <footer className="hw-footer">
         <div className="hw-footer-inner">
           <div className="hw-footer-brand">
-            <h3>Hardware & Supply Chain</h3>
-            <p>
-              Rete diretta internazionale per forniture hardware industriali
-              ad alto contenuto tecnologico. Da oltre vent'anni.
-            </p>
-            <span className="hw-footer-tag">Europa · Cina · Worldwide</span>
+            <h3>{t('hardware.footer.brand')}</h3>
+            <p>{t('hardware.footer.desc')}</p>
+            <span className="hw-footer-tag">{t('hardware.footer.tag')}</span>
           </div>
           <div className="hw-footer-links">
-            <Link to="/cookie">Cookie Policy</Link>
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/contatti" >Contatti</Link>
+            <Link to="/cookie">{t('hardware.footer.cookie')}</Link>
+            <Link to="/privacy">{t('hardware.footer.privacy')}</Link>
+            <Link to="/contatti">{t('hardware.footer.contact')}</Link>
           </div>
         </div>
         <div className="hw-footer-bottom">
-          <span>© {new Date().getFullYear()} BluMentis. Tutti i diritti riservati.</span>
-          <span>Made in Italy 🇮🇹</span>
+          <span>{t('hardware.footer.copyright', { year: new Date().getFullYear() })}</span>
+          <span>{t('hardware.footer.madeIn')}</span>
         </div>
       </footer>
       <Footer />

@@ -1,7 +1,9 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import video from "../assets/proline.mp4";
 import Footer from './Footer';
 import { Link } from "react-router-dom";
+
 const css = `
   .pla-root {
     --orange:      oklch(68% 0.26 50);
@@ -25,7 +27,6 @@ const css = `
   .pla-root *, .pla-root *::before, .pla-root *::after { box-sizing: border-box; margin: 0; padding: 0; }
   .pla-root h1,.pla-root h2,.pla-root h3,.pla-root h4 { font-family: 'Syne', sans-serif; }
 
-  /* ── TRUSTED BY ── */
   .pla-trusted {
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -45,19 +46,16 @@ const css = `
     display: flex; align-items: center; gap: 10px;
     background: var(--surface); border: 1px solid var(--border);
     border-radius: 12px; padding: 12px 22px;
-    white-space: nowrap; transition: border-color .22s;
-    cursor: default;
+    white-space: nowrap; transition: border-color .22s; cursor: default;
   }
   .pla-logo-pill:hover { border-color: var(--orange-bdr); }
   .pla-logo-icon {
     width: 32px; height: 32px; border-radius: 8px;
     background: var(--orange-dim); border: 1px solid var(--orange-bdr);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 15px;
+    display: flex; align-items: center; justify-content: center; font-size: 15px;
   }
   .pla-logo-name { font-size: 13px; font-weight: 600; color: var(--text-2); }
 
-  /* ── HERO ── */
   .pla-hero {
     position: relative;
     height: 100vh; min-height: 680px;
@@ -76,8 +74,7 @@ const css = `
     z-index: 1;
   }
   .pla-hero-overlay::after {
-    content: "";
-    position: absolute; bottom: 0; left: 0; right: 0; height: 220px;
+    content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 220px;
     background: linear-gradient(to bottom, transparent, rgba(13,15,20,.95));
   }
   .pla-hero-content {
@@ -120,28 +117,22 @@ const css = `
     display: flex; gap: 16px; margin-top: 52px; flex-wrap: wrap; justify-content: center;
   }
   .pla-hero-stat {
-    background: rgba(13,15,20,.65);
-    border: 1px solid rgba(255,255,255,.11);
-    backdrop-filter: blur(14px);
-    border-radius: 18px; padding: 20px 32px;
+    background: rgba(13,15,20,.65); border: 1px solid rgba(255,255,255,.11);
+    backdrop-filter: blur(14px); border-radius: 18px; padding: 20px 32px;
     text-align: center; min-width: 136px; transition: .28s;
   }
   .pla-hero-stat:hover { border-color: var(--orange-bdr); background: rgba(13,15,20,.80); transform: translateY(-3px); }
   .pla-hero-stat-val {
-    display: block;
-    font-size: 30px; font-weight: 800; font-family: 'Syne', sans-serif;
+    display: block; font-size: 30px; font-weight: 800; font-family: 'Syne', sans-serif;
     color: var(--orange); line-height: 1;
   }
   .pla-hero-stat-lbl {
-    display: block;
-    font-size: 12px; color: rgba(255,255,255,.48);
+    display: block; font-size: 12px; color: rgba(255,255,255,.48);
     margin-top: 6px; letter-spacing: .04em;
   }
 
-  /* ── PAGE ── */
   .pla-page { max-width: 1100px; margin: 0 auto; padding: 80px 32px; }
 
-  /* ── SECTION HEAD ── */
   .pla-head { margin-bottom: 48px; }
   .pla-head h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.025em; }
   .pla-head h2 .pla-accent { color: var(--orange); }
@@ -152,17 +143,14 @@ const css = `
   }
   @keyframes barPulse { 0%,100% { opacity:1; } 50% { opacity:.32; } }
 
-  /* ── DIVIDER ── */
   .pla-divider {
     border: none; height: 1px; margin: 0 32px;
     background: linear-gradient(90deg, transparent, var(--border), transparent);
   }
 
-  /* ── STATS ── */
   .pla-stats { display: flex; gap: 18px; margin-bottom: 64px; flex-wrap: wrap; }
   .pla-stat {
-    width: 170px; height: 140px;
-    background: var(--surface); border: 1px solid var(--border);
+    width: 170px; height: 140px; background: var(--surface); border: 1px solid var(--border);
     border-radius: 20px; box-shadow: var(--shadow);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     transition: .28s; cursor: default;
@@ -171,7 +159,6 @@ const css = `
   .pla-stat-val { font-size: 34px; font-weight: 800; font-family: 'Syne', sans-serif; color: var(--orange); }
   .pla-stat-lbl { color: var(--text-3); margin-top: 6px; font-size: 13px; }
 
-  /* ── PER CHI ── */
   .pla-perchi { display: flex; gap: 60px; margin-top: 32px; flex-wrap: wrap; }
   .pla-perchi-text { max-width: 420px; color: var(--text-2); line-height: 1.8; font-size: 15px; }
   .pla-checks { display: flex; flex-direction: column; gap: 14px; }
@@ -183,7 +170,6 @@ const css = `
     font-size: 11px; font-weight: 700;
   }
 
-  /* ── PILLS ── */
   .pla-pills { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 44px; }
   .pla-pill {
     background: var(--orange-dim); border: 1px solid var(--orange-bdr);
@@ -200,7 +186,6 @@ const css = `
   .pla-d1{animation-delay:0s;} .pla-d2{animation-delay:.5s;} .pla-d3{animation-delay:1s;}
   .pla-d4{animation-delay:1.5s;} .pla-d5{animation-delay:2s;}
 
-  /* ── STEPS ── */
   .pla-steps { display: flex; align-items: center; gap: 28px; margin-top: 40px; flex-wrap: wrap; }
   .pla-step-card {
     background: var(--surface); border: 1px solid var(--border);
@@ -225,10 +210,8 @@ const css = `
   }
   .pla-next-btn:hover { filter: brightness(1.1); transform: translateX(3px); }
 
-  /* ── BENEFITS ── */
   .pla-benefits {
-    list-style: none; display: flex; flex-direction: column; gap: 0;
-    width: 460px;
+    list-style: none; display: flex; flex-direction: column; gap: 0; width: 460px;
   }
   .pla-benefits li {
     background: var(--surface); border: 1px solid var(--border);
@@ -239,23 +222,20 @@ const css = `
   .pla-benefits li p  { font-size: 13px; color: var(--text-3); }
   .pla-benefits li:hover { border-color: oklch(68% 0.26 50 / 0.40); background: oklch(68% 0.26 50 / 0.08); }
   .pla-benefit-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-  .pla-benefit-arrow { color: var(--text-3); font-size: 11px; flex-shrink: 0; margin-top: 2px; transition: .2s; }
+  .pla-benefit-arrow { color: var(--text-3); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
   .pla-benefit-detail {
     font-size: 13px; color: var(--text-2); line-height: 1.7;
-    margin-top: 10px; padding-top: 10px;
-    border-top: 1px solid var(--border);
+    margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);
     animation: fadeInDetail .2s ease;
   }
   @keyframes fadeInDetail { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* Bolla desktop */
   .pla-benefits li .pla-bubble {
     position: absolute; left: calc(100% + 18px); top: 50%; transform: translateY(-50%) scale(0.85);
     width: 260px; background: oklch(68% 0.26 50 / 0.13);
     border: 1px solid oklch(68% 0.26 50 / 0.40); border-radius: 16px;
     padding: 20px 22px; pointer-events: none;
-    opacity: 0; transition: opacity .22s, transform .28s cubic-bezier(.34,1.56,.64,1);
-    z-index: 10;
+    opacity: 0; transition: opacity .22s, transform .28s cubic-bezier(.34,1.56,.64,1); z-index: 10;
   }
   .pla-benefits li:hover .pla-bubble { opacity: 1; transform: translateY(-50%) scale(1); }
   .pla-bubble::before {
@@ -265,7 +245,6 @@ const css = `
   .pla-bubble h4 { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 800; color: oklch(78% 0.18 50); margin-bottom: 8px; }
   .pla-bubble p  { font-size: 13px; color: #9aa3b8; line-height: 1.7; }
 
-  /* ── SPEC CARDS ── */
   .pla-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .pla-spec-card {
     background: var(--surface); border: 1px solid var(--border);
@@ -300,7 +279,6 @@ const css = `
   .pla-spec-card:hover .pla-spec-item:nth-child(2) { transition-delay: .2s; }
   .pla-spec-card:hover .pla-spec-item:nth-child(3) { transition-delay: .34s; }
 
-  /* ── CTA ── */
   .pla-cta {
     background: linear-gradient(135deg, #0a0c12 0%, oklch(16% 0.1 50) 100%);
     border-top: 1px solid var(--border);
@@ -326,7 +304,6 @@ const css = `
   }
   .pla-cta-secondary:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.5); }
 
-  /* ── FOOTER ── */
   .pla-footer {
     background: #07080d; border-top: 1px solid rgba(255,255,255,.05);
     padding: 60px 32px 36px; color: var(--text-3);
@@ -341,8 +318,7 @@ const css = `
     display: inline-block; margin-top: 14px;
     background: var(--orange-dim); border: 1px solid var(--orange-bdr);
     color: var(--orange-hi); font-size: 11px; font-weight: 600;
-    letter-spacing: .1em; text-transform: uppercase;
-    padding: 4px 12px; border-radius: 999px;
+    letter-spacing: .1em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px;
   }
   .pla-footer-links { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
   .pla-footer-links a { color: var(--text-3); text-decoration: none; font-size: 14px; font-weight: 500; transition: .2s; }
@@ -354,32 +330,25 @@ const css = `
     flex-wrap: wrap; font-size: 12px; opacity: .4;
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 700px) {
     .pla-hero { min-height: 100svh; }
     .pla-hero-stats { gap: 10px; margin-top: 32px; }
     .pla-hero-stat { padding: 12px 16px; min-width: 90px; }
     .pla-hero-stat-val { font-size: 20px; }
-
     .pla-steps { flex-direction: column; align-items: stretch; gap: 16px; }
     .pla-step-card { width: 100%; min-width: unset; padding: 24px 20px; }
     .pla-next-btn { width: 100%; text-align: center; }
-
     .pla-benefits { width: 100%; }
     .pla-benefits li .pla-bubble { display: none; }
-
     .pla-specs { grid-template-columns: 1fr; }
     .pla-perchi { flex-direction: column; }
     .pla-stats { justify-content: center; }
     .pla-stat { width: calc(50% - 9px); height: 110px; }
     .pla-stat-val { font-size: 26px; }
-
     .pla-page { padding: 60px 20px; }
-
     .pla-cta { padding: 64px 20px; }
     .pla-cta-btns { flex-direction: column; align-items: center; }
     .pla-cta-primary, .pla-cta-secondary { width: 100%; text-align: center; }
-
     .pla-footer-inner { grid-template-columns: 1fr; }
     .pla-footer-links { align-items: flex-start; }
     .pla-footer-bottom { flex-direction: column; gap: 4px; }
@@ -387,35 +356,33 @@ const css = `
   }
 `;
 
-const STEPS = [
-  { label: "STEP 1", title: "CONFIGURAZIONE", desc: "Crei la rappresentazione digitale del tuo processo produttivo (Digital Twin)." },
-  { label: "STEP 2", title: "CONNESSIONE",    desc: "Colleghi le sorgenti dati: MES, Excel, CSV, MDF e altri. Nessun dato esce dall'impianto." },
-  { label: "STEP 3", title: "MONITORAGGIO",   desc: "Il sistema calcola in tempo reale Cp/Cpk e altri indicatori chiave, rileva anomalie e attiva gli alert configurati." },
-  { label: "STEP 4", title: "OTTIMIZZAZIONE", desc: "Analizza i trend, monitora processi presso i fornitori. Riduce fermi, rilavorazioni e scarti." },
-];
-
-const BENEFITS = [
-  { title: "Maggiore consapevolezza", desc: "Analisi avanzata dei dati",         detail: "Dashboard intuitive ti danno una visione completa e immediata della qualità produttiva." },
-  { title: "Qualità predittiva",      desc: "Previeni le non conformità",         detail: "Rileva le derive di processo prima che diventino difetti. Mantieni Cp/Cpk e altri indicatori sempre nei target." },
-  { title: "Riduzione costi",         desc: "Meno fermi e rilavorazioni",         detail: "Meno scarti, meno rilavorazioni, meno fermi macchina. ROI misurabile già nei primi mesi." },
-  { title: "Resi ridotti al minimo",  desc: "Prodotti centrati sui target",       detail: "Prodotti più stabili significano meno resi e reclami post-vendita." },
-  { title: "Stabilità processo",      desc: "Monitoraggio continuo",              detail: "Controllo 24/7 con alert configurabili. Ogni anomalia notificata in tempo reale." },
-  { title: "Flessibilità",            desc: "Adattamento immediato",              detail: "Nuovi prodotti, nuove linee, nuovi fornitori: pronto in pochi minuti senza riconfigurazioni." },
-];
+const LOGOS = [{ icon: "🏭", name: "PLB" }, { icon: "⚙️", name: "CSMIC" }];
 
 export default function ProLineAnalytics() {
-  const [step, setStep] = useState(0);
+  const { t } = useTranslation();
+  const [step, setStep]               = useState(0);
   const [openBenefit, setOpenBenefit] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-   useEffect(() => {
-      function handleResize() {
-        setIsMobile(window.innerWidth <= 768);
-      }
-  
-      window.addEventListener("resize", handleResize);
-  
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
+  const [isMobile, setIsMobile]       = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const fn = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", fn);
+    return () => window.removeEventListener("resize", fn);
+  }, []);
+
+  // t() con returnObjects:true restituisce l'array dal file di traduzione
+  const steps    = t("proline.steps",    { returnObjects: true });
+  const benefits = t("proline.benefits", { returnObjects: true });
+  const checks   = t("proline.checks",   { returnObjects: true });
+  const pills    = t("proline.pills",    { returnObjects: true });
+  const specs    = t("proline.specs",    { returnObjects: true });
+
+  const heroStats = [
+    { val: "< 30s", lbl: t("proline.heroStats.detection") },
+    { val: "100%",  lbl: t("proline.heroStats.traceability") },
+    { val: "24/7",  lbl: t("proline.heroStats.monitoring") },
+  ];
+
   return (
     <div className="pla-root">
       <style>{css}</style>
@@ -427,23 +394,17 @@ export default function ProLineAnalytics() {
         <div className="pla-hero-content">
           <div className="pla-hero-badge">
             <span className="pla-badge-dot" />
-            Quality Intelligence Platform
+            {t("proline.badge")}
           </div>
           <h1 className="pla-hero-title">ProLine Analytics</h1>
           <p className="pla-hero-subtitle">
-            Controllo totale. <span className="pla-accent">Qualità garantita.</span>
+            {t("proline.heroSubtitle.0")}
+            <span className="pla-accent">{t("proline.heroSubtitle.1")}</span>
           </p>
-          <p className="pla-hero-sub">
-            La soluzione software specialistica per il controllo accurato del processo produttivo.
-            Monitora, previene, traccia.
-          </p>
+          <p className="pla-hero-sub">{t("proline.heroSub")}</p>
         </div>
         <div className="pla-hero-stats">
-          {[
-            { val: "< 30s", lbl: "Latenza rilevamento" },
-            { val: "100%",  lbl: "Tracciabilità" },
-            { val: "24/7",  lbl: "Monitoraggio" },
-          ].map((s) => (
+          {heroStats.map((s) => (
             <div className="pla-hero-stat" key={s.lbl}>
               <span className="pla-hero-stat-val">{s.val}</span>
               <span className="pla-hero-stat-lbl">{s.lbl}</span>
@@ -453,40 +414,33 @@ export default function ProLineAnalytics() {
       </section>
 
       {/* ── TRUSTED BY ── */}
-      {(() => {
-        const logos = [
-          { icon: "🏭", name: "PLB" },
-          { icon: "⚙️", name: "CSMIC" },
-        ];
-        return (
-          <div className="pla-trusted">
-            <div className="pla-trusted-label">Già scelto da</div>
-            <div className="pla-trusted-track">
-              {logos.map((l, i) => (
-                <div className="pla-logo-pill" key={i}>
-                  <div className="pla-logo-icon">{l.icon}</div>
-                  <span className="pla-logo-name">{l.name}</span>
-                </div>
-              ))}
+      <div className="pla-trusted">
+        <div className="pla-trusted-label">{t("proline.trustedLabel")}</div>
+        <div className="pla-trusted-track">
+          {LOGOS.map((l, i) => (
+            <div className="pla-logo-pill" key={i}>
+              <div className="pla-logo-icon">{l.icon}</div>
+              <span className="pla-logo-name">{l.name}</span>
             </div>
-          </div>
-        );
-      })()}
+          ))}
+        </div>
+      </div>
 
       {/* ── PER CHI ── */}
       <div className="pla-page">
         <div className="pla-head">
-          <h2>Per chi è <span className="pla-accent">ProLine Analytics</span>?</h2>
+          <h2>
+            {t("proline.perchiTitle.0")}
+            <span className="pla-accent">{t("proline.perchiTitle.1")}</span>
+            {t("proline.perchiTitle.2")}
+          </h2>
           <div className="pla-bar" />
         </div>
         <div className="pla-perchi">
-          <p className="pla-perchi-text">
-            Progettato per ambienti produttivi dove la qualità non ammette compromessi.
-            Ideale per settori automotive, elettronica, industriale e altri.
-          </p>
+          <p className="pla-perchi-text">{t("proline.perchiText")}</p>
           <div className="pla-checks">
-            {["On-premise","Dashboard real-time","Multi-utente","Multi-dispositivo","Alert intelligenti e personalizzabili"].map((f) => (
-              <div className="pla-check" key={f}>
+            {Array.isArray(checks) && checks.map((f, i) => (
+              <div className="pla-check" key={i}>
                 <span className="pla-check-ico">✓</span>
                 <span>{f}</span>
               </div>
@@ -494,14 +448,8 @@ export default function ProLineAnalytics() {
           </div>
         </div>
         <div className="pla-pills">
-          {[
-            ["Monitoraggio Real-time","pla-d1"],
-            ["Controllo Qualità","pla-d2"],
-            ["100% Tracciabilità","pla-d3"],
-            ["Alert & Notifiche personalizzabili","pla-d4"],
-            ["Configurazione su misura","pla-d5"],
-          ].map(([label, d]) => (
-            <div className={`pla-pill ${d}`} key={label}>{label}</div>
+          {Array.isArray(pills) && pills.map((label, i) => (
+            <div className={`pla-pill pla-d${i + 1}`} key={i}>{label}</div>
           ))}
         </div>
       </div>
@@ -511,21 +459,26 @@ export default function ProLineAnalytics() {
       {/* ── COME FUNZIONA ── */}
       <div className="pla-page">
         <div className="pla-head">
-          <h2>Come <span className="pla-accent">funziona?</span></h2>
+          <h2>
+            {t("proline.comeTitle.0")}
+            <span className="pla-accent">{t("proline.comeTitle.1")}</span>
+          </h2>
         </div>
         <div className="pla-steps">
-          <div className="pla-step-card">
-            <div className="pla-step-num">{STEPS[step].label}</div>
-            <h3 className="pla-step-title">{STEPS[step].title}</h3>
-            <p className="pla-step-desc">{STEPS[step].desc}</p>
-            <div className="pla-dots">
-              {STEPS.map((_, i) => (
-                <div key={i} className={`pla-dot${i === step ? " active" : ""}`} onClick={() => setStep(i)} />
-              ))}
+          {Array.isArray(steps) && (
+            <div className="pla-step-card">
+              <div className="pla-step-num">{steps[step]?.label}</div>
+              <h3 className="pla-step-title">{steps[step]?.title}</h3>
+              <p className="pla-step-desc">{steps[step]?.desc}</p>
+              <div className="pla-dots">
+                {steps.map((_, i) => (
+                  <div key={i} className={`pla-dot${i === step ? " active" : ""}`} onClick={() => setStep(i)} />
+                ))}
+              </div>
             </div>
-          </div>
-          <button className="pla-next-btn" onClick={() => setStep((s) => (s + 1) % STEPS.length)}>
-            Prossimo →
+          )}
+          <button className="pla-next-btn" onClick={() => setStep((s) => (s + 1) % (Array.isArray(steps) ? steps.length : 4))}>
+            {t("proline.next")}
           </button>
         </div>
       </div>
@@ -535,25 +488,27 @@ export default function ProLineAnalytics() {
       {/* ── BENEFICI ── */}
       <div className="pla-page">
         <div className="pla-head">
-          <h2>Benefici <span className="pla-accent">Concreti</span></h2>
+          <h2>
+            {t("proline.beneficiTitle.0")}
+            <span className="pla-accent">{t("proline.beneficiTitle.1")}</span>
+          </h2>
         </div>
         <ul className="pla-benefits">
-          {BENEFITS.map((b, i) => (
-            <li key={b.title} onClick={() => setOpenBenefit(openBenefit === i ? null : i)}>
+          {Array.isArray(benefits) && benefits.map((b, i) => (
+            <li key={i} onClick={() => setOpenBenefit(openBenefit === i ? null : i)}>
               <div className="pla-benefit-header">
                 <div>
                   <h3>{b.title}</h3>
                   <p>{b.desc}</p>
                 </div>
-                {isMobile&&
-                <span className="pla-benefit-arrow">{openBenefit === i ? "▲" : "▼"}</span>}
+                {isMobile && (
+                  <span className="pla-benefit-arrow">{openBenefit === i ? "▲" : "▼"}</span>
+                )}
               </div>
-              {/* Bolla desktop */}
               <div className="pla-bubble">
                 <h4>{b.title}</h4>
                 <p>{b.detail}</p>
               </div>
-              {/* Accordion mobile */}
               {openBenefit === i && (
                 <div className="pla-benefit-detail">{b.detail}</div>
               )}
@@ -567,22 +522,18 @@ export default function ProLineAnalytics() {
       {/* ── SPECIFICHE ── */}
       <div className="pla-page">
         <div className="pla-head">
-          <h2>Specifiche <span className="pla-accent">Tecniche</span></h2>
+          <h2>
+            {t("proline.specTitle.0")}
+            <span className="pla-accent">{t("proline.specTitle.1")}</span>
+          </h2>
         </div>
         <div className="pla-specs">
-          {[
-            { title: "Monitoraggio in tempo reale ▼", items: ["Calcolo giornaliero indici Cp/Cpk","Indice qualità, Nelson Rules live","Rilevamento anomalie automatico"] },
-            { title: "Controllo qualità avanzato ▼",  items: ["Identificazione componenti non conformi","Analisi completa dati EOL","Verifica conformità fornitori"] },
-            { title: "Tracciabilità completa ▼",      items: ["Ogni seriale tracciato","Confronto con 500 unità precedenti e successive","Storia completa componenti"] },
-            { title: "Alert e notifiche ▼",           items: ["Metriche personalizzate","Livelli gravità allarme / warning","Registrazione interventi per storico completo"] },
-            { title: "Integrazione ▼",                items: ["Connessione MES locale (read-only)","Importazione CSV, Excel, MDF","Modalità ibrida disponibile"] },
-            { title: "Sicurezza ▼",                   items: ["Dati on-premise","Nessun accesso esterno","Conformità normative"] },
-          ].map((card) => (
-            <div className="pla-spec-card" key={card.title}>
+          {Array.isArray(specs) && specs.map((card, i) => (
+            <div className="pla-spec-card" key={i}>
               <button className="pla-spec-btn">{card.title}</button>
               <ul className="pla-spec-tree">
-                {card.items.map((item) => (
-                  <li className="pla-spec-item" key={item}>{item}</li>
+                {card.items.map((item, j) => (
+                  <li className="pla-spec-item" key={j}>{item}</li>
                 ))}
               </ul>
             </div>
@@ -594,17 +545,13 @@ export default function ProLineAnalytics() {
       <section className="pla-cta">
         <div className="pla-cta-inner">
           <h2 className="pla-cta-title">
-            Pronto a trasformare il tuo<br />
-            <span className="pla-accent">processo produttivo?</span>
+            {t("proline.ctaTitle.0")}<br />
+            <span className="pla-accent">{t("proline.ctaTitle.1")}</span>
           </h2>
-          <p className="pla-cta-sub">
-            Richiedi una demo personalizzata e scopri come{" "}
-            <strong>ProLine Analytics</strong> può migliorare la qualità
-            e ridurre i costi della tua produzione.
-          </p>
+          <p className="pla-cta-sub">{t("proline.ctaSub")}</p>
           <div className="pla-cta-btns">
-            <button className="pla-cta-primary">Richiedi Demo</button>
-            <button className="pla-cta-secondary">Scarica Brochure</button>
+            <button className="pla-cta-primary">{t("proline.ctaPrimary")}</button>
+            <button className="pla-cta-secondary">{t("proline.ctaSecondary")}</button>
           </div>
         </div>
       </section>
@@ -614,18 +561,18 @@ export default function ProLineAnalytics() {
         <div className="pla-footer-inner">
           <div className="pla-footer-brand">
             <h3>ProLine Analytics</h3>
-            <p>Quality Intelligence Platform per ambienti produttivi che non accettano compromessi sulla qualità dei propri processi.</p>
-            <span className="pla-footer-tag">On-premise · 24/7 · Made in Italy</span>
+            <p>{t("proline.footerDesc")}</p>
+            <span className="pla-footer-tag">{t("proline.footerTag")}</span>
           </div>
           <div className="pla-footer-links">
-            <a href="#">↓ Scarica Brochure PDF</a>
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/contatti" >Contatti</Link>
+            <a href="#">{t("proline.footerBrochure")}</a>
+            <Link to="/privacy">{t("footer.policy.privacy")}</Link>
+            <Link to="/contatti">{t("nav.contatti")}</Link>
           </div>
         </div>
         <div className="pla-footer-bottom">
-          <span>© {new Date().getFullYear()} ProLine Analytics. Tutti i diritti riservati.</span>
-          <span>Made in Italy 🇮🇹</span>
+          <span>© {new Date().getFullYear()} ProLine Analytics. {t("footer.legal.rights")}</span>
+          <span>{t("proline.madeIn")}</span>
         </div>
       </footer>
       <Footer />

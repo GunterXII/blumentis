@@ -1,0 +1,2019 @@
+{
+  "it": {
+    "agentiche": {
+  "hero": {
+    "badge": "SonIA · OlivIA — Piattaforme Agentiche",
+    "title": "Piattaforme Agentiche",
+    "subtitle": "Assistenti al lavoro. <span class=\"aga-accent\">Tu al valore aggiunto.</span>",
+    "sub": "Le organizzazioni che crescono più velocemente hanno una cosa in comune: processi che funzionano da soli. Le nostre piattaforme portano intelligenza autonoma dentro le tue operation — riducendo costi, errori e tempi di risposta.",
+    "stats": [
+      { "value": "70%", "label": "Riduzione attività manuali" },
+      { "value": "24/7", "label": "Operatività continua" },
+      { "value": "< 1 gg", "label": "Tempo di onboarding" }
+    ]
+  },
+  "stepsTitle": "Come <span class=\"aga-accent\">funziona</span>?",
+  "steps": [
+    { "num": "01", "title": "Apprendimento", "desc": "La piattaforma assimila documentazione e dati aziendali, costruendo una base di conoscenza approvata e verificata.", "tag": null },
+    { "num": "02", "title": "Integrazione",  "desc": "Si connette ai tuoi sistemi aziendali — SW gestionali, sistemi di ticketing — e opera direttamente nei flussi esistenti.", "tag": "Su richiesta" },
+    { "num": "03", "title": "Operatività",   "desc": "Gli agenti gestiscono richieste h24, in qualsiasi lingua, su tutti i canali. Se necessario, coinvolgono il tuo personale.", "tag": null },
+    { "num": "04", "title": "Miglioramento", "desc": "Ogni interazione arricchisce la conoscenza della piattaforma. Il sistema diventa più preciso nel tempo.", "tag": null }
+  ],
+  "featuresTitle": "Funzionalità <span class=\"aga-accent\">principali</span>",
+  "features": [
+    { "icon": "Users", "title": "Orchestrazione multi-agente", "desc": "Più agenti collaborano in parallelo per gestire scenari complessi e ad alto volume.", "tag": null },
+    { "icon": "CheckCircle", "title": "Contenuti approvati", "desc": "Ogni informazione viene validata prima di essere memorizzata. Nessuna risposta non autorizzata.", "tag": null },
+    { "icon": "ArrowUpRight", "title": "Escalation intelligente", "desc": "Quando l'agente non conosce la risposta, coinvolge il personale competente e apprende dall'interazione.", "tag": null },
+    { "icon": "Globe", "title": "Multilingua nativo", "desc": "Comprende e risponde in qualsiasi lingua, adattandosi automaticamente all'interlocutore.", "tag": null },
+    { "icon": "Link", "title": "Integrazione sistemi aziendali", "desc": "Si connette ai software esistenti per eseguire azioni concrete: ordini, offerte, notifiche.", "tag": "Su richiesta" },
+    { "icon": "Lock", "title": "Sicurezza e privacy", "desc": "Dati residenti su cloud privato aziendale. Le informazioni non escono mai dal tuo perimetro.", "tag": null }
+  ],
+  "pills": ["Autonomia operativa", "Zero downtime", "Privacy garantita", "Multilingua", "Apprendimento continuo"],
+  "solutionsTitle": "Soluzioni <span class=\"aga-accent\">disponibili</span>",
+  "solutions": [
+    {
+      "name": "Son", "accent": "IA",
+      "role": "Assistenza clienti & ticketing",
+      "desc": "Gestisce richieste, smista ticket e risolve problemi in autonomia — h24, su tutti i canali.",
+      "checks": ["Risposta immediata sullo stesso canale", "Escalazione automatica al team interno", "Apprendimento continuo dai casi risolti"]
+    },
+    {
+      "name": "Oliv", "accent": "IA",
+      "role": "Knowledge base intelligente",
+      "desc": "Trasforma la conoscenza aziendale in un patrimonio accessibile, sempre aggiornato e verificato.",
+      "checks": ["Contenuti approvati e validati", "Ricerca semantica avanzata", "Predisposizione documentazione in automatico"]
+    }
+  ],
+  "benefitsTitle": "Benefici <span class=\"aga-accent\">concreti</span>",
+  "benefits": [
+    { "title": "Meno lavoro manuale",    "desc": "Fino al 70% in meno",          "detail": "Le attività ripetitive vengono gestite autonomamente dagli agenti, liberando il tuo team per compiti ad alto valore." },
+    { "title": "Operatività continua",   "desc": "H24, 365 giorni",              "detail": "Gli agenti non dormono. Coprono ogni richiesta su tutti i canali, in qualsiasi fuso orario e lingua." },
+    { "title": "Errori ridotti",         "desc": "Conoscenza sempre aggiornata", "detail": "Solo contenuti approvati vengono usati nelle risposte. Zero informazioni non autorizzate o obsolete." },
+    { "title": "Onboarding rapidissimo", "desc": "Operativo in breve tempo",     "detail": "Grazie all'architettura modulare, la piattaforma si configura e si mette in produzione in tempi record." },
+    { "title": "Dati al sicuro",         "desc": "Cloud privato aziendale",      "detail": "Nessun dato esce dal tuo perimetro. Architettura isolata, conforme alle normative sulla privacy." },
+    { "title": "Migliora nel tempo",     "desc": "Apprendimento continuo",       "detail": "Ogni interazione arricchisce la knowledge base. Il sistema diventa più preciso e autonomo ad ogni ciclo." }
+  ],
+  "specsTitle": "Specifiche <span class=\"aga-accent\">tecniche</span>",
+  "specs": [
+    ["Deployment",    "Cloud privato aziendale"],
+    ["Disponibilità", "24/7 · 365 giorni"],
+    ["Lingue",        "Tutte — risposta nella lingua dell'utente"],
+    ["Canali",        "WhatsApp, Email, Sito web (su richiesta)"],
+    ["Integrazioni",  "SW aziendali, API custom — su richiesta"],
+    ["Sicurezza",     "Dati isolati · Nessun accesso esterno"]
+  ],
+  "cta": {
+    "title": "Pronto a innovare la tua azienda<br /><span class=\"aga-accent\">con assistenti virtuali?</span>",
+    "sub": "Richiedi una demo personalizzata e scopri quale piattaforma agentica si adatta meglio ai tuoi processi.",
+    "button": "Richiedi una Demo"
+  },
+  "footer": {
+    "brand": "Piattaforme Agentiche",
+    "desc": "SonIA e OlivIA — intelligenza autonoma dentro le tue operation, per processi che funzionano da soli.",
+    "tag": "Cloud Privato · 24/7 · Made in Italy",
+    "brochure": "↓ Scarica Brochure PDF",
+    "privacy": "Privacy Policy",
+    "contact": "Contatti",
+    "copyright": "© {{year}} BluMentis. Tutti i diritti riservati.",
+    "madeIn": "Made in Italy 🇮🇹"
+  }
+},
+    "custom": {
+  "hero": {
+    "badge": "Sviluppo su misura · AI Custom",
+    "title": "Diamo forma<br /><span class=\"svc-accent\">alle tue idee</span>",
+    "sub": "Hai un'idea che nessun prodotto standard riesce a soddisfare? Lavoriamo insieme per trasformarla in una soluzione AI concreta — con tempi rapidi, costi calibrati e una tecnologia costruita per durare.",
+    "ctaPrimary": "Raccontaci il tuo progetto",
+    "ctaSecondary": "Scopri come lavoriamo"
+  },
+  "modelsTitle": "Due modelli di <span class=\"svc-accent\">collaborazione</span>",
+  "models": [
+    {
+      "tag": "Co-sviluppo allineato",
+      "title": "La tua visione, la nostra roadmap",
+      "sub": "Costi altamente competitivi",
+      "desc": "Il progetto si sviluppa nella direzione della nostra visione tecnologica. Il cliente beneficia di costi ridotti grazie alla condivisione della roadmap.",
+      "checks": ["Tempi di sviluppo più rapidi", "Roadmap condivisa", "Investimento ottimizzato"]
+    },
+    {
+      "tag": "Sviluppo esclusivo",
+      "title": "Una soluzione solo tua",
+      "sub": "Unicità garantita, dedicato a te",
+      "desc": "Per progetti ad alto grado di personalizzazione e con vincolo di unicità. La soluzione è sviluppata esclusivamente per te, con condizioni concordate ad hoc.",
+      "checks": ["Sviluppo riservato al cliente", "Massima personalizzazione", "Unicità dell'architettura"]
+    }
+  ],
+  "processTitle": "Come <span class=\"svc-accent\">lavoriamo insieme</span>",
+  "processSteps": [
+    {
+      "number": "01",
+      "title": "Ascolto",
+      "desc": "Capiamo il tuo problema, il contesto e gli obiettivi di business. Nessuna soluzione standard — partiamo da ciò che conta davvero per te."
+    },
+    {
+      "number": "02",
+      "title": "Proposta",
+      "desc": "Definiamo insieme il modello di collaborazione più adatto e la soluzione tecnica. Trasparenza totale su tempi, costi e architettura."
+    },
+    {
+      "number": "03",
+      "title": "Sviluppo",
+      "desc": "Costruiamo in modo iterativo, con il cliente coinvolto in ogni fase chiave. Nessuna sorpresa a fine progetto."
+    },
+    {
+      "number": "04",
+      "title": "Rilascio",
+      "desc": "Consegna, integrazione nei sistemi esistenti e supporto post-lancio. Siamo presenti anche dopo il go-live."
+    }
+  ],
+  "cta": {
+    "title": "Hai un progetto in mente?<br /><span class=\"svc-accent\">Raccontacelo.</span>",
+    "sub": "Valutiamo insieme la soluzione più adatta — senza impegno. Il team di BluMentis è pronto ad ascoltarti.",
+    "buttonPrimary": "Parliamone",
+    "buttonSecondary": "↓ Scarica Brochure PDF"
+  },
+  "footer": {
+    "brand": "Sviluppo Custom · BluMentis",
+    "desc": "La tua visione. La nostra tecnologia. Soluzioni AI su misura costruite per durare.",
+    "tag": "Su misura · Iterativo · Made in Italy",
+    "brochure": "↓ Scarica Brochure PDF",
+    "privacy": "Privacy Policy",
+    "contact": "Contatti",
+    "copyright": "© {{year}} BluMentis. Tutti i diritti riservati.",
+    "madeIn": "Made in Italy 🇮🇹"
+  }
+},
+    "langs": {
+      "it": "Italiano",
+      "en": "Inglese",
+      "zh": "Cinese"
+    },
+    "nav": {
+      "homepage": "Homepage",
+      "prodotti": "Prodotti",
+      "industrie": "Industrie",
+      "contatti": "Contatti",
+      "links": {
+        "chi_siamo": "Chi siamo",
+        "visione": "Visione",
+        "missione": "Missione",
+        "valori": "Valori",
+        "rete_internazionale": "Rete internazionale",
+        "proline": "ProLine Analytics",
+        "optimai": "OptimAI",
+        "agentiche": "Piattaforme Agentiche",
+        "custom": "Sviluppi Custom",
+        "hardware": "Hardware",
+        "automotive": "Automotive",
+        "industriale": "Industriale",
+        "agromeccanica": "Agromeccanica",
+        "nautico": "Nautico",
+        "pmi": "PMI",
+        "contatti_link": "Contatti",
+        "collaborazioni": "Collaborazioni & Carriere"
+      },
+      "aria": {
+        "main_nav": "Navigazione principale",
+        "lang_select": "Seleziona lingua",
+        "open_menu": "Apri menu",
+        "close_menu": "Chiudi menu",
+        "home": "Home"
+      }
+    },
+    "footer": {
+      "claim": "Intelligenza artificiale applicata all'industria.\nDove l'innovazione incontra l'esperienza.",
+      "azienda": "Azienda",
+      "prodotti": "Prodotti",
+      "contatti": "Contatti",
+      "badges": {
+        "gdpr": "GDPR Compliant",
+        "iso": "ISO Ready",
+        "madeInItaly": "Made in Italy"
+      },
+      "links": {
+        "chi_siamo": "Chi siamo",
+        "visione": "Visione",
+        "missione": "Missione",
+        "valori": "Valori",
+        "rete_internazionale": "Rete internazionale",
+        "scrivici": "Scrivici →",
+        "carriere": "Carriere & Tesi"
+      },
+      "sedi": {
+        "title": "Sedi",
+        "legale": "Sede Legale",
+        "operativa": "Sedi Operative"
+      },
+      "addresses": {
+        "legale": "Corso Garibaldi, 80 – 55049 Viareggio (LU), Italia",
+        "ops": [
+          "Corso Garibaldi, 80 – 55049 Viareggio (LU), Italia",
+          "Second Floor, No. 979, Yunhan Road,\nLingang New Area, Shanghai, Cina"
+        ]
+      },
+      "legal": {
+        "pec": "PEC",
+        "tel": "Tel",
+        "cf": "C.F./P.IVA",
+        "rights": "Tutti i diritti riservati."
+      },
+      "policy": {
+        "privacy": "Privacy Policy",
+        "cookie": "Cookie Policy"
+      },
+      "aria": {
+        "linkedin": "BluMentis su LinkedIn"
+      }
+    },
+    "industrie": {
+      "hero": {
+        "kicker": "I nostri settori",
+        "title": "Portiamo l'AI dove serve davvero",
+        "subtitle": "Dall'automotive alla nautica, dall'agromeccanica alle PMI. Settori diversi, stessa visione: dati e intelligenza al servizio del processo.",
+        "bg_word": "INDUSTRIE"
+      },
+      "cta": "Scopri di più →",
+      "items": [
+        {
+          "id": "automotive",
+          "name": "Automotive",
+          "description": "Esperienza produttiva in stabilimenti e linee di assemblaggio.",
+          "text": "L'automotive è il settore da cui tutto è partito. Abbiamo maturato un'esperienza solida e profonda all'interno di stabilimenti produttivi e linee di assemblaggio, dove la qualità del dato e la velocità di reazione fanno la differenza tra efficienza e fermo macchina. Ogni secondo conta. Ogni dato conta."
+        },
+        {
+          "id": "industriale",
+          "name": "Industriale",
+          "description": "Soluzioni per linee di processo e ottimizzazione dei flussi.",
+          "text": "Dall'automotive abbiamo naturalmente esteso il nostro perimetro verso altri settori manifatturieri. Produzioni diverse per mercato e prodotto, ma accomunate dalla stessa complessità operativa: linee di processo, controllo qualità, gestione dei dati di produzione, ottimizzazione dei flussi."
+        },
+        {
+          "id": "agromeccanica",
+          "name": "Agromeccanica",
+          "description": "Trasformiamo macchine tradizionali in sistemi intelligenti.",
+          "text": "L'agromeccanica rappresenta uno dei fronti più interessanti su cui stiamo lavorando. Operiamo sia nella filiera dei componenti, sia integrando tecnologie AI direttamente sui macchinari. Tradizione e innovazione si incontrano nel campo."
+        },
+        {
+          "id": "nautico",
+          "name": "Nautico",
+          "description": "Tecnologie AI per cantieristica e nautica di eccellenza.",
+          "text": "Siamo persone di mondo, con un network internazionale consolidato. Il nostro cuore batte a Viareggio, uno dei poli di riferimento più importanti a livello globale per la cantieristica e la nautica di eccellenza. Il mare chiama, noi rispondiamo con intelligenza."
+        },
+        {
+          "id": "pmi",
+          "name": "PMI",
+          "description": "AI accessibile per piccole e medie imprese.",
+          "text": "Le piccole e medie imprese sono la spina dorsale dell'economia italiana. Una piccola impresa dotata degli strumenti giusti può eliminare inefficienze, automatizzare attività ripetitive e liberare il personale per concentrarsi su ciò che crea davvero valore."
+        }
+      ]
+    },
+    "prodotti": {
+      "hero": {
+        "eyebrow": "Le nostre soluzioni",
+        "title_1": "Tecnologia che lavora.",
+        "title_2": "Risultati concreti.",
+        "title_3": "Benefici misurabili.",
+        "subtitle": "Prodotti costruiti su casi d'uso reali, pensati per generare valore dal primo giorno.",
+        "bg_word": "PRODOTTI"
+      },
+      "counts": [
+        { "val": "5", "label": "Aree di soluzione" },
+        { "val": "25+", "label": "Use case coperti" },
+        { "val": "48h", "label": "Dall'accordo all'uso" }
+      ],
+      "scopri": "Scopri di più →",
+      "esplora": "Esplora anche",
+      "scopri_short": "Scopri →",
+      "items": [
+        {
+          "id": "proline",
+          "name": "ProLine Analytics",
+          "shortName": "ProLine",
+          "category": "Software",
+          "badge": "Più usato",
+          "tagline": "Controllo totale. Qualità garantita.",
+          "description": "ProLine Analytics elabora e analizza i dati provenienti dalle linee di assemblaggio in tempo reale, offrendo visibilità completa sui processi e identificando potenziali rischi prima che si concretizzino in prodotti non conformi. Progettato per processi produttivi che richiedono controllo qualitativo rigoroso.",
+          "features": ["On-premise", "Dashboard real-time", "Multi-utente", "Multi-dispositivo", "Integrazione MES"],
+          "stats": [
+            { "value": "1000+", "label": "Prodotti confrontati" },
+            { "value": "100%", "label": "Tracciabilità prodotti" },
+            { "value": "<30s", "label": "Rilevamento anomalie" }
+          ]
+        },
+        {
+          "id": "optimai",
+          "name": "OptimAI",
+          "shortName": "OptimAI",
+          "category": "Tecnologia AI embedded",
+          "badge": "Innovativo",
+          "tagline": "Ottimizzazione dinamica basata su reti neurali",
+          "description": "OptimAI è un algoritmo a rete neurale artificiale che si integra direttamente a bordo di macchine e dispositivi, ottimizzando il funzionamento in tempo reale senza necessità di connessione Internet. Gestisce simultaneamente numerose variabili in continua evoluzione, scegliendo in ogni momento la decisione migliore per le condizioni operative e ambientali del momento.",
+          "features": ["Integrazione onboard", "Funzionamento offline", "ANN allenata con tecniche di Reinforcement Learning", "Training su Digital Twin del tuo dispositivo", "Tempi di messa in opera ridotti"],
+          "stats": [
+            { "value": "100%", "label": "Dati elaborati in locale" },
+            { "value": "0 ms", "label": "Latenza di rete richiesta" },
+            { "value": "50+", "label": "Variabili gestite in parallelo" }
+          ]
+        },
+        {
+          "id": "agentiche",
+          "name": "Piattaforme Agentiche",
+          "shortName": "Agentiche",
+          "category": "SonIA | OlivIA",
+          "badge": "Flessibili",
+          "tagline": "Assistenti al lavoro. Tu al valore aggiunto.",
+          "description": "Le organizzazioni che crescono più velocemente hanno una cosa in comune: processi che funzionano da soli. Le nostre piattaforme agentiche portano intelligenza autonoma dentro le tue operation riducendo costi, errori e tempi di risposta — così i tuoi processi complessi si automatizzano e le tue persone si concentrano su ciò che crea valore.",
+          "features": ["Orchestrazione multi-agente", "Memoria e contesto persistente", "Integrazione sistemi aziendali", "Tempi di messa in opera minimi", "Residente su cloud privato aziendale"],
+          "stats": [
+            { "value": "70%", "label": "Riduzione attività manuali" },
+            { "value": "24/7", "label": "Operatività continua" },
+            { "value": "< 1 gg", "label": "Tempo di onboarding" }
+          ]
+        },
+        {
+          "id": "custom",
+          "name": "Sviluppi Custom",
+          "shortName": "Custom",
+          "category": "Diamo forma alle tue idee",
+          "badge": "Su richiesta",
+          "tagline": "La tua visione. La nostra tecnologia.",
+          "description": "Sviluppiamo soluzioni personalizzate in collaborazione con i nostri clienti — con costi accessibili quando il progetto si allinea alla nostra visione tecnologica, e con condizioni concordate ad hoc per sviluppi esclusivi ad alto grado di personalizzazione. Non vendiamo ore. Costruiamo insieme prodotti che durano.",
+          "features": ["Sviluppo congiunto con il cliente", "Tecnologia AI altamente personalizzata", "Sviluppo esclusivo disponibile", "Integrazione con sistemi esistenti"],
+          "stats": [
+            { "value": "2", "label": "Modalità di collaborazione" },
+            { "value": "AI", "label": "Native by design" },
+            { "value": "100%", "label": "Personalizzato" }
+          ]
+        },
+        {
+          "id": "hardware",
+          "name": "Hardware",
+          "shortName": "Hardware",
+          "category": "Hardware & Supply Chain",
+          "badge": "Disponibile",
+          "tagline": "Il componente giusto. Dove serve. Quando serve.",
+          "description": "Grazie a connessioni ventennali con fornitori selezionati in Europa, Asia e con un focus privilegiato sulla Cina, offriamo fornitura di hardware industriale ad alto contenuto tecnologico a costi competitivi e con qualità garantita. Un interlocutore unico per approvvigionamenti complessi, con esperienza diretta nei settori automotive, agromeccanica e altri.",
+          "features": ["Rete di fornitori consolidata", "Supporto hardware alle nostre tecnologie", "Costi competitivi", "Su richiesta e su misura"],
+          "stats": [
+            { "value": "20+", "label": "Anni di connessioni internazionali" },
+            { "value": "3+", "label": "Continenti coperti" },
+            { "value": "100%", "label": "Qualità verificata" }
+          ]
+        }
+      ]
+    },
+    "contatti": {
+      "hero": {
+        "kicker": "Parliamo",
+        "title": "Inizia la conversazione",
+        "subtitle": "Crediamo nel potere del dialogo e della collaborazione.",
+        "bg_word": "CONTATTI"
+      },
+      "info": {
+        "sedi_label": "Sedi operative",
+        "contatti_label": "Contatti diretti",
+        "sedi": [
+          {
+            "flag": "🇮🇹",
+            "country": "Italia",
+            "address": "Corso Garibaldi, 80\n55049 Viareggio (LU)"
+          },
+          {
+            "flag": "🇨🇳",
+            "country": "Cina",
+            "address": "Second Floor, No. 979, Yunhan Road,\nLingang New Area, Shanghai, Cina"
+          }
+        ]
+      },
+      "form": {
+        "kicker": "Modulo di contatto",
+        "title": "Scrivici, rispondiamo a tutto",
+        "fields": {
+          "nome": "Nome e cognome *",
+          "email": "Email *",
+          "azienda": "Azienda / Ente",
+          "argomento": "Argomento",
+          "messaggio": "Messaggio *",
+          "messaggio_placeholder": "Raccontaci il tuo progetto o la tua idea..."
+        },
+        "tipi": [
+          "Seleziona un argomento",
+          "Informazioni generali",
+          "Demo prodotto",
+          "Proposta di partnership",
+          "Opportunità di tesi / stage",
+          "Candidatura spontanea",
+          "Idea o progetto innovativo",
+          "Altro"
+        ],
+        "privacy": "Ho letto e accetto la <a href=\"/privacy\">Privacy Policy</a>. Acconsento al trattamento dei miei dati personali da parte di BluMentis s.r.l.",
+        "submit": "Invia messaggio",
+        "submitting": "Invio…",
+        "submit_note": "Risponderemo entro 24 ore lavorative.",
+        "error": "Errore durante l'invio. Riprova.",
+        "success": {
+          "title": "Messaggio inviato",
+          "text": "Grazie per averci contattato. Il nostro team ti risponderà al più presto."
+        }
+      },
+      "highlights": [
+        {
+          "num": "01",
+          "title": "Hai un'idea in mente?",
+          "text": "Rappresentiamo un'opportunità per innovatori e inventori. Se hai in mente un'idea o un progetto brillante, siamo pronti ad ascoltarti. Condividi la tua visione con noi e insieme valuteremo come trasformarla in realtà.",
+          "cta": "Condividi la tua idea →",
+          "href": "mailto:info@blumentis.ai?subject=Idea progetto"
+        },
+        {
+          "num": "02",
+          "title": "Carriere, tesi e formazione",
+          "text": "Libera il tuo potenziale. In BluMentis ci dedichiamo a nutrire la prossima generazione di pionieri dell'intelligenza artificiale. Unisciti al nostro team come stagista, esplora le opportunità di tesi o inizia la tua carriera con noi.",
+          "cta": "Esplora le opportunità →",
+          "href": "/carriere"
+        }
+      ]
+    },
+    "chi_siamo": {
+      "hero": {
+        "title": "Conosciamo le tue sfide. Perché le abbiamo vissute in prima persona.",
+        "subtitle": "Non consulenti. Non teorici.\nSiamo imprenditori che costruiscono tecnologia per chi fa impresa."
+      },
+      "sections": {
+        "chi_siamo": {
+          "eyebrow": "Chi siamo",
+          "title": "Imprenditori dietro alle soluzioni",
+          "body": "Imprenditori con una lunga storia nel panorama industriale italiano e una rete internazionale consolidata, uniti alla energia e alla visione di una nuova generazione. Questa è la nostra formula: esperienza che guida, gioventù che innova. Un equilibrio raro, che ci permette di muoverci veloci senza perdere solidità.",
+          "highlight": "Radici solide. Visione nel futuro.",
+          "stat": "5+",
+          "stat_desc": "Settori industriali in cui abbiamo operato"
+        },
+        "visione": {
+          "eyebrow": "Il nostro orizzonte",
+          "title": "Visione",
+          "body": "L'Intelligenza Artificiale non è il futuro — è il presente. Crediamo che ogni azienda, grande o piccola, possa trasformare il proprio modo di lavorare grazie a questa innovazione. Costruiamo tecnologie che non complicano, ma semplificano — dando alle imprese gli strumenti per crescere più velocemente, decidere meglio e competere ad armi pari con i grandi player del mercato.",
+          "highlight": "La tecnologia che lavora per te, non al posto tuo.",
+          "stat": "3×",
+          "stat_desc": "Aumento della velocità di crescita delle aziende che scelgono l'AI oggi"
+        },
+        "missione": {
+          "eyebrow": "Cosa facciamo ogni giorno",
+          "title": "Missione",
+          "body": "Diffondiamo soluzioni innovative e sostenibili all'interno delle aziende che vogliono cavalcare il progresso tecnologico e restare competitive in un mercato in continua evoluzione.",
+          "highlight": "Dall'idea al mercato.",
+          "stat": "70%",
+          "stat_desc": "Dei task a basso valore aggiunto può essere automatizzato"
+        },
+        "valori": {
+          "eyebrow": "I principi che ci guidano",
+          "title": "Valori",
+          "supertitle": "Il riferimento nel nostro lavoro",
+          "items": {
+            "qualita": {
+              "label": "Qualità",
+              "desc": "Impegno per standard elevati in ogni fase dello sviluppo, dal codice al prodotto finale."
+            },
+            "sicurezza": {
+              "label": "Sicurezza",
+              "desc": "Garantiamo affidabilità e protezione dei dati, prevenendo vulnerabilità e operando in piena conformità con le normative europee sull'AI."
+            },
+            "inclusivita": {
+              "label": "Inclusività",
+              "desc": "Progettare soluzioni AI accessibili e fruibili da tutti, indipendentemente da background o abilità."
+            },
+            "etica": {
+              "label": "Etica",
+              "desc": "Sviluppiamo e implementiamo l'AI in modo responsabile, rispettando i diritti umani e minimizzando l'impatto negativo sulla società e sull'ambiente."
+            },
+            "innovazione": {
+              "label": "Innovazione",
+              "desc": "Ricerchiamo costantemente soluzioni all'avanguardia per superare le sfide attuali e migliorare le performance delle tecnologie che sviluppiamo."
+            },
+            "trasparenza": {
+              "label": "Trasparenza",
+              "desc": "Garantiamo che clienti e utenti comprendano come le nostre tecnologie funzionano e quali implicazioni hanno per loro."
+            },
+            "collaborazione": {
+              "label": "Collaborazione",
+              "desc": "Lavoriamo con aziende, istituzioni accademiche e organizzazioni per condividere conoscenze e best practice, costruendo soluzioni più robuste insieme."
+            },
+            "sostenibilita": {
+              "label": "Sostenibilità",
+              "desc": "Riduciamo l'impatto ambientale delle nostre tecnologie, ottimizzando l'uso delle risorse e contribuendo al benessere collettivo."
+            }
+          }
+        },
+        "rete_internazionale": {
+          "eyebrow": "La nostra presenza",
+          "title": "Rete internazionale",
+          "body": "Operiamo su scala internazionale con una presenza consolidata in Asia, dove collaboriamo con partner strategici in Cina — mercato in cui siamo già fornitori attivi per player di primo livello nel settore automotive. Una rete commerciale e tecnologica costruita nel tempo, che ci permette di muoverci dove il futuro dell'industria si sta già scrivendo.",
+          "stat": "20+",
+          "stat_desc": "Anni di presenza dei nostri founder in Asia"
+        }
+      }
+    },
+    "proline": {
+      "badge": "Quality Intelligence Platform",
+      "heroSubtitle": ["Controllo totale. ", "Qualità garantita."],
+      "heroSub": "La soluzione software specialistica per il controllo accurato del processo produttivo. Monitora, previene, traccia.",
+      "heroStats": {
+        "detection": "Latenza rilevamento",
+        "traceability": "Tracciabilità",
+        "monitoring": "Monitoraggio"
+      },
+      "trustedLabel": "Già scelto da",
+      "perchiTitle": ["Per chi è ", "ProLine Analytics", "?"],
+      "perchiText": "Progettato per ambienti produttivi dove la qualità non ammette compromessi. Ideale per settori automotive, elettronica, industriale e altri.",
+      "checks": ["On-premise", "Dashboard real-time", "Multi-utente", "Multi-dispositivo", "Alert intelligenti e personalizzabili"],
+      "pills": ["Monitoraggio Real-time", "Controllo Qualità", "100% Tracciabilità", "Alert & Notifiche personalizzabili", "Configurazione su misura"],
+      "comeTitle": ["Come ", "funziona?"],
+      "steps": [
+        { "label": "STEP 1", "title": "CONFIGURAZIONE", "desc": "Crei la rappresentazione digitale del tuo processo produttivo (Digital Twin)." },
+        { "label": "STEP 2", "title": "CONNESSIONE", "desc": "Colleghi le sorgenti dati: MES, Excel, CSV, MDF e altri. Nessun dato esce dall'impianto." },
+        { "label": "STEP 3", "title": "MONITORAGGIO", "desc": "Il sistema calcola in tempo reale Cp/Cpk e altri indicatori chiave, rileva anomalie e attiva gli alert configurati." },
+        { "label": "STEP 4", "title": "OTTIMIZZAZIONE", "desc": "Analizza i trend, monitora processi presso i fornitori. Riduce fermi, rilavorazioni e scarti." }
+      ],
+      "next": "Prossimo →",
+      "beneficiTitle": ["Benefici ", "Concreti"],
+      "benefits": [
+        { "title": "Maggiore consapevolezza", "desc": "Analisi avanzata dei dati", "detail": "Dashboard intuitive ti danno una visione completa e immediata della qualità produttiva." },
+        { "title": "Qualità predittiva", "desc": "Previeni le non conformità", "detail": "Rileva le derive di processo prima che diventino difetti. Mantieni Cp/Cpk e altri indicatori sempre nei target." },
+        { "title": "Riduzione costi", "desc": "Meno fermi e rilavorazioni", "detail": "Meno scarti, meno rilavorazioni, meno fermi macchina. ROI misurabile già nei primi mesi." },
+        { "title": "Resi ridotti al minimo", "desc": "Prodotti centrati sui target", "detail": "Prodotti più stabili significano meno resi e reclami post-vendita." },
+        { "title": "Stabilità processo", "desc": "Monitoraggio continuo", "detail": "Controllo 24/7 con alert configurabili. Ogni anomalia notificata in tempo reale." },
+        { "title": "Flessibilità", "desc": "Adattamento immediato", "detail": "Nuovi prodotti, nuove linee, nuovi fornitori: pronto in pochi minuti senza riconfigurazioni." }
+      ],
+      "specTitle": ["Specifiche ", "Tecniche"],
+      "specs": [
+        { "title": "Monitoraggio in tempo reale ▼", "items": ["Calcolo giornaliero indici Cp/Cpk", "Indice qualità, Nelson Rules live", "Rilevamento anomalie automatico"] },
+        { "title": "Controllo qualità avanzato ▼", "items": ["Identificazione componenti non conformi", "Analisi completa dati EOL", "Verifica conformità fornitori"] },
+        { "title": "Tracciabilità completa ▼", "items": ["Ogni seriale tracciato", "Confronto con 500 unità precedenti e successive", "Storia completa componenti"] },
+        { "title": "Alert e notifiche ▼", "items": ["Metriche personalizzate", "Livelli gravità allarme / warning", "Registrazione interventi per storico completo"] },
+        { "title": "Integrazione ▼", "items": ["Connessione MES locale (read-only)", "Importazione CSV, Excel, MDF", "Modalità ibrida disponibile"] },
+        { "title": "Sicurezza ▼", "items": ["Dati on-premise", "Nessun accesso esterno", "Conformità normative"] }
+      ],
+      "ctaTitle": ["Pronto a trasformare il tuo ", "processo produttivo?"],
+      "ctaSub": "Richiedi una demo personalizzata e scopri come ProLine Analytics può migliorare la qualità e ridurre i costi della tua produzione.",
+      "ctaPrimary": "Richiedi Demo",
+      "ctaSecondary": "Scarica Brochure",
+      "footerDesc": "Quality Intelligence Platform per ambienti produttivi che non accettano compromessi sulla qualità dei propri processi.",
+      "footerTag": "On-premise · 24/7 · Made in Italy",
+      "footerBrochure": "↓ Scarica Brochure PDF",
+      "madeIn": "Made in Italy 🇮🇹"
+    },
+    "optimai": {
+      "badge": "AI Embedded · Real-time Optimization",
+      "heroLine1": "Decisioni ottimali.",
+      "heroAccent": "In ogni istante.",
+      "heroSub": "L'algoritmo AI embedded che ottimizza in tempo reale il funzionamento di macchine e dispositivi, gestendo simultaneamente tutte le variabili in gioco — in modo continuo, autonomo e sicuro.",
+      "heroStats": {
+        "local": "Dati elaborati in locale",
+        "realtime": "Decisioni istante per istante",
+        "variables": "Variabili gestite simultaneamente"
+      },
+      "trustedLabel": "Già scelto da",
+      "perchiTitle": ["Per chi è ", "OptimAI", "?"],
+      "perchiText": "Progettato per sistemi complessi in cui le variabili in gioco sono numerose, la funzione da ottimizzare è troppo articolata per un approccio tradizionale e impossibile da gestire manualmente in tempo reale.",
+      "checks": ["Funzionamento completamente offline", "Integrazione onboard su hardware leggero", "Decisioni trasparenti e tracciabili", "Parametri di ottimizzazione definiti dal cliente", "Conforme AI Act e normative vigenti"],
+      "pills": ["Ottimizzazione Real-time", "100% Locale", "AI Trasparente", "AI Act Compliant", "Multi-obiettivo"],
+      "comeTitle": ["Come ", "funziona?"],
+      "steps": [
+        { "label": "STEP 1", "title": "DEFINIZIONE", "desc": "Il cliente identifica cosa vuole ottimizzare e fornisce le funzioni che descrivono l'evoluzione delle variabili del sistema." },
+        { "label": "STEP 2", "title": "PROGETTAZIONE", "desc": "Il team traduce i requisiti in parametri tecnici, progettando e addestrando una ANN su misura tramite Reinforcement Learning su Digital Twin." },
+        { "label": "STEP 3", "title": "INTEGRAZIONE", "desc": "OptimAI viene installato a bordo su un piccolo computer di bordo, leggero e facilmente integrabile. I sensori raccolgono i dati in tempo reale." },
+        { "label": "STEP 4", "title": "OTTIMIZZAZIONE", "desc": "L'algoritmo lavora in autonomia senza necessità di connessione Internet: legge le variabili istante per istante e prende la decisione ottimale in tempo reale, continuamente." }
+      ],
+      "next": "Prossimo →",
+      "beneficiTitle": ["Benefici ", "Concreti"],
+      "benefits": [
+        { "title": "Prestazioni al massimo", "desc": "Sempre al limite ottimale possibile", "detail": "Il sistema si adatta in tempo reale alle condizioni operative e ambientali, lavorando sempre al punto di ottimo senza intervento umano." },
+        { "title": "Obiettivi multipli", "desc": "Tutti sotto controllo simultaneamente", "detail": "Riduci consumi, emissioni e costi operativi senza rinunciare alle prestazioni. OptimAI bilancia tutti i parametri in ogni istante." },
+        { "title": "Sicurezza dei dati", "desc": "Elaborazione 100% locale", "detail": "Nessun dato viene trasmesso all'esterno. Elaborazione completamente onboard, piena conformità normativa garantita." },
+        { "title": "AI trasparente", "desc": "Auditabile e tracciabile", "detail": "Ogni decisione dell'algoritmo è tracciata e consultabile nella dashboard dedicata, in linea con i requisiti dell'AI Act europeo." },
+        { "title": "Integrazione semplice", "desc": "Hardware compatto e non invasivo", "detail": "Richiede solo un Single Board Computer leggero. Il team BluMentis supporta il cliente in tutte le fasi di installazione." }
+      ],
+      "casiTitle": ["Casi d'", "uso"],
+      "cases": [
+        { "title": "Motori ibridi ed elettrici", "desc": "Ottimizzazione della gestione energetica e delle prestazioni in tempo reale." },
+        { "title": "Climatizzazione ambienti chiusi", "desc": "Controllo continuo di temperatura, umidità e consumo energetico." },
+        { "title": "Ottimizzazione combustibile", "desc": "Riduzione dei consumi e delle emissioni su motori termici e sistemi di propulsione." },
+        { "title": "Ottimizzazione energetica industriale", "desc": "Gestione efficiente di impianti e macchinari con molte variabili operative." },
+        { "title": "Macchinari su misura", "desc": "Qualsiasi sistema con numerose variabili da controllare e una funzione obiettivo complessa." },
+        { "title": "Sistemi di controllo embedded", "desc": "Integrazione diretta su hardware compatto per applicazioni IoT e dispositivi autonomi." }
+      ],
+      "specTitle": ["Dettagli ", "Tecnici"],
+      "specs": [
+        { "title": "Algoritmo ▼", "items": ["Rete neurale artificiale complessa", "Progettata su specifiche del cliente", "Parametrizzata dal team AI BluMentis"] },
+        { "title": "Training ▼", "items": ["Reinforcement Learning", "Digital Twin del dispositivo", "Simulatore proprietario BluMentis"] },
+        { "title": "Hardware richiesto ▼", "items": ["Single Board Computer compatto", "Nessun requisito computazionale elevato", "Installazione supportata da BluMentis"] },
+        { "title": "Acquisizione dati ▼", "items": ["Lettura real-time via sensori", "Non necessaria connessione Internet", "Latenza minima garantita"] },
+        { "title": "Sicurezza ▼", "items": ["Elaborazione 100% locale", "Nessun dato trasmesso all'esterno", "Conforme normative vigenti"] },
+        { "title": "Conformità normativa ▼", "items": ["Progettato secondo AI Act europeo", "Normative di settore applicabili", "Decisioni auditabili e tracciabili"] }
+      ],
+      "faqTitle": ["Domande ", "frequenti"],
+      "faqs": [
+        { "q": "I dati vengono trasmessi all'esterno?", "a": "No. OptimAI elabora tutti i dati interamente in locale, a bordo del dispositivo. Nessuna connessione Internet richiesta, nessun dato condiviso con terzi." },
+        { "q": "Che hardware serve per installare OptimAI?", "a": "Un piccolo computer di bordo compatto e leggero, facilmente integrabile su macchine e dispositivi (Single Board Computer). BluMentis fornisce supporto tecnico dedicato." },
+        { "q": "Posso scegliere io cosa ottimizzare?", "a": "Sì. Sei tu a definire i parametri e gli obiettivi di ottimizzazione. Il team di BluMentis li traduce nella progettazione della rete neurale richiesta per il tuo caso." },
+        { "q": "Quanto tempo richiede la messa in opera?", "a": "I tempi dipendono dalla complessità del sistema. Grazie al training su Digital Twin e al simulatore proprietario, i tempi di adattamento sono ridotti al minimo." },
+        { "q": "È conforme all'AI Act?", "a": "Sì. OptimAI è progettato nel rispetto dell'AI Act europeo e delle normative vigenti in materia di intelligenza artificiale." }
+      ],
+      "ctaTitle": ["Vuoi ottimizzare le prestazioni", "del tuo sistema?"],
+      "ctaSub": "Contattaci per scoprire come OptimAI può essere integrato nel tuo dispositivo o macchinario. Il team di BluMentis analizzerà il tuo caso d'uso e ti proporrà la soluzione più idonea.",
+      "ctaPrimary": "Richiedi una Consulenza",
+      "ctaSecondary": "Contattaci",
+      "footerDesc": "Algoritmo AI embedded per l'ottimizzazione continua e autonoma di macchine e dispositivi complessi, in tempo reale.",
+      "footerTag": "Offline · Real-time · AI Act Compliant",
+      "footerBrochure": "↓ Scarica Brochure PDF",
+      "madeIn": "Made in Italy 🇮🇹"
+    },
+    "hardware": {
+      "hero": {
+        "badge": "Hardware & Supply Chain",
+        "title": "Il componente giusto.<br /><span class=\"hw-accent\">Dove serve. Quando serve.</span>",
+        "sub": "Trovare hardware industriale di qualità, a prezzi competitivi e con fornitori affidabili non è semplice. Noi lo facciamo da oltre vent'anni — con una rete diretta in Europa, Cina e nel resto del mondo, costruita sui rapporti personali dei nostri fondatori.",
+        "cta": "Hai un'esigenza? Scrivici"
+      },
+      "intro": {
+        "title": "Componenti Hardware",
+        "text": "I nostri fondatori hanno costruito nel tempo una <strong>rete commerciale internazionale solida e diversificata</strong>. Oggi quella rete è al servizio di forniture per i nostri clienti — con un focus su automotive e agromeccanica, e la capacità di operare su un ampio ventaglio di componenti industriali.",
+        "highlight": "Recentemente abbiamo intrapreso un nuovo percorso che ci entusiasma particolarmente: <strong> soluzioni integrate che combinano hardware selezionato e software AI proprietario</strong> — prodotti ad alto impatto tecnologico che renderemo disponibili nei prossimi mesi.<br /> <span class='mt-10'><strong>Non perderti le prossime novità!</strong></span>"
+      },
+      "sectors": {
+        "title": "Settori di <span class=\"hw-accent\">riferimento</span>",
+        "items": [
+          { "title": "Automotive", "desc": "Componentistica e hardware per linee di produzione, testing e sistemi embedded nel settore automotive." },
+          { "title": "Agromeccanica", "desc": "Hardware dedicato a macchine agricole e sistemi di automazione per il settore agromeccanico." },
+          { "title": "Altri settori", "desc": "La nostra rete copre un'ampia gamma di categorie merceologiche. Se hai un'esigenza specifica, contattaci." }
+        ]
+      },
+      "why": {
+        "title": "Perché <span class=\"hw-accent\">sceglierci</span>",
+        "items": [
+          { "icon": "Users", "title": "Connessioni dirette", "desc": "Rapporti personali ventennali con fornitori selezionati in Europa, Cina e nel resto del mondo. Nessun intermediario.", "ai": false },
+          { "icon": "CheckCircle", "title": "Qualità verificata", "desc": "Ogni fornitore è selezionato per standard tecnologici elevati e affidabilità consolidata nel tempo.", "ai": false },
+          { "icon": "DollarSign", "title": "Costi competitivi", "desc": "L'accesso diretto ai mercati di produzione ci permette di offrire condizioni difficilmente replicabili sul mercato.", "ai": false },
+          { "icon": "Cpu", "title": "Integrazione AI", "desc": "L'hardware può essere selezionato e configurato per supportare direttamente le nostre tecnologie.", "ai": true }
+        ]
+      },
+      "cta": {
+        "title": "Hai un'esigenza<br /><span class=\"hw-accent\">di fornitura?</span>",
+        "sub": "Raccontaci cosa ti serve. Valutiamo insieme tempi, specifiche e condizioni — senza impegno.",
+        "button": "Contattaci"
+      },
+      "footer": {
+        "brand": "Hardware & Supply Chain",
+        "desc": "Rete diretta internazionale per forniture hardware industriali ad alto contenuto tecnologico. Da oltre vent'anni.",
+        "tag": "Europa · Cina · Worldwide",
+        "cookie": "Cookie Policy",
+        "privacy": "Privacy Policy",
+        "contact": "Contatti",
+        "copyright": "© {{year}} BluMentis. Tutti i diritti riservati.",
+        "madeIn": "Made in Italy 🇮🇹"
+      }
+    }
+  },
+  "en": {
+    "agentiche": {
+  "hero": {
+    "badge": "SonIA · OlivIA — Agentic Platforms",
+    "title": "Agentic Platforms",
+    "subtitle": "Assistants at work. <span class=\"aga-accent\">You focused on added value.</span>",
+    "sub": "The fastest-growing organisations share one thing: processes that run themselves. Our platforms bring autonomous intelligence into your operations — reducing costs, errors and response times.",
+    "stats": [
+      { "value": "70%", "label": "Reduction in manual activities" },
+      { "value": "24/7", "label": "Continuous operation" },
+      { "value": "< 1 d", "label": "Onboarding time" }
+    ]
+  },
+  "stepsTitle": "How does it <span class=\"aga-accent\">work</span>?",
+  "steps": [
+    { "num": "01", "title": "Learning", "desc": "The platform assimilates documentation and company data, building an approved and verified knowledge base.", "tag": null },
+    { "num": "02", "title": "Integration", "desc": "It connects to your business systems — management software, ticketing systems — and operates directly in existing workflows.", "tag": "On request" },
+    { "num": "03", "title": "Operation", "desc": "Agents handle requests 24/7, in any language, on all channels. If needed, they involve your staff.", "tag": null },
+    { "num": "04", "title": "Improvement", "desc": "Every interaction enriches the platform's knowledge. The system becomes more accurate over time.", "tag": null }
+  ],
+  "featuresTitle": "Key <span class=\"aga-accent\">features</span>",
+  "features": [
+    { "icon": "Users", "title": "Multi-agent orchestration", "desc": "Multiple agents collaborate in parallel to handle complex, high-volume scenarios.", "tag": null },
+    { "icon": "CheckCircle", "title": "Approved content", "desc": "Every piece of information is validated before being stored. No unauthorised answers.", "tag": null },
+    { "icon": "ArrowUpRight", "title": "Intelligent escalation", "desc": "When the agent doesn't know the answer, it involves the competent staff and learns from the interaction.", "tag": null },
+    { "icon": "Globe", "title": "Native multilingual", "desc": "Understands and responds in any language, automatically adapting to the user.", "tag": null },
+    { "icon": "Link", "title": "Enterprise system integration", "desc": "Connects to existing software to perform concrete actions: orders, quotes, notifications.", "tag": "On request" },
+    { "icon": "Lock", "title": "Security & privacy", "desc": "Data resides in a private corporate cloud. Information never leaves your perimeter.", "tag": null }
+  ],
+  "pills": ["Operational autonomy", "Zero downtime", "Guaranteed privacy", "Multilingual", "Continuous learning"],
+  "solutionsTitle": "Available <span class=\"aga-accent\">solutions</span>",
+  "solutions": [
+    {
+      "name": "Son", "accent": "IA",
+      "role": "Customer support & ticketing",
+      "desc": "Handles requests, triages tickets and resolves issues autonomously — 24/7, on all channels.",
+      "checks": ["Immediate response on the same channel", "Automatic escalation to internal team", "Continuous learning from resolved cases"]
+    },
+    {
+      "name": "Oliv", "accent": "IA",
+      "role": "Intelligent knowledge base",
+      "desc": "Transforms company knowledge into an accessible, always up‑to‑date and verified asset.",
+      "checks": ["Approved and validated content", "Advanced semantic search", "Automatic documentation preparation"]
+    }
+  ],
+  "benefitsTitle": "Concrete <span class=\"aga-accent\">benefits</span>",
+  "benefits": [
+    { "title": "Less manual work",   "desc": "Up to 70% reduction",        "detail": "Repetitive activities are autonomously handled by agents, freeing your team for high‑value tasks." },
+    { "title": "Continuous operation", "desc": "24/7, 365 days",           "detail": "Agents never sleep. They cover every request on all channels, in any time zone and language." },
+    { "title": "Reduced errors",      "desc": "Always up‑to‑date knowledge", "detail": "Only approved content is used in responses. No unauthorised or outdated information." },
+    { "title": "Rapid onboarding",    "desc": "Operational in no time",     "detail": "Thanks to the modular architecture, the platform is configured and deployed in record time." },
+    { "title": "Data security",       "desc": "Private corporate cloud",    "detail": "No data leaves your perimeter. Isolated architecture, compliant with privacy regulations." },
+    { "title": "Improves over time",  "desc": "Continuous learning",        "detail": "Every interaction enriches the knowledge base. The system becomes more accurate and autonomous with each cycle." }
+  ],
+  "specsTitle": "Technical <span class=\"aga-accent\">specifications</span>",
+  "specs": [
+    ["Deployment",    "Private corporate cloud"],
+    ["Availability",  "24/7 · 365 days"],
+    ["Languages",     "All — response in the user's language"],
+    ["Channels",      "WhatsApp, Email, Website (on request)"],
+    ["Integrations",  "Business software, custom APIs — on request"],
+    ["Security",      "Isolated data · No external access"]
+  ],
+  "cta": {
+    "title": "Ready to innovate your company<br /><span class=\"aga-accent\">with virtual assistants?</span>",
+    "sub": "Request a personalised demo and discover which agentic platform best fits your processes.",
+    "button": "Request a Demo"
+  },
+  "footer": {
+    "brand": "Agentic Platforms",
+    "desc": "SonIA and OlivIA — autonomous intelligence inside your operations, for processes that run themselves.",
+    "tag": "Private Cloud · 24/7 · Made in Italy",
+    "brochure": "↓ Download PDF Brochure",
+    "privacy": "Privacy Policy",
+    "contact": "Contact",
+    "copyright": "© {{year}} BluMentis. All rights reserved.",
+    "madeIn": "Made in Italy 🇮🇹"
+  }
+},
+    "custom": {
+  "hero": {
+    "badge": "Tailor-made · Custom AI",
+    "title": "We shape<br /><span class=\"svc-accent\">your ideas</span>",
+    "sub": "Have an idea that no standard product can satisfy? Let's work together to turn it into a concrete AI solution — with fast timelines, calibrated costs, and technology built to last.",
+    "ctaPrimary": "Tell us about your project",
+    "ctaSecondary": "Discover how we work"
+  },
+  "modelsTitle": "Two <span class=\"svc-accent\">collaboration models</span>",
+  "models": [
+    {
+      "tag": "Aligned co-development",
+      "title": "Your vision, our roadmap",
+      "sub": "Highly competitive costs",
+      "desc": "The project develops in the direction of our technological vision. The client benefits from reduced costs thanks to shared roadmap.",
+      "checks": ["Faster development times", "Shared roadmap", "Optimized investment"]
+    },
+    {
+      "tag": "Exclusive development",
+      "title": "A solution just for you",
+      "sub": "Uniqueness guaranteed, dedicated to you",
+      "desc": "For projects with a high degree of customization and uniqueness constraints. The solution is developed exclusively for you, with terms agreed ad hoc.",
+      "checks": ["Development reserved for the client", "Maximum customization", "Unique architecture"]
+    }
+  ],
+  "processTitle": "How we <span class=\"svc-accent\">work together</span>",
+  "processSteps": [
+    {
+      "number": "01",
+      "title": "Listening",
+      "desc": "We understand your problem, context and business goals. No standard solutions — we start from what really matters to you."
+    },
+    {
+      "number": "02",
+      "title": "Proposal",
+      "desc": "Together we define the most suitable collaboration model and technical solution. Full transparency on timelines, costs and architecture."
+    },
+    {
+      "number": "03",
+      "title": "Development",
+      "desc": "We build iteratively, with the client involved at every key stage. No surprises at the end of the project."
+    },
+    {
+      "number": "04",
+      "title": "Release",
+      "desc": "Delivery, integration into existing systems and post-launch support. We are there even after go-live."
+    }
+  ],
+  "cta": {
+    "title": "Have a project in mind?<br /><span class=\"svc-accent\">Tell us about it.</span>",
+    "sub": "Together we'll evaluate the most suitable solution — without obligation. The BluMentis team is ready to listen.",
+    "buttonPrimary": "Let's talk",
+    "buttonSecondary": "↓ Download PDF Brochure"
+  },
+  "footer": {
+    "brand": "Custom Development · BluMentis",
+    "desc": "Your vision. Our technology. Tailor-made AI solutions built to last.",
+    "tag": "Tailor-made · Iterative · Made in Italy",
+    "brochure": "↓ Download PDF Brochure",
+    "privacy": "Privacy Policy",
+    "contact": "Contact",
+    "copyright": "© {{year}} BluMentis. All rights reserved.",
+    "madeIn": "Made in Italy 🇮🇹"
+  }
+},
+    "langs": {
+      "it": "Italian",
+      "en": "English",
+      "zh": "Chinese"
+    },
+    "nav": {
+      "homepage": "Homepage",
+      "prodotti": "Products",
+      "industrie": "Industries",
+      "contatti": "Contact",
+      "links": {
+        "chi_siamo": "About us",
+        "visione": "Vision",
+        "missione": "Mission",
+        "valori": "Values",
+        "rete_internazionale": "International network",
+        "proline": "ProLine Analytics",
+        "optimai": "OptimAI",
+        "agentiche": "Agentic Platforms",
+        "custom": "Custom Development",
+        "hardware": "Hardware",
+        "automotive": "Automotive",
+        "industriale": "Industrial",
+        "agromeccanica": "Agromechanics",
+        "nautico": "Marine",
+        "pmi": "SMEs",
+        "contatti_link": "Contact",
+        "collaborazioni": "Partnerships & Careers"
+      },
+      "aria": {
+        "main_nav": "Main navigation",
+        "lang_select": "Select language",
+        "open_menu": "Open menu",
+        "close_menu": "Close menu",
+        "home": "Home"
+      }
+    },
+    "footer": {
+      "claim": "Artificial intelligence applied to industry.\nWhere innovation meets experience.",
+      "azienda": "Company",
+      "prodotti": "Products",
+      "contatti": "Contact",
+      "badges": {
+        "gdpr": "GDPR Compliant",
+        "iso": "ISO Ready",
+        "madeInItaly": "Made in Italy"
+      },
+      "links": {
+        "chi_siamo": "About us",
+        "visione": "Vision",
+        "missione": "Mission",
+        "valori": "Values",
+        "rete_internazionale": "International network",
+        "scrivici": "Contact us →",
+        "carriere": "Careers & Thesis"
+      },
+      "sedi": {
+        "title": "Offices",
+        "legale": "Registered Office",
+        "operativa": "Operational Headquarters"
+      },
+      "addresses": {
+        "legale": "Corso Garibaldi, 80 – 55049 Viareggio (LU), Italy",
+        "ops": [
+          "Corso Garibaldi, 80 – 55049 Viareggio (LU), Italy",
+          "Second Floor, No. 979, Yunhan Road,\nLingang New Area, Shanghai, China"
+        ]
+      },
+      "legal": {
+        "pec": "Certified Email",
+        "tel": "Tel",
+        "cf": "VAT Number",
+        "rights": "All rights reserved."
+      },
+      "policy": {
+        "privacy": "Privacy Policy",
+        "cookie": "Cookie Policy"
+      },
+      "aria": {
+        "linkedin": "BluMentis on LinkedIn"
+      }
+    },
+    "industrie": {
+      "hero": {
+        "kicker": "Our sectors",
+        "title": "We bring AI where it truly matters",
+        "subtitle": "From automotive to marine, from agromechanics to SMEs. Different sectors, same vision: data and intelligence at the service of the process.",
+        "bg_word": "INDUSTRIES"
+      },
+      "cta": "Learn more →",
+      "items": [
+        {
+          "id": "automotive",
+          "name": "Automotive",
+          "description": "Production experience in plants and assembly lines.",
+          "text": "Automotive is the sector where it all started. We have built solid, deep experience inside production plants and assembly lines, where data quality and reaction speed make the difference between efficiency and machine downtime. Every second counts. Every data point counts."
+        },
+        {
+          "id": "industriale",
+          "name": "Industrial",
+          "description": "Solutions for process lines and flow optimisation.",
+          "text": "From automotive we naturally extended our scope to other manufacturing sectors. Different productions by market and product, but united by the same operational complexity: process lines, quality control, production data management, flow optimisation."
+        },
+        {
+          "id": "agromeccanica",
+          "name": "Agromechanics",
+          "description": "We transform traditional machines into intelligent systems.",
+          "text": "Agromechanics is one of the most interesting frontiers we are working on. We operate both in the component supply chain and by integrating AI technologies directly into machinery. Tradition and innovation meet in the field."
+        },
+        {
+          "id": "nautico",
+          "name": "Marine",
+          "description": "AI technologies for world-class shipbuilding and yachting.",
+          "text": "We are people of the world, with a consolidated international network. Our heart beats in Viareggio, one of the most important global reference points for excellence in shipbuilding and yachting. The sea calls — we answer with intelligence."
+        },
+        {
+          "id": "pmi",
+          "name": "SMEs",
+          "description": "Accessible AI for small and medium-sized enterprises.",
+          "text": "Small and medium-sized enterprises are the backbone of the Italian economy. A small business equipped with the right tools can eliminate inefficiencies, automate repetitive activities and free up staff to focus on what truly creates value."
+        }
+      ]
+    },
+    "prodotti": {
+      "hero": {
+        "eyebrow": "Our solutions",
+        "title_1": "Technology that works.",
+        "title_2": "Concrete results.",
+        "title_3": "Measurable benefits.",
+        "subtitle": "Products built on real use cases, designed to generate value from day one.",
+        "bg_word": "PRODUCTS"
+      },
+      "counts": [
+        { "val": "5", "label": "Solution areas" },
+        { "val": "25+", "label": "Use cases covered" },
+        { "val": "48h", "label": "From agreement to use" }
+      ],
+      "scopri": "Learn more →",
+      "esplora": "Explore also",
+      "scopri_short": "Explore →",
+      "items": [
+        {
+          "id": "proline",
+          "name": "ProLine Analytics",
+          "shortName": "ProLine",
+          "category": "Software",
+          "badge": "Most used",
+          "tagline": "Total control. Guaranteed quality.",
+          "description": "ProLine Analytics processes and analyses data from assembly lines in real time, offering complete visibility into processes and identifying potential risks before they materialise into non-conforming products. Designed for production processes requiring rigorous quality control.",
+          "features": ["On-premise", "Real-time dashboard", "Multi-user", "Multi-device", "MES integration"],
+          "stats": [
+            { "value": "1000+", "label": "Products compared" },
+            { "value": "100%", "label": "Product traceability" },
+            { "value": "<30s", "label": "Anomaly detection" }
+          ]
+        },
+        {
+          "id": "optimai",
+          "name": "OptimAI",
+          "shortName": "OptimAI",
+          "category": "Embedded AI technology",
+          "badge": "Innovative",
+          "tagline": "Dynamic optimisation based on neural networks",
+          "description": "OptimAI is an artificial neural network algorithm that integrates directly on board machines and devices, optimising operation in real time without requiring an internet connection. It simultaneously manages numerous continuously evolving variables, choosing at every moment the best decision for current operational and environmental conditions.",
+          "features": ["Onboard integration", "Offline operation", "ANN trained with Reinforcement Learning techniques", "Training on your device's Digital Twin", "Reduced deployment times"],
+          "stats": [
+            { "value": "100%", "label": "Data processed locally" },
+            { "value": "0 ms", "label": "Network latency required" },
+            { "value": "50+", "label": "Variables managed in parallel" }
+          ]
+        },
+        {
+          "id": "agentiche",
+          "name": "Agentic Platforms",
+          "shortName": "Agentic",
+          "category": "SonIA | OlivIA",
+          "badge": "Flexible",
+          "tagline": "Assistants at work. You focused on added value.",
+          "description": "The fastest-growing organisations share one thing: processes that run themselves. Our agentic platforms bring autonomous intelligence into your operations, reducing costs, errors and response times — so your complex processes automate and your people focus on what creates value.",
+          "features": ["Multi-agent orchestration", "Persistent memory and context", "Enterprise systems integration", "Minimal deployment time", "Hosted on private company cloud"],
+          "stats": [
+            { "value": "70%", "label": "Reduction in manual activities" },
+            { "value": "24/7", "label": "Continuous operation" },
+            { "value": "< 1 d", "label": "Onboarding time" }
+          ]
+        },
+        {
+          "id": "custom",
+          "name": "Custom Development",
+          "shortName": "Custom",
+          "category": "We shape your ideas",
+          "badge": "On request",
+          "tagline": "Your vision. Our technology.",
+          "description": "We develop customised solutions in collaboration with our clients — at accessible costs when the project aligns with our technological vision, and with ad hoc agreed terms for exclusive, highly personalised developments. We don't sell hours. We build products together that last.",
+          "features": ["Joint development with the client", "Highly personalised AI technology", "Exclusive development available", "Integration with existing systems"],
+          "stats": [
+            { "value": "2", "label": "Collaboration modes" },
+            { "value": "AI", "label": "Native by design" },
+            { "value": "100%", "label": "Customised" }
+          ]
+        },
+        {
+          "id": "hardware",
+          "name": "Hardware",
+          "shortName": "Hardware",
+          "category": "Hardware & Supply Chain",
+          "badge": "Available",
+          "tagline": "The right component. Where needed. When needed.",
+          "description": "Thanks to two decades of connections with selected suppliers in Europe, Asia and with a privileged focus on China, we provide high-tech industrial hardware at competitive costs and guaranteed quality. A single point of contact for complex procurement, with direct experience in automotive, agromechanics and other sectors.",
+          "features": ["Consolidated supplier network", "Hardware support for our technologies", "Competitive costs", "On request and tailor-made"],
+          "stats": [
+            { "value": "20+", "label": "Years of international connections" },
+            { "value": "3+", "label": "Continents covered" },
+            { "value": "100%", "label": "Verified quality" }
+          ]
+        }
+      ]
+    },
+    "contatti": {
+      "hero": {
+        "kicker": "Let's talk",
+        "title": "Start the conversation",
+        "subtitle": "We believe in the power of dialogue and collaboration.",
+        "bg_word": "CONTACT"
+      },
+      "info": {
+        "sedi_label": "Offices",
+        "contatti_label": "Direct contacts",
+        "sedi": [
+          {
+            "flag": "🇮🇹",
+            "country": "Italy",
+            "address": "Corso Garibaldi, 80\n55049 Viareggio (LU)"
+          },
+          {
+            "flag": "🇨🇳",
+            "country": "China",
+            "address": "Second Floor, No. 979, Yunhan Road,\nLingang New Area, Shanghai, China"
+          }
+        ]
+      },
+      "form": {
+        "kicker": "Contact form",
+        "title": "Write to us, we reply to everything",
+        "fields": {
+          "nome": "Full name *",
+          "email": "Email *",
+          "azienda": "Company / Organisation",
+          "argomento": "Topic",
+          "messaggio": "Message *",
+          "messaggio_placeholder": "Tell us about your project or idea..."
+        },
+        "tipi": [
+          "Select a topic",
+          "General information",
+          "Product demo",
+          "Partnership proposal",
+          "Thesis / internship opportunity",
+          "Spontaneous application",
+          "Innovative idea or project",
+          "Other"
+        ],
+        "privacy": "I have read and accept the <a href=\"/privacy\">Privacy Policy</a>. I consent to the processing of my personal data by BluMentis s.r.l.",
+        "submit": "Send message",
+        "submitting": "Sending…",
+        "submit_note": "We will reply within 24 business hours.",
+        "error": "Error during sending. Please try again.",
+        "success": {
+          "title": "Message sent",
+          "text": "Thank you for contacting us. Our team will get back to you as soon as possible."
+        }
+      },
+      "highlights": [
+        {
+          "num": "01",
+          "title": "Got an idea in mind?",
+          "text": "We represent an opportunity for innovators and inventors. If you have a brilliant idea or project in mind, we are ready to listen. Share your vision with us and together we will assess how to turn it into reality.",
+          "cta": "Share your idea →",
+          "href": "mailto:info@blumentis.ai?subject=Project idea"
+        },
+        {
+          "num": "02",
+          "title": "Careers, thesis & training",
+          "text": "Unlock your potential. At BluMentis we are dedicated to nurturing the next generation of artificial intelligence pioneers. Join our team as an intern, explore thesis opportunities or start your career with us.",
+          "cta": "Explore opportunities →",
+          "href": "/carriere"
+        }
+      ]
+    },
+    "chi_siamo": {
+      "hero": {
+        "title": "We know your challenges. Because we've lived them firsthand.",
+        "subtitle": "Not consultants. Not theorists.\nWe are entrepreneurs building technology for those who do business."
+      },
+      "sections": {
+        "chi_siamo": {
+          "eyebrow": "About us",
+          "title": "Entrepreneurs behind the solutions",
+          "body": "Entrepreneurs with a long history in the Italian industrial landscape and a consolidated international network, joined by the energy and vision of a new generation. This is our formula: experience that guides, youth that innovates. A rare balance that allows us to move fast without losing solidity.",
+          "highlight": "Strong roots. Vision for the future.",
+          "stat": "5+",
+          "stat_desc": "Industrial sectors in which we have operated"
+        },
+        "visione": {
+          "eyebrow": "Our horizon",
+          "title": "Vision",
+          "body": "Artificial Intelligence is not the future — it is the present. We believe that every company, large or small, can transform the way it works through this innovation. We build technologies that don't complicate, but simplify — giving businesses the tools to grow faster, decide better, and compete on equal terms with major market players.",
+          "highlight": "Technology that works for you, not instead of you.",
+          "stat": "3×",
+          "stat_desc": "Increase in growth speed for companies that choose AI today"
+        },
+        "missione": {
+          "eyebrow": "What we do every day",
+          "title": "Mission",
+          "body": "We spread innovative and sustainable solutions within companies that want to ride the wave of technological progress and stay competitive in a constantly evolving market.",
+          "highlight": "From idea to market.",
+          "stat": "70%",
+          "stat_desc": "Of low-value tasks can be automated"
+        },
+        "valori": {
+          "eyebrow": "The principles that guide us",
+          "title": "Values",
+          "supertitle": "Our reference in our work",
+          "items": {
+            "qualita": {
+              "label": "Quality",
+              "desc": "Commitment to high standards at every stage of development, from code to final product."
+            },
+            "sicurezza": {
+              "label": "Security",
+              "desc": "We guarantee reliability and data protection, preventing vulnerabilities and operating in full compliance with European AI regulations."
+            },
+            "inclusivita": {
+              "label": "Inclusivity",
+              "desc": "Designing AI solutions accessible and usable by everyone, regardless of background or ability."
+            },
+            "etica": {
+              "label": "Ethics",
+              "desc": "We develop and implement AI responsibly, respecting human rights and minimizing negative impacts on society and the environment."
+            },
+            "innovazione": {
+              "label": "Innovation",
+              "desc": "We constantly seek cutting-edge solutions to overcome current challenges and improve the performance of the technologies we develop."
+            },
+            "trasparenza": {
+              "label": "Transparency",
+              "desc": "We ensure that clients and users understand how our technologies work and what implications they have for them."
+            },
+            "collaborazione": {
+              "label": "Collaboration",
+              "desc": "We work with companies, academic institutions and organizations to share knowledge and best practices, building more robust solutions together."
+            },
+            "sostenibilita": {
+              "label": "Sustainability",
+              "desc": "We reduce the environmental impact of our technologies by optimizing resource use and contributing to collective well-being."
+            }
+          }
+        },
+        "rete_internazionale": {
+          "eyebrow": "Our presence",
+          "title": "International network",
+          "body": "We operate on an international scale with a consolidated presence in Asia, where we collaborate with strategic partners in China — a market where we are already active suppliers for top-tier players in the automotive sector. A commercial and technological network built over time, allowing us to move where the future of industry is already being written.",
+          "stat": "20+",
+          "stat_desc": "Years of our founders' presence in Asia"
+        }
+      }
+    },
+    "proline": {
+      "badge": "Quality Intelligence Platform",
+      "heroSubtitle": ["Total control. ", "Guaranteed quality."],
+      "heroSub": "The specialist software solution for accurate production process control. Monitor, prevent, trace.",
+      "heroStats": {
+        "detection": "Detection latency",
+        "traceability": "Traceability",
+        "monitoring": "Monitoring"
+      },
+      "trustedLabel": "Already chosen by",
+      "perchiTitle": ["Who is ", "ProLine Analytics", " for?"],
+      "perchiText": "Designed for production environments where quality admits no compromise. Ideal for automotive, electronics, industrial and other sectors.",
+      "checks": ["On-premise", "Real-time dashboard", "Multi-user", "Multi-device", "Smart, customisable alerts"],
+      "pills": ["Real-time Monitoring", "Quality Control", "100% Traceability", "Customisable Alerts & Notifications", "Tailored Configuration"],
+      "comeTitle": ["How does it ", "work?"],
+      "steps": [
+        { "label": "STEP 1", "title": "CONFIGURATION", "desc": "You create the digital representation of your production process (Digital Twin)." },
+        { "label": "STEP 2", "title": "CONNECTION", "desc": "You connect data sources: MES, Excel, CSV, MDF and others. No data leaves the plant." },
+        { "label": "STEP 3", "title": "MONITORING", "desc": "The system calculates Cp/Cpk and other key indicators in real time, detects anomalies and triggers configured alerts." },
+        { "label": "STEP 4", "title": "OPTIMISATION", "desc": "Analyses trends, monitors supplier processes. Reduces downtime, rework and scrap." }
+      ],
+      "next": "Next →",
+      "beneficiTitle": ["Concrete ", "Benefits"],
+      "benefits": [
+        { "title": "Greater awareness", "desc": "Advanced data analysis", "detail": "Intuitive dashboards give you a complete, immediate view of production quality." },
+        { "title": "Predictive quality", "desc": "Prevent non-conformities", "detail": "Detect process drifts before they become defects. Keep Cp/Cpk and other indicators always on target." },
+        { "title": "Cost reduction", "desc": "Less downtime and rework", "detail": "Less scrap, less rework, less machine downtime. Measurable ROI from the first months." },
+        { "title": "Returns minimised", "desc": "Products centred on targets", "detail": "More stable products mean fewer returns and post-sale complaints." },
+        { "title": "Process stability", "desc": "Continuous monitoring", "detail": "24/7 control with configurable alerts. Every anomaly notified in real time." },
+        { "title": "Flexibility", "desc": "Immediate adaptation", "detail": "New products, new lines, new suppliers: ready in minutes with no reconfigurations." }
+      ],
+      "specTitle": ["Technical ", "Specifications"],
+      "specs": [
+        { "title": "Real-time monitoring ▼", "items": ["Daily Cp/Cpk index calculation", "Quality index, Nelson Rules live", "Automatic anomaly detection"] },
+        { "title": "Advanced quality control ▼", "items": ["Non-conforming component identification", "Complete EOL data analysis", "Supplier compliance verification"] },
+        { "title": "Full traceability ▼", "items": ["Every serial tracked", "Comparison with 500 previous and subsequent units", "Complete component history"] },
+        { "title": "Alerts & notifications ▼", "items": ["Custom metrics", "Alarm / warning severity levels", "Intervention logging for full history"] },
+        { "title": "Integration ▼", "items": ["Local MES connection (read-only)", "CSV, Excel, MDF import", "Hybrid mode available"] },
+        { "title": "Security ▼", "items": ["On-premise data", "No external access", "Regulatory compliance"] }
+      ],
+      "ctaTitle": ["Ready to transform your ", "production process?"],
+      "ctaSub": "Request a personalised demo and discover how ProLine Analytics can improve quality and reduce costs in your production.",
+      "ctaPrimary": "Request Demo",
+      "ctaSecondary": "Download Brochure",
+      "footerDesc": "Quality Intelligence Platform for production environments that accept no compromise on process quality.",
+      "footerTag": "On-premise · 24/7 · Made in Italy",
+      "footerBrochure": "↓ Download PDF Brochure",
+      "madeIn": "Made in Italy 🇮🇹"
+    },
+    "optimai": {
+      "badge": "AI Embedded · Real-time Optimization",
+      "heroLine1": "Optimal decisions.",
+      "heroAccent": "At every moment.",
+      "heroSub": "The embedded AI algorithm that optimises the operation of machines and devices in real time, simultaneously managing all variables — continuously, autonomously and securely.",
+      "heroStats": {
+        "local": "Data processed locally",
+        "realtime": "Decisions moment by moment",
+        "variables": "Variables managed simultaneously"
+      },
+      "trustedLabel": "Already chosen by",
+      "perchiTitle": ["Who is ", "OptimAI", " for?"],
+      "perchiText": "Designed for complex systems where the variables are numerous, the function to optimise is too intricate for a traditional approach and impossible to manage manually in real time.",
+      "checks": ["Fully offline operation", "Onboard integration on lightweight hardware", "Transparent and traceable decisions", "Optimisation parameters defined by the client", "AI Act and regulatory compliant"],
+      "pills": ["Real-time Optimisation", "100% Local", "Transparent AI", "AI Act Compliant", "Multi-objective"],
+      "comeTitle": ["How does it ", "work?"],
+      "steps": [
+        { "label": "STEP 1", "title": "DEFINITION", "desc": "The client identifies what they want to optimise and provides the functions that describe the evolution of the system's variables." },
+        { "label": "STEP 2", "title": "DESIGN", "desc": "The team translates requirements into technical parameters, designing and training a bespoke ANN via Reinforcement Learning on a Digital Twin." },
+        { "label": "STEP 3", "title": "INTEGRATION", "desc": "OptimAI is installed onboard a small, lightweight computer, easily integrable. Sensors collect data in real time." },
+        { "label": "STEP 4", "title": "OPTIMISATION", "desc": "The algorithm works autonomously without internet connectivity: it reads variables instant by instant and takes the optimal decision in real time, continuously." }
+      ],
+      "next": "Next →",
+      "beneficiTitle": ["Concrete ", "Benefits"],
+      "benefits": [
+        { "title": "Peak performance", "desc": "Always at the optimal limit", "detail": "The system adapts in real time to operational and environmental conditions, always working at the optimum point without human intervention." },
+        { "title": "Multiple objectives", "desc": "All under simultaneous control", "detail": "Reduce consumption, emissions and operating costs without sacrificing performance. OptimAI balances all parameters at every instant." },
+        { "title": "Data security", "desc": "100% local processing", "detail": "No data is transmitted externally. Fully onboard processing, full regulatory compliance guaranteed." },
+        { "title": "Transparent AI", "desc": "Auditable and traceable", "detail": "Every algorithm decision is tracked and viewable in the dedicated dashboard, in line with European AI Act requirements." },
+        { "title": "Simple integration", "desc": "Compact, non-invasive hardware", "detail": "Requires only a lightweight Single Board Computer. The BluMentis team supports the client at all installation stages." }
+      ],
+      "casiTitle": ["Use ", "Cases"],
+      "cases": [
+        { "title": "Hybrid and electric motors", "desc": "Real-time optimisation of energy management and performance." },
+        { "title": "Indoor climate control", "desc": "Continuous control of temperature, humidity and energy consumption." },
+        { "title": "Fuel optimisation", "desc": "Reduction of consumption and emissions in thermal engines and propulsion systems." },
+        { "title": "Industrial energy optimisation", "desc": "Efficient management of plants and machinery with many operating variables." },
+        { "title": "Custom machinery", "desc": "Any system with numerous variables to control and a complex objective function." },
+        { "title": "Embedded control systems", "desc": "Direct integration on compact hardware for IoT applications and autonomous devices." }
+      ],
+      "specTitle": ["Technical ", "Details"],
+      "specs": [
+        { "title": "Algorithm ▼", "items": ["Complex artificial neural network", "Designed to client specifications", "Parameterised by the BluMentis AI team"] },
+        { "title": "Training ▼", "items": ["Reinforcement Learning", "Device Digital Twin", "Proprietary BluMentis simulator"] },
+        { "title": "Required hardware ▼", "items": ["Compact Single Board Computer", "No high computational requirements", "Installation supported by BluMentis"] },
+        { "title": "Data acquisition ▼", "items": ["Real-time reading via sensors", "No internet connection required", "Minimum latency guaranteed"] },
+        { "title": "Security ▼", "items": ["100% local processing", "No data transmitted externally", "Compliant with current regulations"] },
+        { "title": "Regulatory compliance ▼", "items": ["Designed according to European AI Act", "Applicable sector regulations", "Auditable and traceable decisions"] }
+      ],
+      "faqTitle": ["Frequently Asked ", "Questions"],
+      "faqs": [
+        { "q": "Is data transmitted externally?", "a": "No. OptimAI processes all data entirely locally, onboard the device. No internet connection required, no data shared with third parties." },
+        { "q": "What hardware is needed to install OptimAI?", "a": "A small, compact and lightweight onboard computer (Single Board Computer), easily integrable on machines and devices. BluMentis provides dedicated technical support." },
+        { "q": "Can I choose what to optimise?", "a": "Yes. You define the parameters and optimisation objectives. The BluMentis team translates them into the neural network design required for your case." },
+        { "q": "How long does deployment take?", "a": "Timescales depend on system complexity. Thanks to Digital Twin training and the proprietary simulator, adaptation times are minimised." },
+        { "q": "Is it AI Act compliant?", "a": "Yes. OptimAI is designed in compliance with the European AI Act and current artificial intelligence regulations." }
+      ],
+      "ctaTitle": ["Want to optimise the performance", "of your system?"],
+      "ctaSub": "Contact us to discover how OptimAI can be integrated into your device or machinery. The BluMentis team will analyse your use case and propose the most suitable solution.",
+      "ctaPrimary": "Request a Consultation",
+      "ctaSecondary": "Contact us",
+      "footerDesc": "Embedded AI algorithm for continuous, autonomous real-time optimisation of complex machines and devices.",
+      "footerTag": "Offline · Real-time · AI Act Compliant",
+      "footerBrochure": "↓ Download PDF Brochure",
+      "madeIn": "Made in Italy 🇮🇹"
+    },
+    "hardware": {
+      "hero": {
+        "badge": "Hardware & Supply Chain",
+        "title": "The right component.<br /><span class=\"hw-accent\">Where needed. When needed.</span>",
+        "sub": "Finding quality industrial hardware at competitive prices with reliable suppliers is not easy. We have been doing it for over twenty years — with a direct network in Europe, China and the rest of the world, built on the personal relationships of our founders.",
+        "cta": "Have a need? Contact us"
+      },
+      "intro": {
+        "title": "Hardware Components",
+        "text": "Our founders have built over time a <strong>solid and diversified international commercial network</strong>. Today that network is at the service of supplies for our clients — with a focus on automotive and agromechanics, and the ability to operate across a wide range of industrial components.",
+        "highlight": "We have recently embarked on a new path that we are particularly excited about: <strong>integrated solutions combining selected hardware and proprietary AI software</strong> — high-impact technology products that we will make available in the coming months.<br /> <span class='mt-10'><strong>Don't miss the upcoming news!</strong></span>"
+      },
+      "sectors": {
+        "title": "Reference <span class=\"hw-accent\">Sectors</span>",
+        "items": [
+          { "title": "Automotive", "desc": "Components and hardware for production lines, testing and embedded systems in the automotive sector." },
+          { "title": "Agromechanics", "desc": "Hardware dedicated to agricultural machinery and automation systems for the agromechanics sector." },
+          { "title": "Other sectors", "desc": "Our network covers a wide range of product categories. If you have a specific need, contact us." }
+        ]
+      },
+      "why": {
+        "title": "Why <span class=\"hw-accent\">choose us</span>",
+        "items": [
+          { "icon": "Users", "title": "Direct connections", "desc": "Twenty-year personal relationships with selected suppliers in Europe, China and the rest of the world. No intermediaries.", "ai": false },
+          { "icon": "CheckCircle", "title": "Verified quality", "desc": "Every supplier is selected for high technological standards and proven reliability over time.", "ai": false },
+          { "icon": "DollarSign", "title": "Competitive costs", "desc": "Direct access to production markets allows us to offer conditions that are hard to match on the market.", "ai": false },
+          { "icon": "Cpu", "title": "AI integration", "desc": "Hardware can be selected and configured to directly support our technologies.", "ai": true }
+        ]
+      },
+      "cta": {
+        "title": "Have a supply<br /><span class=\"hw-accent\">need?</span>",
+        "sub": "Tell us what you need. We'll evaluate timelines, specifications and conditions together — without obligation.",
+        "button": "Contact us"
+      },
+      "footer": {
+        "brand": "Hardware & Supply Chain",
+        "desc": "Direct international network for high-tech industrial hardware supplies. For over twenty years.",
+        "tag": "Europe · China · Worldwide",
+        "cookie": "Cookie Policy",
+        "privacy": "Privacy Policy",
+        "contact": "Contact",
+        "copyright": "© {{year}} BluMentis. All rights reserved.",
+        "madeIn": "Made in Italy 🇮🇹"
+      }
+    }
+  },
+  "zh": {
+    "agentiche": {
+  "hero": {
+    "badge": "SonIA · OlivIA — 智能平台",
+    "title": "智能平台",
+    "subtitle": "助手在工作。<span class=\"aga-accent\">您专注于增值。</span>",
+    "sub": "增长最快的组织有一个共同点：自动运行的流程。我们的平台将自主智能引入您的运营——降低成本、减少错误和响应时间。",
+    "stats": [
+      { "value": "70%", "label": "减少手动活动" },
+      { "value": "24/7", "label": "持续运营" },
+      { "value": "< 1天", "label": "入职时间" }
+    ]
+  },
+  "stepsTitle": "如何<span class=\"aga-accent\">运作</span>？",
+  "steps": [
+    { "num": "01", "title": "学习", "desc": "平台吸收文档和公司数据，构建经批准和验证的知识库。", "tag": null },
+    { "num": "02", "title": "集成", "desc": "连接到您的业务系统——管理软件、工单系统——并直接在现有流程中运行。", "tag": "按需定制" },
+    { "num": "03", "title": "运营", "desc": "代理全天候处理请求，支持任何语言和所有渠道。必要时，他们可以调动您的员工。", "tag": null },
+    { "num": "04", "title": "改进", "desc": "每次交互都会丰富平台的知识。系统随时间变得更加精准。", "tag": null }
+  ],
+  "featuresTitle": "主要<span class=\"aga-accent\">功能</span>",
+  "features": [
+    { "icon": "Users", "title": "多智能体编排", "desc": "多个智能体并行协作，处理复杂、高容量的场景。", "tag": null },
+    { "icon": "CheckCircle", "title": "批准内容", "desc": "每条信息在存储前都经过验证。没有未经授权的回答。", "tag": null },
+    { "icon": "ArrowUpRight", "title": "智能升级", "desc": "当智能体不知道答案时，它会联系相关员工，并从交互中学习。", "tag": null },
+    { "icon": "Globe", "title": "原生多语言", "desc": "理解并以任何语言回应，自动适应用户。", "tag": null },
+    { "icon": "Link", "title": "企业系统集成", "desc": "连接到现有软件以执行具体操作：订单、报价、通知。", "tag": "按需定制" },
+    { "icon": "Lock", "title": "安全与隐私", "desc": "数据驻留在私有企业云中。信息永远不会离开您的边界。", "tag": null }
+  ],
+  "pills": ["运营自主", "零停机", "隐私保障", "多语言", "持续学习"],
+  "solutionsTitle": "可用<span class=\"aga-accent\">解决方案</span>",
+  "solutions": [
+    {
+      "name": "Son", "accent": "IA",
+      "role": "客户支持与工单",
+      "desc": "自主处理请求、分配工单并解决问题——全天候，覆盖所有渠道。",
+      "checks": ["同一渠道即时响应", "自动升级到内部团队", "从已解决案例中持续学习"]
+    },
+    {
+      "name": "Oliv", "accent": "IA",
+      "role": "智能知识库",
+      "desc": "将公司知识转化为可访问、始终最新且经过验证的资产。",
+      "checks": ["批准和验证的内容", "高级语义搜索", "自动准备文档"]
+    }
+  ],
+  "benefitsTitle": "具体<span class=\"aga-accent\">收益</span>",
+  "benefits": [
+    { "title": "减少手动工作",   "desc": "减少高达70%",          "detail": "重复性活动由智能体自主处理，解放您的团队从事高价值任务。" },
+    { "title": "持续运营",       "desc": "7x24小时，365天",     "detail": "智能体从不休息。他们覆盖所有渠道的任何请求，跨越任何时区和语言。" },
+    { "title": "减少错误",       "desc": "知识始终最新",        "detail": "仅使用批准的内容进行回复。没有未经授权或过时的信息。" },
+    { "title": "快速入职",       "desc": "短时间内投入运营",    "detail": "得益于模块化架构，平台在创纪录的时间内完成配置和投产。" },
+    { "title": "数据安全",       "desc": "私有企业云",          "detail": "数据不离开您的边界。隔离架构，符合隐私法规。" },
+    { "title": "随时间改进",     "desc": "持续学习",            "detail": "每次交互都丰富知识库。系统在每个周期中变得更加精准和自主。" }
+  ],
+  "specsTitle": "技术<span class=\"aga-accent\">规格</span>",
+  "specs": [
+    ["部署",    "私有企业云"],
+    ["可用性",  "7x24小时 · 365天"],
+    ["语言",    "所有语言 — 以用户语言回复"],
+    ["渠道",    "WhatsApp, 电子邮件, 网站（按需）"],
+    ["集成",    "业务软件, 自定义API — 按需"],
+    ["安全",    "隔离数据 · 无外部访问"]
+  ],
+  "cta": {
+    "title": "准备好用虚拟助手<br /><span class=\"aga-accent\">革新您的公司了吗？</span>",
+    "sub": "申请个性化演示，了解哪种智能平台最适合您的流程。",
+    "button": "申请演示"
+  },
+  "footer": {
+    "brand": "智能平台",
+    "desc": "SonIA和OlivIA — 运营内部的自主智能，实现自动运行的流程。",
+    "tag": "私有云 · 7x24 · 意大利制造",
+    "brochure": "↓ 下载PDF手册",
+    "privacy": "隐私政策",
+    "contact": "联系我们",
+    "copyright": "© {{year}} BluMentis. 保留所有权利。",
+    "madeIn": "意大利制造 🇮🇹"
+  }
+}
+,
+    "custom": {
+  "hero": {
+    "badge": "定制开发 · 定制AI",
+    "title": "我们塑造<br /><span class=\"svc-accent\">您的想法</span>",
+    "sub": "有一个标准产品无法满足的想法？让我们一起努力，将其转变为具体的AI解决方案——快速、成本可控、技术持久。",
+    "ctaPrimary": "告诉我们您的项目",
+    "ctaSecondary": "了解我们的工作方式"
+  },
+  "modelsTitle": "两种<span class=\"svc-accent\">合作模式</span>",
+  "models": [
+    {
+      "tag": "协同开发",
+      "title": "您的愿景，我们的路线图",
+      "sub": "极具竞争力的成本",
+      "desc": "项目按照我们的技术愿景方向发展。客户因共享路线图而受益于降低的成本。",
+      "checks": ["更快的开发时间", "共享路线图", "优化的投资"]
+    },
+    {
+      "tag": "独家开发",
+      "title": "只属于您的解决方案",
+      "sub": "独一无二，专为您打造",
+      "desc": "适用于高度定制化和独特性要求的项目。解决方案专为您开发，条件另行商定。",
+      "checks": ["为客户保留开发权", "最大程度定制", "独特的架构"]
+    }
+  ],
+  "processTitle": "我们如何<span class=\"svc-accent\">协同工作</span>",
+  "processSteps": [
+    {
+      "number": "01",
+      "title": "倾听",
+      "desc": "我们理解您的问题、背景和业务目标。没有标准解决方案——我们从真正重要的事情开始。"
+    },
+    {
+      "number": "02",
+      "title": "提案",
+      "desc": "我们一起定义最合适的合作模式和技术方案。时间、成本和架构完全透明。"
+    },
+    {
+      "number": "03",
+      "title": "开发",
+      "desc": "我们迭代构建，客户参与每个关键阶段。项目结束时不会有意外。"
+    },
+    {
+      "number": "04",
+      "title": "发布",
+      "desc": "交付、集成到现有系统并提供上线后支持。我们即使在项目上线后也会在场。"
+    }
+  ],
+  "cta": {
+    "title": "有项目想法？<br /><span class=\"svc-accent\">告诉我们。</span>",
+    "sub": "我们一起评估最合适的解决方案——不承担任何义务。BluMentis团队随时准备倾听。",
+    "buttonPrimary": "让我们谈谈",
+    "buttonSecondary": "↓ 下载PDF手册"
+  },
+  "footer": {
+    "brand": "定制开发 · BluMentis",
+    "desc": "您的愿景。我们的技术。为持久而构建的定制AI解决方案。",
+    "tag": "定制 · 迭代 · 意大利制造",
+    "brochure": "↓ 下载PDF手册",
+    "privacy": "隐私政策",
+    "contact": "联系我们",
+    "copyright": "© {{year}} BluMentis. 保留所有权利。",
+    "madeIn": "意大利制造 🇮🇹"
+  }
+},
+    "langs": {
+      "it": "意大利语",
+      "en": "英语",
+      "zh": "中文"
+    },
+    "nav": {
+      "homepage": "首页",
+      "prodotti": "产品",
+      "industrie": "行业",
+      "contatti": "联系我们",
+      "links": {
+        "chi_siamo": "关于我们",
+        "visione": "愿景",
+        "missione": "使命",
+        "valori": "价值观",
+        "rete_internazionale": "国际网络",
+        "proline": "ProLine Analytics",
+        "optimai": "OptimAI",
+        "agentiche": "智能平台",
+        "custom": "定制开发",
+        "hardware": "硬件",
+        "automotive": "汽车",
+        "industriale": "工业",
+        "agromeccanica": "农业机械",
+        "nautico": "船舶",
+        "pmi": "中小企业",
+        "contatti_link": "联系我们",
+        "collaborazioni": "合作与招聘"
+      },
+      "aria": {
+        "main_nav": "主导航",
+        "lang_select": "选择语言",
+        "open_menu": "打开菜单",
+        "close_menu": "关闭菜单",
+        "home": "主页"
+      }
+    },
+    "footer": {
+      "claim": "人工智能应用于工业领域。\n创新与经验的交汇之处。",
+      "azienda": "公司",
+      "prodotti": "产品",
+      "contatti": "联系我们",
+      "badges": {
+        "gdpr": "GDPR合规",
+        "iso": "ISO就绪",
+        "madeInItaly": "意大利制造"
+      },
+      "links": {
+        "chi_siamo": "关于我们",
+        "visione": "愿景",
+        "missione": "使命",
+        "valori": "价值观",
+        "rete_internazionale": "国际网络",
+        "scrivici": "联系我们 →",
+        "carriere": "招聘与论文"
+      },
+      "sedi": {
+        "title": "办公地点",
+        "legale": "注册办公室",
+        "operativa": "运营总部"
+      },
+      "addresses": {
+        "legale": "Corso Garibaldi, 80 – 55049 Viareggio (LU), 意大利",
+        "ops": [
+          "Corso Garibaldi, 80 – 55049 Viareggio (LU), 意大利",
+          "中国（上海）自由贸易试验区\n临港新片区云汉路979号2楼"
+        ]
+      },
+      "legal": {
+        "pec": "认证邮箱",
+        "tel": "电话",
+        "cf": "增值税号",
+        "rights": "版权所有。"
+      },
+      "policy": {
+        "privacy": "隐私政策",
+        "cookie": "Cookie政策"
+      },
+      "aria": {
+        "linkedin": "BluMentis领英主页"
+      }
+    },
+    "industrie": {
+      "hero": {
+        "kicker": "我们的行业",
+        "title": "将AI带到真正需要的地方",
+        "subtitle": "从汽车到船舶，从农业机械到中小企业。不同行业，相同愿景：数据和智能服务于流程。",
+        "bg_word": "行业"
+      },
+      "cta": "了解更多 →",
+      "items": [
+        {
+          "id": "automotive",
+          "name": "汽车",
+          "description": "在工厂和装配线中积累的生产经验。",
+          "text": "汽车是一切开始的行业。我们在生产工厂和装配线内积累了扎实而深厚的经验，在那里，数据质量和反应速度决定了效率与停机之间的差距。每一秒都很重要。每个数据都很重要。"
+        },
+        {
+          "id": "industriale",
+          "name": "工业",
+          "description": "流程线解决方案和流程优化。",
+          "text": "从汽车行业出发，我们自然地将业务范围扩展到其他制造业领域。不同市场和产品的生产，但都面临相同的运营复杂性：流程线、质量控制、生产数据管理、流程优化。"
+        },
+        {
+          "id": "agromeccanica",
+          "name": "农业机械",
+          "description": "我们将传统机械转变为智能系统。",
+          "text": "农业机械是我们正在研究的最有趣的领域之一。我们既在零部件供应链中运营，也将AI技术直接集成到机械设备中。传统与创新在田野相遇。"
+        },
+        {
+          "id": "nautico",
+          "name": "船舶",
+          "description": "用于世界级造船和游艇的AI技术。",
+          "text": "我们是国际化的人，拥有稳固的国际网络。我们的心跳在维亚雷焦，这里是全球造船和高端游艇最重要的参考中心之一。大海在呼唤，我们以智慧回应。"
+        },
+        {
+          "id": "pmi",
+          "name": "中小企业",
+          "description": "面向中小型企业的可及AI。",
+          "text": "中小企业是意大利经济的支柱。一家拥有正确工具的小企业可以消除低效、自动化重复性工作，并让员工专注于真正创造价值的事情。"
+        }
+      ]
+    },
+    "prodotti": {
+      "hero": {
+        "eyebrow": "我们的解决方案",
+        "title_1": "真正运作的技术。",
+        "title_2": "具体的成果。",
+        "title_3": "可衡量的收益。",
+        "subtitle": "基于真实使用案例构建的产品，旨在从第一天起创造价值。",
+        "bg_word": "产品"
+      },
+      "counts": [
+        { "val": "5", "label": "解决方案领域" },
+        { "val": "25+", "label": "覆盖用例" },
+        { "val": "48h", "label": "从协议到使用" }
+      ],
+      "scopri": "了解更多 →",
+      "esplora": "也可探索",
+      "scopri_short": "探索 →",
+      "items": [
+        {
+          "id": "proline",
+          "name": "ProLine Analytics",
+          "shortName": "ProLine",
+          "category": "软件",
+          "badge": "最常用",
+          "tagline": "全面控制。质量保证。",
+          "description": "ProLine Analytics实时处理和分析来自装配线的数据，提供对流程的全面可见性，并在潜在风险转化为不合格产品之前识别它们。专为需要严格质量控制的生产流程而设计。",
+          "features": ["本地部署", "实时仪表板", "多用户", "多设备", "MES集成"],
+          "stats": [
+            { "value": "1000+", "label": "产品对比" },
+            { "value": "100%", "label": "产品可追溯性" },
+            { "value": "<30s", "label": "异常检测" }
+          ]
+        },
+        {
+          "id": "optimai",
+          "name": "OptimAI",
+          "shortName": "OptimAI",
+          "category": "嵌入式AI技术",
+          "badge": "创新",
+          "tagline": "基于神经网络的动态优化",
+          "description": "OptimAI是一种人工神经网络算法，直接集成在机器和设备上，无需互联网连接即可实时优化运行。它同时管理众多不断变化的变量，在每个时刻为当前运行和环境条件选择最佳决策。",
+          "features": ["板载集成", "离线运行", "使用强化学习技术训练的ANN", "在设备数字孪生上训练", "缩短部署时间"],
+          "stats": [
+            { "value": "100%", "label": "本地数据处理" },
+            { "value": "0 ms", "label": "所需网络延迟" },
+            { "value": "50+", "label": "并行管理变量" }
+          ]
+        },
+        {
+          "id": "agentiche",
+          "name": "智能平台",
+          "shortName": "智能",
+          "category": "SonIA | OlivIA",
+          "badge": "灵活",
+          "tagline": "助手在工作。您专注于增值。",
+          "description": "增长最快的组织有一个共同点：自动运行的流程。我们的智能平台将自主智能引入您的运营，降低成本、减少错误和响应时间——让您的复杂流程自动化，让您的员工专注于创造价值的事情。",
+          "features": ["多智能体编排", "持久记忆和上下文", "企业系统集成", "最短部署时间", "托管在私有企业云上"],
+          "stats": [
+            { "value": "70%", "label": "减少手动活动" },
+            { "value": "24/7", "label": "持续运营" },
+            { "value": "< 1天", "label": "入职时间" }
+          ]
+        },
+        {
+          "id": "custom",
+          "name": "定制开发",
+          "shortName": "定制",
+          "category": "我们塑造您的想法",
+          "badge": "按需定制",
+          "tagline": "您的愿景。我们的技术。",
+          "description": "我们与客户合作开发定制解决方案——当项目与我们的技术愿景一致时，以可接受的成本进行，对于高度个性化的独家开发，则以专门商定的条件进行。我们不出售工时。我们共同构建持久的产品。",
+          "features": ["与客户联合开发", "高度个性化AI技术", "独家开发可用", "与现有系统集成"],
+          "stats": [
+            { "value": "2", "label": "合作模式" },
+            { "value": "AI", "label": "原生设计" },
+            { "value": "100%", "label": "个性化" }
+          ]
+        },
+        {
+          "id": "hardware",
+          "name": "硬件",
+          "shortName": "硬件",
+          "category": "硬件与供应链",
+          "badge": "可用",
+          "tagline": "正确的组件。在需要的地方。在需要的时候。",
+          "description": "凭借与欧洲、亚洲（特别是中国）精选供应商二十年的合作关系，我们以具有竞争力的成本和有保障的质量提供高科技工业硬件。为复杂采购提供单一联系点，在汽车、农业机械等领域拥有直接经验。",
+          "features": ["稳固的供应商网络", "为我们的技术提供硬件支持", "具有竞争力的成本", "按需定制"],
+          "stats": [
+            { "value": "20+", "label": "国际合作年数" },
+            { "value": "3+", "label": "覆盖大洲" },
+            { "value": "100%", "label": "质量验证" }
+          ]
+        }
+      ]
+    },
+    "contatti": {
+      "hero": {
+        "kicker": "来谈谈",
+        "title": "开始对话",
+        "subtitle": "我们相信对话与协作的力量。",
+        "bg_word": "联系"
+      },
+      "info": {
+        "sedi_label": "办公地点",
+        "contatti_label": "直接联系",
+        "sedi": [
+          {
+            "flag": "🇮🇹",
+            "country": "意大利",
+            "address": "Corso Garibaldi, 80\n55049 Viareggio (LU)"
+          },
+          {
+            "flag": "🇨🇳",
+            "country": "中国",
+            "address": "中国（上海）自由贸易试验区\n临港新片区云汉路979号2楼"
+          }
+        ]
+      },
+      "form": {
+        "kicker": "联系表单",
+        "title": "写信给我们，我们一一回复",
+        "fields": {
+          "nome": "姓名 *",
+          "email": "电子邮件 *",
+          "azienda": "公司 / 机构",
+          "argomento": "主题",
+          "messaggio": "留言 *",
+          "messaggio_placeholder": "告诉我们您的项目或想法..."
+        },
+        "tipi": [
+          "选择主题",
+          "一般信息",
+          "产品演示",
+          "合作提案",
+          "论文 / 实习机会",
+          "自发申请",
+          "创新想法或项目",
+          "其他"
+        ],
+        "privacy": "我已阅读并接受<a href=\"/privacy\">隐私政策</a>。我同意BluMentis s.r.l.处理我的个人数据。",
+        "submit": "发送留言",
+        "submitting": "发送中…",
+        "submit_note": "我们将在24个工作小时内回复。",
+        "error": "发送失败，请重试。",
+        "success": {
+          "title": "留言已发送",
+          "text": "感谢您联系我们。我们的团队将尽快回复您。"
+        }
+      },
+      "highlights": [
+        {
+          "num": "01",
+          "title": "心中有想法？",
+          "text": "我们为创新者和发明家提供机会。如果您有出色的想法或项目，我们随时准备聆听。与我们分享您的愿景，我们将共同评估如何将其变为现实。",
+          "cta": "分享您的想法 →",
+          "href": "mailto:info@blumentis.ai?subject=项目想法"
+        },
+        {
+          "num": "02",
+          "title": "职业、论文与培训",
+          "text": "释放您的潜力。在BluMentis，我们致力于培养下一代人工智能先驱。作为实习生加入我们的团队，探索论文机会，或与我们一起开始您的职业生涯。",
+          "cta": "探索机会 →",
+          "href": "/carriere"
+        }
+      ]
+    },
+    "chi_siamo": {
+      "hero": {
+        "title": "我们了解您的挑战，因为我们亲身经历过。",
+        "subtitle": "我们不是顾问，不是理论家。\n我们是为企业家构建技术的企业家。"
+      },
+      "sections": {
+        "chi_siamo": {
+          "eyebrow": "关于我们",
+          "title": "解决方案背后的企业家",
+          "body": "我们是在意大利工业领域拥有悠久历史和稳固国际网络的企业家，与新一代的活力和远见相结合。这就是我们的公式：经验引领，青春创新。这种罕见的平衡使我们能够快速行动而不失稳健。",
+          "highlight": "根基稳固，展望未来。",
+          "stat": "5+",
+          "stat_desc": "我们曾运营过的工业领域"
+        },
+        "visione": {
+          "eyebrow": "我们的视野",
+          "title": "愿景",
+          "body": "人工智能不是未来——它是现在。我们相信每家企业，无论大小，都可以通过这项创新改变工作方式。我们构建的技术不会使事情复杂化，而是简化它——为企业提供更快成长、更好决策、与市场大玩家平等竞争的工具。",
+          "highlight": "为您服务的技术，而非取代您的技术。",
+          "stat": "3×",
+          "stat_desc": "今天选择AI的企业增长速度倍增"
+        },
+        "missione": {
+          "eyebrow": "我们每天做什么",
+          "title": "使命",
+          "body": "我们在希望抓住技术进步机遇、在不断变化的市场中保持竞争力的企业中传播创新和可持续的解决方案。",
+          "highlight": "从想法到市场。",
+          "stat": "70%",
+          "stat_desc": "低附加值任务可以实现自动化"
+        },
+        "valori": {
+          "eyebrow": "指引我们的原则",
+          "title": "价值观",
+          "supertitle": "我们工作的参照",
+          "items": {
+            "qualita": {
+              "label": "质量",
+              "desc": "在开发的每个阶段，从代码到最终产品，承诺达到高标准。"
+            },
+            "sicurezza": {
+              "label": "安全",
+              "desc": "我们保证可靠性和数据保护，防止漏洞，并完全符合欧洲AI法规运营。"
+            },
+            "inclusivita": {
+              "label": "包容性",
+              "desc": "设计人人可用的AI解决方案，无论背景或能力如何。"
+            },
+            "etica": {
+              "label": "道德",
+              "desc": "我们以负责任的方式开发和实施AI，尊重人权，最大程度减少对社会和环境的负面影响。"
+            },
+            "innovazione": {
+              "label": "创新",
+              "desc": "我们不断寻求前沿解决方案，以克服当前挑战并提高我们所开发技术的性能。"
+            },
+            "trasparenza": {
+              "label": "透明度",
+              "desc": "我们确保客户和用户了解我们的技术如何运作以及对他们有何影响。"
+            },
+            "collaborazione": {
+              "label": "协作",
+              "desc": "我们与企业、学术机构和组织合作，分享知识和最佳实践，共同构建更强大的解决方案。"
+            },
+            "sostenibilita": {
+              "label": "可持续性",
+              "desc": "我们通过优化资源使用和促进集体福祉，减少我们技术的环境影响。"
+            }
+          }
+        },
+        "rete_internazionale": {
+          "eyebrow": "我们的存在",
+          "title": "国际网络",
+          "body": "我们在国际范围内运营，在亚洲拥有稳固的存在，在中国与战略合作伙伴合作——在这个市场，我们已经是汽车行业顶级企业的活跃供应商。这是一个随时间建立的商业和技术网络，使我们能够在工业未来正在书写的地方行动。",
+          "stat": "20+",
+          "stat_desc": "我们创始人在亚洲的年数"
+        }
+      }
+    },
+    "proline": {
+      "badge": "质量智能平台",
+      "heroSubtitle": ["全面控制。", "质量保证。"],
+      "heroSub": "专业软件解决方案，精准控制生产流程。监测、预防、追溯。",
+      "heroStats": {
+        "detection": "检测延迟",
+        "traceability": "可追溯性",
+        "monitoring": "监控"
+      },
+      "trustedLabel": "已被以下客户选用",
+      "perchiTitle": ["谁适合使用 ", "ProLine Analytics", "？"],
+      "perchiText": "专为质量要求极高的生产环境设计，适用于汽车、电子、工业等行业。",
+      "checks": ["本地部署", "实时仪表板", "多用户", "多设备", "智能可定制报警"],
+      "pills": ["实时监控", "质量控制", "100% 可追溯", "可定制报警与通知", "定制化配置"],
+      "comeTitle": ["如何 ", "运作？"],
+      "steps": [
+        { "label": "第 1 步", "title": "配置", "desc": "创建您的生产流程数字孪生。" },
+        { "label": "第 2 步", "title": "连接", "desc": "连接数据源：MES、Excel、CSV、MDF 等。数据不离开工厂。" },
+        { "label": "第 3 步", "title": "监控", "desc": "系统实时计算 Cp/Cpk 及其他关键指标，检测异常并触发已配置的报警。" },
+        { "label": "第 4 步", "title": "优化", "desc": "分析趋势，监控供应商流程，减少停机、返工和废品。" }
+      ],
+      "next": "下一步 →",
+      "beneficiTitle": ["具体 ", "收益"],
+      "benefits": [
+        { "title": "更强的认知", "desc": "先进的数据分析", "detail": "直观的仪表板让您即时全面掌握生产质量状况。" },
+        { "title": "预测性质量", "desc": "预防不合格品", "detail": "在流程偏差转化为缺陷之前发现它们，始终保持 Cp/Cpk 及其他指标在目标范围内。" },
+        { "title": "降低成本", "desc": "减少停机和返工", "detail": "更少废品、更少返工、更少停机，投资回报率在最初几个月内即可量化。" },
+        { "title": "最小化退货", "desc": "产品精准达标", "detail": "更稳定的产品意味着更少的退货和售后投诉。" },
+        { "title": "流程稳定性", "desc": "持续监控", "detail": "24/7 可配置报警控制，每个异常实时通知。" },
+        { "title": "灵活性", "desc": "即时适应", "detail": "新产品、新产线、新供应商：几分钟内即可就绪，无需重新配置。" }
+      ],
+      "specTitle": ["技术 ", "规格"],
+      "specs": [
+        { "title": "实时监控 ▼", "items": ["每日 Cp/Cpk 指数计算", "质量指数、Nelson 规则实时", "自动异常检测"] },
+        { "title": "高级质量控制 ▼", "items": ["不合格零件识别", "完整 EOL 数据分析", "供应商合规性验证"] },
+        { "title": "完整可追溯性 ▼", "items": ["每个序列号均被追踪", "与前后 500 个单元对比", "完整零件历史"] },
+        { "title": "报警与通知 ▼", "items": ["自定义指标", "报警/警告严重级别", "干预记录以完整历史"] },
+        { "title": "集成 ▼", "items": ["本地 MES 连接（只读）", "导入 CSV、Excel、MDF", "混合模式可用"] },
+        { "title": "安全 ▼", "items": ["数据本地存储", "无外部访问", "符合法规"] }
+      ],
+      "ctaTitle": ["准备好改变您的 ", "生产流程了吗？"],
+      "ctaSub": "申请个性化演示，了解 ProLine Analytics 如何提升质量并降低生产成本。",
+      "ctaPrimary": "申请演示",
+      "ctaSecondary": "下载手册",
+      "footerDesc": "面向对流程质量绝不妥协的生产环境的质量智能平台。",
+      "footerTag": "本地部署 · 24/7 · 意大利制造",
+      "footerBrochure": "↓ 下载 PDF 手册",
+      "madeIn": "意大利制造 🇮🇹"
+    },
+    "optimai": {
+      "badge": "嵌入式AI · 实时优化",
+      "heroLine1": "最优决策。",
+      "heroAccent": "每时每刻。",
+      "heroSub": "嵌入式AI算法，实时优化机器和设备的运行，同时管理所有相关变量——持续、自主、安全。",
+      "heroStats": {
+        "local": "本地数据处理",
+        "realtime": "逐时决策",
+        "variables": "同时管理变量"
+      },
+      "trustedLabel": "已被以下客户选用",
+      "perchiTitle": ["谁适合使用 ", "OptimAI", "？"],
+      "perchiText": "专为变量众多的复杂系统设计，优化函数过于复杂无法采用传统方法，也无法实时手动管理。",
+      "checks": ["完全离线运行", "集成在轻量级硬件上", "透明且可追溯的决策", "优化参数由客户定义", "符合 AI 法案及现行法规"],
+      "pills": ["实时优化", "100% 本地", "透明AI", "AI法案合规", "多目标"],
+      "comeTitle": ["如何 ", "运作？"],
+      "steps": [
+        { "label": "第 1 步", "title": "定义", "desc": "客户确定要优化的目标，并提供描述系统变量演变的函数。" },
+        { "label": "第 2 步", "title": "设计", "desc": "团队将需求转化为技术参数，通过数字孪生上的强化学习设计并训练定制化ANN。" },
+        { "label": "第 3 步", "title": "集成", "desc": "OptimAI 安装在小型轻量级车载计算机上，易于集成。传感器实时采集数据。" },
+        { "label": "第 4 步", "title": "优化", "desc": "算法无需互联网连接自主运行：逐时读取变量，持续实时做出最优决策。" }
+      ],
+      "next": "下一步 →",
+      "beneficiTitle": ["具体 ", "收益"],
+      "benefits": [
+        { "title": "峰值性能", "desc": "始终处于最优极限", "detail": "系统实时适应运行和环境条件，无需人工干预，始终在最优点运行。" },
+        { "title": "多目标", "desc": "同时全面掌控", "detail": "在不牺牲性能的前提下降低能耗、排放和运营成本。OptimAI 在每个时刻平衡所有参数。" },
+        { "title": "数据安全", "desc": "100% 本地处理", "detail": "不向外部传输任何数据。完全板载处理，完全符合法规要求。" },
+        { "title": "透明AI", "desc": "可审计且可追溯", "detail": "每个算法决策都被追踪，可在专用仪表板中查看，符合欧洲AI法案要求。" },
+        { "title": "简易集成", "desc": "紧凑且非侵入式硬件", "detail": "只需轻量级单板计算机。BluMentis 团队在所有安装阶段为客户提供支持。" }
+      ],
+      "casiTitle": ["使用 ", "案例"],
+      "cases": [
+        { "title": "混合动力及电动机", "desc": "实时优化能源管理和性能。" },
+        { "title": "室内气候控制", "desc": "持续控制温度、湿度和能耗。" },
+        { "title": "燃油优化", "desc": "降低热力发动机和推进系统的能耗和排放。" },
+        { "title": "工业能源优化", "desc": "高效管理具有众多运行变量的工厂和机械。" },
+        { "title": "定制机械", "desc": "任何具有众多变量和复杂目标函数的系统。" },
+        { "title": "嵌入式控制系统", "desc": "在紧凑硬件上直接集成，用于物联网应用和自主设备。" }
+      ],
+      "specTitle": ["技术 ", "详情"],
+      "specs": [
+        { "title": "算法 ▼", "items": ["复杂人工神经网络", "根据客户规格设计", "BluMentis AI 团队参数化"] },
+        { "title": "训练 ▼", "items": ["强化学习", "设备数字孪生", "BluMentis 专有模拟器"] },
+        { "title": "所需硬件 ▼", "items": ["紧凑型单板计算机", "无高计算要求", "BluMentis 支持安装"] },
+        { "title": "数据采集 ▼", "items": ["通过传感器实时读取", "无需互联网连接", "最低延迟保证"] },
+        { "title": "安全 ▼", "items": ["100% 本地处理", "不向外部传输数据", "符合现行法规"] },
+        { "title": "法规合规 ▼", "items": ["根据欧洲AI法案设计", "适用行业法规", "可审计且可追溯的决策"] }
+      ],
+      "faqTitle": ["常见 ", "问题"],
+      "faqs": [
+        { "q": "数据是否会被传输到外部？", "a": "不会。OptimAI 完全在本地设备上处理所有数据。不需要互联网连接，不与第三方共享数据。" },
+        { "q": "安装 OptimAI 需要什么硬件？", "a": "小型、紧凑且轻量级的车载计算机（单板计算机），易于集成到机器和设备上。BluMentis 提供专业技术支持。" },
+        { "q": "我可以选择优化什么吗？", "a": "可以。您定义参数和优化目标，BluMentis 团队将其转化为您案例所需的神经网络设计。" },
+        { "q": "部署需要多长时间？", "a": "时间取决于系统复杂性。借助数字孪生训练和专有模拟器，适配时间被最小化。" },
+        { "q": "它符合AI法案吗？", "a": "是的。OptimAI 按照欧洲AI法案和现行人工智能法规设计。" }
+      ],
+      "ctaTitle": ["想要优化您的系统", "性能吗？"],
+      "ctaSub": "联系我们，了解 OptimAI 如何集成到您的设备或机械中。BluMentis 团队将分析您的使用案例并提出最合适的解决方案。",
+      "ctaPrimary": "申请咨询",
+      "ctaSecondary": "联系我们",
+      "footerDesc": "嵌入式AI算法，用于复杂机器和设备的持续、自主实时优化。",
+      "footerTag": "离线 · 实时 · AI法案合规",
+      "footerBrochure": "↓ 下载 PDF 手册",
+      "madeIn": "意大利制造 🇮🇹"
+    },
+    "hardware": {
+      "hero": {
+        "badge": "硬件与供应链",
+        "title": "正确的组件。<br /><span class=\"hw-accent\">在需要的地方。在需要的时候。</span>",
+        "sub": "找到高质量、有竞争力的价格和可靠供应商的工业硬件并不容易。我们在这方面已经有二十多年的经验——在欧洲、中国和世界其他地区拥有直接网络，建立在我们创始人的个人关系之上。",
+        "cta": "有需求？联系我们"
+      },
+      "intro": {
+        "title": "硬件组件",
+        "text": "我们的创始人经过多年努力建立了一个<strong>坚实且多元化的国际商业网络</strong>。今天，这个网络为我们的客户提供供应服务——专注于汽车和农业机械领域，并具备处理广泛工业组件的能力。",
+        "highlight": "我们最近开启了一条新的道路，对此我们特别兴奋：<strong>将精选硬件与专有AI软件相结合的集成解决方案</strong>——高影响力的技术产品，我们将在未来几个月内提供。<br /> <span class='mt-10'><strong>不要错过即将到来的新产品！</strong></span>"
+      },
+      "sectors": {
+        "title": "参考<span class=\"hw-accent\">行业</span>",
+        "items": [
+          { "title": "汽车", "desc": "用于汽车行业生产线、测试和嵌入式系统的组件和硬件。" },
+          { "title": "农业机械", "desc": "用于农业机械和农业机械行业自动化系统的专用硬件。" },
+          { "title": "其他行业", "desc": "我们的网络覆盖广泛的产品类别。如果您有特定需求，请联系我们。" }
+        ]
+      },
+      "why": {
+        "title": "为什么<span class=\"hw-accent\">选择我们</span>",
+        "items": [
+          { "icon": "Users", "title": "直接连接", "desc": "与欧洲、中国和世界其他地区精选供应商的二十年个人关系。没有中间商。", "ai": false },
+          { "icon": "CheckCircle", "title": "验证质量", "desc": "每个供应商都经过高技术标准和长期可靠性的筛选。", "ai": false },
+          { "icon": "DollarSign", "title": "有竞争力的成本", "desc": "直接进入生产市场使我们能够提供市场上难以匹敌的条件。", "ai": false },
+          { "icon": "Cpu", "title": "AI集成", "desc": "硬件可以经过选择和配置，以直接支持我们的技术。", "ai": true }
+        ]
+      },
+      "cta": {
+        "title": "有供应<br /><span class=\"hw-accent\">需求？</span>",
+        "sub": "告诉我们您需要什么。我们将共同评估时间、规格和条件——不承担任何义务。",
+        "button": "联系我们"
+      },
+      "footer": {
+        "brand": "硬件与供应链",
+        "desc": "面向高科技工业硬件的直接国际网络。超过二十年经验。",
+        "tag": "欧洲 · 中国 · 全球",
+        "cookie": "Cookie政策",
+        "privacy": "隐私政策",
+        "contact": "联系我们",
+        "copyright": "© {{year}} BluMentis. 保留所有权利。",
+        "madeIn": "意大利制造 🇮🇹"
+      }
+    }
+  }
+}

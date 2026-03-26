@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import Footer from "./Footer";
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 const css = `
   .svc-root {
@@ -202,52 +203,30 @@ const css = `
     .svc-footer-links { align-items: flex-start; }
     .svc-hero { padding: 100px 20px 72px; }
   }
-    @media (max-width: 700px) {
-  .svc-hero { padding: 80px 20px 60px; }
-  .svc-hero h1 { font-size: clamp(30px, 8vw, 48px); }
-  .svc-hero-sub { font-size: 14px; }
-  .svc-hero-cta { flex-direction: column; }
-  .svc-btn-primary, .svc-btn-ghost { width: 100%; text-align: center; }
-
-  .svc-models { grid-template-columns: 1fr; }
-  .svc-model { padding: 24px 20px; }
-
-  .svc-page { padding: 48px 16px; }
-
-  .svc-cta { padding: 56px 16px; }
-  .svc-cta-btns { flex-direction: column; align-items: center; }
-  .svc-cta-primary, .svc-cta-secondary { width: 100%; text-align: center; justify-content: center; }
-
-  .svc-footer-inner { grid-template-columns: 1fr; }
-  .svc-footer-links { align-items: flex-start; }
-  .svc-footer-bottom { flex-direction: column; gap: 4px; }
-}
+  @media (max-width: 700px) {
+    .svc-hero { padding: 80px 20px 60px; }
+    .svc-hero h1 { font-size: clamp(30px, 8vw, 48px); }
+    .svc-hero-sub { font-size: 14px; }
+    .svc-hero-cta { flex-direction: column; }
+    .svc-btn-primary, .svc-btn-ghost { width: 100%; text-align: center; }
+    .svc-models { grid-template-columns: 1fr; }
+    .svc-model { padding: 24px 20px; }
+    .svc-page { padding: 48px 16px; }
+    .svc-cta { padding: 56px 16px; }
+    .svc-cta-btns { flex-direction: column; align-items: center; }
+    .svc-cta-primary, .svc-cta-secondary { width: 100%; text-align: center; justify-content: center; }
+    .svc-footer-inner { grid-template-columns: 1fr; }
+    .svc-footer-links { align-items: flex-start; }
+    .svc-footer-bottom { flex-direction: column; gap: 4px; }
+  }
 `;
 
-const PROCESSO = [
-  {
-    n: "01",
-    title: "Ascolto",
-    desc: "Capiamo il tuo problema, il contesto e gli obiettivi di business. Nessuna soluzione standard — partiamo da ciò che conta davvero per te.",
-  },
-  {
-    n: "02",
-    title: "Proposta",
-    desc: "Definiamo insieme il modello di collaborazione più adatto e la soluzione tecnica. Trasparenza totale su tempi, costi e architettura.",
-  },
-  {
-    n: "03",
-    title: "Sviluppo",
-    desc: "Costruiamo in modo iterativo, con il cliente coinvolto in ogni fase chiave. Nessuna sorpresa a fine progetto.",
-  },
-  {
-    n: "04",
-    title: "Rilascio",
-    desc: "Consegna, integrazione nei sistemi esistenti e supporto post-lancio. Siamo presenti anche dopo il go-live.",
-  },
-];
-
 export default function SviluppiCustom() {
+  const { t } = useTranslation();
+
+  const models = t('custom.models', { returnObjects: true });
+  const steps = t('custom.processSteps', { returnObjects: true });
+
   return (
     <div className="svc-root">
       <style>{css}</style>
@@ -257,24 +236,21 @@ export default function SviluppiCustom() {
         <div className="svc-hero-inner">
           <div className="svc-hero-badge">
             <span className="svc-badge-dot" />
-            Sviluppo su misura · AI Custom
+            {t('custom.hero.badge')}
           </div>
-          <h1>
-            Diamo forma
-            <br />
-            <span className="svc-accent">alle tue idee</span>
-          </h1>
-          <p className="svc-hero-sub">
-            Hai un'idea che nessun prodotto standard riesce a soddisfare?
-            Lavoriamo insieme per trasformarla in una soluzione AI concreta —
-            con tempi rapidi, costi calibrati e una tecnologia costruita per
-            durare.
-          </p>
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: t('custom.hero.title', { interpolation: { escapeValue: false } }),
+            }}
+          />
+          <p className="svc-hero-sub">{t('custom.hero.sub')}</p>
           <div className="svc-hero-cta">
             <Link to="/contatti" className="svc-btn-primary">
-              Raccontaci il tuo progetto
+              {t('custom.hero.ctaPrimary')}
             </Link>
-            <a href="#come-lavoriamo" className="svc-btn-ghost">Scopri come lavoriamo</a>
+            <a href="#come-lavoriamo" className="svc-btn-ghost">
+              {t('custom.hero.ctaSecondary')}
+            </a>
           </div>
         </div>
       </section>
@@ -282,38 +258,17 @@ export default function SviluppiCustom() {
       <hr className="svc-divider" />
 
       {/* ── MODELLI ── */}
-      <div className="svc-page " id="come-lavoriamo">
+      <div className="svc-page" id="come-lavoriamo">
         <div className="svc-head">
-          <h2>
-            Due modelli di <span className="svc-accent">collaborazione</span>
-          </h2>
+          <h2
+            dangerouslySetInnerHTML={{
+              __html: t('custom.modelsTitle', { interpolation: { escapeValue: false } }),
+            }}
+          />
           <div className="svc-bar" />
         </div>
         <div className="svc-models">
-          {[
-            {
-              tag: "Co-sviluppo allineato",
-              title: "La tua visione, la nostra roadmap",
-              sub: "Costi altamente competitivi",
-              desc: "Il progetto si sviluppa nella direzione della nostra visione tecnologica. Il cliente beneficia di costi ridotti grazie alla condivisione della roadmap.",
-              checks: [
-                "Tempi di sviluppo più rapidi",
-                "Roadmap condivisa",
-                "Investimento ottimizzato",
-              ],
-            },
-            {
-              tag: "Sviluppo esclusivo",
-              title: "Una soluzione solo tua",
-              sub: "Unicità garantita, dedicato a te",
-              desc: "Per progetti ad alto grado di personalizzazione e con vincolo di unicità. La soluzione è sviluppata esclusivamente per te, con condizioni concordate ad hoc.",
-              checks: [
-                "Sviluppo riservato al cliente",
-                "Massima personalizzazione",
-                "Unicità dell'architettura",
-              ],
-            },
-          ].map((m) => (
+          {models.map((m) => (
             <div className="svc-model" key={m.tag}>
               <span className="svc-model-tag">{m.tag}</span>
               <h3>{m.title}</h3>
@@ -337,15 +292,17 @@ export default function SviluppiCustom() {
       {/* ── PROCESSO ── */}
       <div className="svc-page">
         <div className="svc-head">
-          <h2>
-            Come <span className="svc-accent">lavoriamo insieme</span>
-          </h2>
+          <h2
+            dangerouslySetInnerHTML={{
+              __html: t('custom.processTitle', { interpolation: { escapeValue: false } }),
+            }}
+          />
           <div className="svc-bar" />
         </div>
         <div className="svc-process">
-          {PROCESSO.map((s) => (
-            <div className="svc-proc-step" key={s.n}>
-              <div className="svc-proc-num">{s.n}</div>
+          {steps.map((s) => (
+            <div className="svc-proc-step" key={s.number}>
+              <div className="svc-proc-num">{s.number}</div>
               <div className="svc-proc-body">
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
@@ -358,21 +315,19 @@ export default function SviluppiCustom() {
       {/* ── CTA ── */}
       <section className="svc-cta">
         <div className="svc-cta-inner">
-          <h2 className="svc-cta-title">
-            Hai un progetto in mente?
-            <br />
-            <span className="svc-accent">Raccontacelo.</span>
-          </h2>
-          <p className="svc-cta-sub">
-            Valutiamo insieme la soluzione più adatta — senza impegno. Il team
-            di BluMentis è pronto ad ascoltarti.
-          </p>
+          <h2
+            className="svc-cta-title"
+            dangerouslySetInnerHTML={{
+              __html: t('custom.cta.title', { interpolation: { escapeValue: false } }),
+            }}
+          />
+          <p className="svc-cta-sub">{t('custom.cta.sub')}</p>
           <div className="svc-cta-btns">
             <Link to="/contatti" className="svc-cta-primary">
-              Parliamone
+              {t('custom.cta.buttonPrimary')}
             </Link>
             <button className="svc-cta-secondary">
-              ↓ Scarica Brochure PDF
+              {t('custom.cta.buttonSecondary')}
             </button>
           </div>
         </div>
@@ -382,27 +337,19 @@ export default function SviluppiCustom() {
       <footer className="svc-footer">
         <div className="svc-footer-inner">
           <div className="svc-footer-brand">
-            <h3>Sviluppo Custom · BluMentis</h3>
-            <p>
-              La tua visione. La nostra tecnologia. Soluzioni AI su misura
-              costruite per durare.
-            </p>
-            <span className="svc-footer-tag">
-              Su misura · Iterativo · Made in Italy
-            </span>
+            <h3>{t('custom.footer.brand')}</h3>
+            <p>{t('custom.footer.desc')}</p>
+            <span className="svc-footer-tag">{t('custom.footer.tag')}</span>
           </div>
           <div className="svc-footer-links">
-            <a href="#">↓ Scarica Brochure PDF</a>
-
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/contatti" >Contatti</Link>
+            <a href="#">{t('custom.footer.brochure')}</a>
+            <Link to="/privacy">{t('custom.footer.privacy')}</Link>
+            <Link to="/contatti">{t('custom.footer.contact')}</Link>
           </div>
         </div>
         <div className="svc-footer-bottom">
-          <span>
-            © {new Date().getFullYear()} BluMentis. Tutti i diritti riservati.
-          </span>
-          <span>Made in Italy 🇮🇹</span>
+          <span>{t('custom.footer.copyright', { year: new Date().getFullYear() })}</span>
+          <span>{t('custom.footer.madeIn')}</span>
         </div>
       </footer>
       <Footer />

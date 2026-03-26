@@ -1,19 +1,24 @@
+// src/components/Navbar.jsx
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import Dropdown from "./Dropdown";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/LOGO.png";
 
+// ─── Lingue disponibili ───────────────────────────────────────────────────────
 const LANGS = [
-  { code: "it", flag: "🇮🇹", label: "Italiano" },
-  { code: "en", flag: "🇬🇧", label: "Inglese" },
-  { code: "zh", flag: "🇨🇳", label: "Cinese" },
+  { code: "it", flag: "🇮🇹" },
+  { code: "en", flag: "🇬🇧" },
+  { code: "zh", flag: "🇨🇳" },
 ];
 
+// ─── Selettore lingua ─────────────────────────────────────────────────────────
 const LangSelector = ({ isOpen, onToggle, onClose }) => {
-  const [sel, setSel] = useState("it");
+  const { t, i18n } = useTranslation();
   const ref = useRef(null);
-  const cur = LANGS.find((l) => l.code === sel);
+  const cur = LANGS.find((l) => l.code === i18n.language) ?? LANGS[0];
 
+  // Chiude il dropdown se si clicca fuori
   useEffect(() => {
     if (!isOpen) return;
     const handler = (e) => {
@@ -23,9 +28,18 @@ const LangSelector = ({ isOpen, onToggle, onClose }) => {
     return () => document.removeEventListener("mousedown", handler);
   }, [isOpen, onClose]);
 
+  const handleSelect = (code) => {
+    i18n.changeLanguage(code);
+    onClose();
+  };
+
   return (
     <div style={{ position: "relative" }} ref={ref}>
-      <button className="lang-btn" onClick={onToggle} aria-label="Seleziona lingua">
+      <button
+        className="lang-btn"
+        onClick={onToggle}
+        aria-label={t("nav.aria.lang_select")}
+      >
         <span>{cur.code.toUpperCase()}</span>
         <svg
           style={{
@@ -44,13 +58,14 @@ const LangSelector = ({ isOpen, onToggle, onClose }) => {
           {LANGS.map((l) => (
             <button
               key={l.code}
-              className={`lang-item${sel === l.code ? " sel" : ""}`}
-              onClick={() => { setSel(l.code); onClose(); }}
+              className={`lang-item${i18n.language === l.code ? " sel" : ""}`}
+              onClick={() => handleSelect(l.code)}
               role="menuitem"
             >
               <span>{l.flag}</span>
-              <span>{l.label}</span>
-              {sel === l.code && <span className="lang-check">✓</span>}
+              {/* Il nome della lingua è tradotto nella lingua corrente */}
+              <span>{t(`langs.${l.code}`)}</span>
+              {i18n.language === l.code && <span className="lang-check">✓</span>}
             </button>
           ))}
         </div>
@@ -59,52 +74,55 @@ const LangSelector = ({ isOpen, onToggle, onClose }) => {
   );
 };
 
+// ─── Navbar ───────────────────────────────────────────────────────────────────
 const Navbar = () => {
+  const { t } = useTranslation();
   const [open, setOpen]         = useState(null);
   const [mobile, setMobile]     = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
 
+  // Le voci di navigazione usano t() — si aggiornano automaticamente al cambio lingua
   const NAV = [
     {
-      title: "Homepage",
+      title: t("nav.homepage"),
       align: "left",
       options: [
-        { label: "Chi siamo",           href: pathname === "/" ? "#chi-siamo"           : "/#chi-siamo" },
-        { label: "Visione",             href: pathname === "/" ? "#visione"             : "/#visione" },
-        { label: "Missione",            href: pathname === "/" ? "#missione"            : "/#missione" },
-        { label: "Valori",              href: pathname === "/" ? "#valori"              : "/#valori" },
-        { label: "Rete internazionale", href: pathname === "/" ? "#rete-internazionale" : "/#rete-internazionale" },
+        { label: t("nav.links.chi_siamo"),           href: pathname === "/" ? "#chi-siamo"           : "/#chi-siamo" },
+        { label: t("nav.links.visione"),             href: pathname === "/" ? "#visione"             : "/#visione" },
+        { label: t("nav.links.missione"),            href: pathname === "/" ? "#missione"            : "/#missione" },
+        { label: t("nav.links.valori"),              href: pathname === "/" ? "#valori"              : "/#valori" },
+        { label: t("nav.links.rete_internazionale"), href: pathname === "/" ? "#rete-internazionale" : "/#rete-internazionale" },
       ],
     },
     {
-      title: "Prodotti",
+      title: t("nav.prodotti"),
       align: "left",
       options: [
-        { label: "ProLine Analytics",     href: "/prodotti#proline" },
-        { label: "OptimAI",               href: "/prodotti#optimai" },
-        { label: "Piattaforme Agentiche", href: "/prodotti#agentiche" },
-        { label: "Sviluppi Custom",       href: "/prodotti#custom" },
-        { label: "Hardware",              href: "/prodotti#hardware" },
+        { label: t("nav.links.proline"),   href: "/prodotti#proline" },
+        { label: t("nav.links.optimai"),   href: "/prodotti#optimai" },
+        { label: t("nav.links.agentiche"), href: "/prodotti#agentiche" },
+        { label: t("nav.links.custom"),    href: "/prodotti#custom" },
+        { label: t("nav.links.hardware"),  href: "/prodotti#hardware" },
       ],
     },
     {
-      title: "Industrie",
+      title: t("nav.industrie"),
       align: "left",
       options: [
-        { label: "Automotive",    href: "/industrie#automotive" },
-        { label: "Industriale",   href: "/industrie#industriale" },
-       { label: "Agromeccanica", href: "/industrie#agromeccanica" },
-{ label: "Nautico",       href: "/industrie#nautico" },
-{ label: "PMI",           href: "/industrie#pmi" },
+        { label: t("nav.links.automotive"),    href: "/industrie#automotive" },
+        { label: t("nav.links.industriale"),   href: "/industrie#industriale" },
+        { label: t("nav.links.agromeccanica"), href: "/industrie#agromeccanica" },
+        { label: t("nav.links.nautico"),       href: "/industrie#nautico" },
+        { label: t("nav.links.pmi"),           href: "/industrie#pmi" },
       ],
     },
     {
-      title: "Contatti",
+      title: t("nav.contatti"),
       align: "right",
       options: [
-        { label: "Contatti",                  href: "/contatti" },
-        { label: "Collaborazioni & Carriere", href: "/contatti" },
+        { label: t("nav.links.contatti_link"),  href: "/contatti" },
+        { label: t("nav.links.collaborazioni"), href: "/contatti" },
       ],
     },
   ];
@@ -133,22 +151,22 @@ const Navbar = () => {
       <nav
         className={`navbar${scrolled ? " scrolled" : ""}`}
         role="navigation"
-        aria-label="Navigazione principale"
+        aria-label={t("nav.aria.main_nav")}
       >
         <div className="navbar-inner">
 
           {/* Logo */}
-          <a href="/" className="logo" aria-label="Home">
-           <img
-  src={logo}
-  alt="BluMentis"
-  style={{
-    height: "clamp(44px, 8vw, 70px)",
-    width: "auto",
-    display: "block",
-    objectFit: "contain",
-  }}
-/>
+          <a href="/" className="logo" aria-label={t("nav.aria.home")}>
+            <img
+              src={logo}
+              alt="BluMentis"
+              style={{
+                height: "clamp(44px, 8vw, 70px)",
+                width: "auto",
+                display: "block",
+                objectFit: "contain",
+              }}
+            />
           </a>
 
           {/* Desktop nav */}
@@ -166,7 +184,7 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Destra */}
+          {/* Destra: selettore lingua + hamburger */}
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <LangSelector
               isOpen={open === "lang"}
@@ -176,7 +194,7 @@ const Navbar = () => {
             <button
               className={`hamburger${mobile ? " open" : ""}`}
               onClick={() => setMobile((p) => !p)}
-              aria-label={mobile ? "Chiudi menu" : "Apri menu"}
+              aria-label={mobile ? t("nav.aria.close_menu") : t("nav.aria.open_menu")}
               aria-expanded={mobile}
             >
               <span className="ham" />
@@ -189,7 +207,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobile && (
-        <div className="mobile-menu" role="dialog" aria-label="Menu mobile">
+        <div className="mobile-menu" role="dialog" aria-label={t("nav.aria.main_nav")}>
           {NAV.map((item) => (
             <div key={item.title} className="mob-section">
               <div className="mob-title">{item.title}</div>

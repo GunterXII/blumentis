@@ -1,6 +1,8 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import Footer from './Footer';
-import { Users, CheckCircle, ArrowUpRight, Globe, Link, Lock } from "lucide-react";
+import { Users, CheckCircle, ArrowUpRight, Globe, Link as LinkIcon, Lock } from "lucide-react";
 
 const css = `
   .aga-root {
@@ -340,27 +342,38 @@ const css = `
   }
 `;
 
-const BENEFITS = [
-  { title: "Meno lavoro manuale",    desc: "Fino al 70% in meno",          detail: "Le attività ripetitive vengono gestite autonomamente dagli agenti, liberando il tuo team per compiti ad alto valore." },
-  { title: "Operatività continua",   desc: "H24, 365 giorni",              detail: "Gli agenti non dormono. Coprono ogni richiesta su tutti i canali, in qualsiasi fuso orario e lingua." },
-  { title: "Errori ridotti",         desc: "Conoscenza sempre aggiornata", detail: "Solo contenuti approvati vengono usati nelle risposte. Zero informazioni non autorizzate o obsolete." },
-  { title: "Onboarding rapidissimo", desc: "Operativo in breve tempo",     detail: "Grazie all'architettura modulare, la piattaforma si configura e si mette in produzione in tempi record." },
-  { title: "Dati al sicuro",         desc: "Cloud privato aziendale",      detail: "Nessun dato esce dal tuo perimetro. Architettura isolata, conforme alle normative sulla privacy." },
-  { title: "Migliora nel tempo",     desc: "Apprendimento continuo",       detail: "Ogni interazione arricchisce la knowledge base. Il sistema diventa più preciso e autonomo ad ogni ciclo." },
-];
-  
 export default function PiattaformeAgentiche() {
+  const { t } = useTranslation();
   const [openBenefit, setOpenBenefit] = useState(null);
-const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
- useEffect(() => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
     function handleResize() {
       setIsMobile(window.innerWidth <= 768);
     }
-
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Dati tradotti con returnObjects (array)
+  const heroStats = t('agentiche.hero.stats', { returnObjects: true });
+  const steps = t('agentiche.steps', { returnObjects: true });
+  const features = t('agentiche.features', { returnObjects: true });
+  const solutions = t('agentiche.solutions', { returnObjects: true });
+  const benefits = t('agentiche.benefits', { returnObjects: true });
+  const specs = t('agentiche.specs', { returnObjects: true });
+  const pills = t('agentiche.pills', { returnObjects: true });
+
+  // Mappa icone
+  const iconMap = {
+    Users: Users,
+    CheckCircle: CheckCircle,
+    ArrowUpRight: ArrowUpRight,
+    Globe: Globe,
+    Link: LinkIcon,
+    Lock: Lock,
+  };
+
   return (
     <div className="aga-root">
       <style>{css}</style>
@@ -370,27 +383,18 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
         <div className="aga-hero-content">
           <div className="aga-hero-badge">
             <span className="aga-badge-dot" />
-            SonIA · OlivIA — Piattaforme Agentiche
+            {t('agentiche.hero.badge')}
           </div>
-          <h1 className="aga-hero-title">Piattaforme Agentiche</h1>
-          <p className="aga-hero-subtitle">
-            Assistenti al lavoro. <span className="aga-accent">Tu al valore aggiunto.</span>
-          </p>
-          <p className="aga-hero-sub">
-            Le organizzazioni che crescono più velocemente hanno una cosa in comune: processi che
-            funzionano da soli. Le nostre piattaforme portano intelligenza autonoma dentro le tue
-            operation — riducendo costi, errori e tempi di risposta.
-          </p>
+          <h1 className="aga-hero-title">{t('agentiche.hero.title')}</h1>
+          <p className="aga-hero-subtitle"
+             dangerouslySetInnerHTML={{ __html: t('agentiche.hero.subtitle') }} />
+          <p className="aga-hero-sub">{t('agentiche.hero.sub')}</p>
         </div>
         <div className="aga-hero-stats">
-          {[
-            { val: "70%",    lbl: "Riduzione attività manuali" },
-            { val: "24/7",   lbl: "Operatività continua" },
-            { val: "< 1 gg", lbl: "Tempo di onboarding" },
-          ].map((s) => (
-            <div className="aga-hero-stat" key={s.lbl}>
-              <span className="aga-hero-stat-val">{s.val}</span>
-              <span className="aga-hero-stat-lbl">{s.lbl}</span>
+          {heroStats && heroStats.map((s) => (
+            <div className="aga-hero-stat" key={s.label}>
+              <span className="aga-hero-stat-val">{s.value}</span>
+              <span className="aga-hero-stat-lbl">{s.label}</span>
             </div>
           ))}
         </div>
@@ -399,16 +403,11 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
       {/* ── COME FUNZIONA ── */}
       <div className="aga-page">
         <div className="aga-head">
-          <h2>Come <span className="aga-accent">funziona</span>?</h2>
+          <h2 dangerouslySetInnerHTML={{ __html: t('agentiche.stepsTitle') }} />
           <div className="aga-bar" />
         </div>
         <div className="aga-steps-grid">
-          {[
-            { num: "01", title: "Apprendimento", desc: "La piattaforma assimila documentazione e dati aziendali, costruendo una base di conoscenza approvata e verificata.", tag: null },
-            { num: "02", title: "Integrazione",  desc: "Si connette ai tuoi sistemi aziendali — SW gestionali, sistemi di ticketing — e opera direttamente nei flussi esistenti.", tag: "Su richiesta" },
-            { num: "03", title: "Operatività",   desc: "Gli agenti gestiscono richieste h24, in qualsiasi lingua, su tutti i canali. Se necessario, coinvolgono il tuo personale.", tag: null },
-            { num: "04", title: "Miglioramento", desc: "Ogni interazione arricchisce la conoscenza della piattaforma. Il sistema diventa più preciso nel tempo.", tag: null },
-          ].map((s) => (
+          {steps && steps.map((s) => (
             <div className="aga-step" key={s.num}>
               <span className="aga-step-num">{s.num}</span>
               <h3>{s.title}</h3>
@@ -424,58 +423,28 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
       {/* ── FUNZIONALITÀ ── */}
       <div className="aga-page">
         <div className="aga-head">
-          <h2>Funzionalità <span className="aga-accent">principali</span></h2>
+          <h2 dangerouslySetInnerHTML={{ __html: t('agentiche.featuresTitle') }} />
         </div>
         <div className="aga-features">
-          { [
-  { icon: <Users color="#2563EB" size={24} />, 
-    title: "Orchestrazione multi-agente",    
-    desc: "Più agenti collaborano in parallelo per gestire scenari complessi e ad alto volume.", 
-    tag: null 
-  },
-  { icon: <CheckCircle color="#16A34A" size={24} />, 
-    title: "Contenuti approvati",            
-    desc: "Ogni informazione viene validata prima di essere memorizzata. Nessuna risposta non autorizzata.", 
-    tag: null 
-  },
-  { icon: <ArrowUpRight color="#F59E0B" size={24} />,  
-    title: "Escalation intelligente",        
-    desc: "Quando l'agente non conosce la risposta, coinvolge il personale competente e apprende dall'interazione.", 
-    tag: null 
-  },
-  { icon: <Globe color="#0EA5E9" size={24} />, 
-    title: "Multilingua nativo",             
-    desc: "Comprende e risponde in qualsiasi lingua, adattandosi automaticamente all'interlocutore.", 
-    tag: null 
-  },
-  { icon: <Link color="#F97316" size={24} />, 
-    title: "Integrazione sistemi aziendali", 
-    desc: "Si connette ai software esistenti per eseguire azioni concrete: ordini, offerte, notifiche.", 
-    tag: "Su richiesta" 
-  },
-  { icon: <Lock color="#374151" size={24} />, 
-    title: "Sicurezza e privacy",            
-    desc: "Dati residenti su cloud privato aziendale. Le informazioni non escono mai dal tuo perimetro.", 
-    tag: null 
-  },
-].map((f) => (
-            <div className="aga-feature" key={f.title}>
-              <div className="aga-feature-icon">{f.icon}</div>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
-              {f.tag && <span className="aga-feature-tag">{f.tag}</span>}
-            </div>
-          ))}
+          {features && features.map((f) => {
+            const IconComponent = iconMap[f.icon];
+            return (
+              <div className="aga-feature" key={f.title}>
+                <div className="aga-feature-icon">
+                  {IconComponent && <IconComponent size={24} />}
+                </div>
+                <h3>{f.title}</h3>
+                <p>{f.desc}</p>
+                {f.tag && <span className="aga-feature-tag">{f.tag}</span>}
+              </div>
+            );
+          })}
         </div>
         <div className="aga-pills">
-          {[
-            ["Autonomia operativa","aga-d1"],
-            ["Zero downtime","aga-d2"],
-            ["Privacy garantita","aga-d3"],
-            ["Multilingua","aga-d4"],
-            ["Apprendimento continuo","aga-d5"],
-          ].map(([label, d]) => (
-            <div className={`aga-pill ${d}`} key={label}>{label}</div>
+          {pills && pills.map((pill, idx) => (
+            <div className={`aga-pill aga-d${idx + 1}`} key={pill}>
+              {pill}
+            </div>
           ))}
         </div>
       </div>
@@ -485,23 +454,10 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
       {/* ── SOLUZIONI ── */}
       <div className="aga-page">
         <div className="aga-head">
-          <h2>Soluzioni <span className="aga-accent">disponibili</span></h2>
+          <h2 dangerouslySetInnerHTML={{ __html: t('agentiche.solutionsTitle') }} />
         </div>
         <div className="aga-solutions">
-          {[
-            {
-              name: "Son", accent: "IA",
-              role: "Assistenza clienti & ticketing",
-              desc: "Gestisce richieste, smista ticket e risolve problemi in autonomia — h24, su tutti i canali.",
-              checks: ["Risposta immediata sullo stesso canale", "Escalation automatica al team interno", "Apprendimento continuo dai casi risolti"],
-            },
-            {
-              name: "Oliv", accent: "IA",
-              role: "Knowledge base intelligente",
-              desc: "Trasforma la conoscenza aziendale in un patrimonio accessibile, sempre aggiornato e verificato.",
-              checks: ["Contenuti approvati e validati", "Ricerca semantica avanzata", "Predisposizione documentazione in automatico"],
-            },
-          ].map((sol) => (
+          {solutions && solutions.map((sol) => (
             <div className="aga-solution" key={sol.name}>
               <div className="aga-solution-name">
                 {sol.name}<span className="aga-accent">{sol.accent}</span>
@@ -526,22 +482,21 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
       {/* ── BENEFICI ── */}
       <div className="aga-page">
         <div className="aga-head">
-          <h2>Benefici <span className="aga-accent">concreti</span></h2>
+          <h2 dangerouslySetInnerHTML={{ __html: t('agentiche.benefitsTitle') }} />
         </div>
         <ul className="aga-benefits">
-          {BENEFITS.map((b, i) => (
+          {benefits && benefits.map((b, i) => (
             <li key={b.title} onClick={() => setOpenBenefit(openBenefit === i ? null : i)}>
               <div className="aga-benefit-header">
                 <div>
                   <h3>{b.title}</h3>
                   <p>{b.desc}</p>
                 </div>
-                
                 {isMobile && (
-        <span className="aga-benefit-arrow">
-          {openBenefit === i ? "▲" : "▼"}
-        </span>
-      )}
+                  <span className="aga-benefit-arrow">
+                    {openBenefit === i ? "▲" : "▼"}
+                  </span>
+                )}
               </div>
               <div className="aga-bubble">
                 <h4>{b.title}</h4>
@@ -560,20 +515,16 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
       {/* ── SPECIFICHE ── */}
       <div className="aga-page">
         <div className="aga-head">
-          <h2>Specifiche <span className="aga-accent">tecniche</span></h2>
+          <h2 dangerouslySetInnerHTML={{ __html: t('agentiche.specsTitle') }} />
         </div>
         <div className="aga-spec-wrap">
           <table className="aga-spec-table">
             <tbody>
-              {[
-                ["Deployment",    "Cloud privato aziendale"],
-                ["Disponibilità", "24/7 · 365 giorni"],
-                ["Lingue",        "Tutte — risposta nella lingua dell'utente"],
-                ["Canali",        "WhatsApp, Email, Sito web (su richiesta)"],
-                ["Integrazioni",  "SW aziendali, API custom — su richiesta"],
-                ["Sicurezza",     "Dati isolati · Nessun accesso esterno"],
-              ].map(([k, v]) => (
-                <tr key={k}><td>{k}</td><td>{v}</td></tr>
+              {specs && specs.map(([key, value]) => (
+                <tr key={key}>
+                  <td>{key}</td>
+                  <td>{value}</td>
+                </tr>
               ))}
             </tbody>
           </table>
@@ -583,16 +534,11 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
       {/* ── CTA ── */}
       <section className="aga-cta">
         <div className="aga-cta-inner">
-          <h2 className="aga-cta-title">
-            Pronto a innovare la tua azienda<br />
-            <span className="aga-accent">con assistenti virtuali?</span>
-          </h2>
-          <p className="aga-cta-sub">
-            Richiedi una demo personalizzata e scopri quale piattaforma agentica
-            si adatta meglio ai tuoi processi.
-          </p>
+          <h2 className="aga-cta-title"
+              dangerouslySetInnerHTML={{ __html: t('agentiche.cta.title') }} />
+          <p className="aga-cta-sub">{t('agentiche.cta.sub')}</p>
           <div className="aga-cta-btns">
-            <button className="aga-cta-primary">Richiedi una Demo</button>
+            <button className="aga-cta-primary">{t('agentiche.cta.button')}</button>
           </div>
         </div>
       </section>
@@ -601,19 +547,19 @@ const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
       <footer className="aga-footer">
         <div className="aga-footer-inner">
           <div className="aga-footer-brand">
-            <h3>Piattaforme Agentiche</h3>
-            <p>SonIA e OlivIA — intelligenza autonoma dentro le tue operation, per processi che funzionano da soli.</p>
-            <span className="aga-footer-tag">Cloud Privato · 24/7 · Made in Italy</span>
+            <h3>{t('agentiche.footer.brand')}</h3>
+            <p>{t('agentiche.footer.desc')}</p>
+            <span className="aga-footer-tag">{t('agentiche.footer.tag')}</span>
           </div>
           <div className="aga-footer-links">
-            <a href="#">↓ Scarica Brochure PDF</a>
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/contatti" >Contatti</Link>
+            <a href="#">{t('agentiche.footer.brochure')}</a>
+            <Link to="/privacy">{t('agentiche.footer.privacy')}</Link>
+            <Link to="/contatti">{t('agentiche.footer.contact')}</Link>
           </div>
         </div>
         <div className="aga-footer-bottom">
-          <span>© {new Date().getFullYear()} BluMentis. Tutti i diritti riservati.</span>
-          <span>Made in Italy 🇮🇹</span>
+          <span>{t('agentiche.footer.copyright', { year: new Date().getFullYear() })}</span>
+          <span>{t('agentiche.footer.madeIn')}</span>
         </div>
       </footer>
       <Footer />
