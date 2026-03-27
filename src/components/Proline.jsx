@@ -1,9 +1,12 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import video from "../assets/proline.mp4";
 import Footer from './Footer';
 import { Link } from "react-router-dom";
-
+import pdfIT from "../assets/ProlineIT.pdf?url";
+import pdfEN from "../assets/ProlineEN.pdf?url";
+import pdfZH from "../assets/ProlineZH.pdf?url";
 const css = `
   .pla-root {
     --orange:      oklch(68% 0.26 50);
@@ -359,11 +362,31 @@ const css = `
 const LOGOS = [{ icon: "🏭", name: "PLB" }, { icon: "⚙️", name: "CSMIC" }];
 
 export default function ProLineAnalytics() {
-  const { t } = useTranslation();
+  const { t,i18n } = useTranslation();
   const [step, setStep]               = useState(0);
   const [openBenefit, setOpenBenefit] = useState(null);
   const [isMobile, setIsMobile]       = useState(window.innerWidth <= 768);
 
+  const getBrochure = () => {
+  const lang = i18n.language;
+
+  if (lang.startsWith("it")) return pdfIT;
+  if (lang.startsWith("zh")) return pdfZH;
+  return pdfEN; // fallback
+};
+
+const handleDownload = () => {
+
+  const file = getBrochure();
+
+  const link = document.createElement("a");
+  link.href = file;
+  link.setAttribute("download", "Proline.pdf");
+  link.setAttribute("target", "_blank");        // fallback se il download viene bloccato
+  document.body.appendChild(link);              // necessario su Firefox
+  link.click();
+  document.body.removeChild(link);
+};
   useEffect(() => {
     const fn = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", fn);
@@ -461,7 +484,7 @@ export default function ProLineAnalytics() {
               <p className="pla-step-desc">{steps[step]?.desc}</p>
               <div className="pla-dots">
                 {steps.map((_, i) => (
-                  <div key={i} className={`pla-dot${i === step ? " active" : ""}`} onClick={() => setStep(i)} />
+                  <div key={`dot-${i}`} className={`pla-dot${i === step ? " active" : ""}`} onClick={() => setStep(i)} />
                 ))}
               </div>
             </div>
@@ -484,7 +507,7 @@ export default function ProLineAnalytics() {
         </div>
         <ul className="pla-benefits">
           {Array.isArray(benefits) && benefits.map((b, i) => (
-            <li key={i} onClick={() => setOpenBenefit(openBenefit === i ? null : i)}>
+            <li key={`${i}-${b.title}`}>
               <div className="pla-benefit-header">
                 <div>
                   <h3>{b.title}</h3>
@@ -522,7 +545,7 @@ export default function ProLineAnalytics() {
               <button className="pla-spec-btn">{card.title}</button>
               <ul className="pla-spec-tree">
                 {card.items.map((item, j) => (
-                  <li className="pla-spec-item" key={j}>{item}</li>
+                    <li className="pla-spec-item" key={`${j}-${item}`}>{item}</li>
                 ))}
               </ul>
             </div>
@@ -551,7 +574,7 @@ export default function ProLineAnalytics() {
           <p className="pla-cta-sub">{t("proline.ctaSub")}</p>
           <div className="pla-cta-btns">
             <button className="pla-cta-primary">{t("proline.ctaPrimary")}</button>
-            <button className="pla-cta-secondary">{t("proline.ctaSecondary")}</button>
+            <button className="pla-cta-secondary" onClick={handleDownload}>{t("proline.ctaSecondary")}</button>
           </div>
         </div>
       </section>
@@ -565,7 +588,9 @@ export default function ProLineAnalytics() {
             <span className="pla-footer-tag">{t("proline.footerTag")}</span>
           </div>
           <div className="pla-footer-links">
-            <a href="#">{t("proline.footerBrochure")}</a>
+            <button onClick={handleDownload}>
+  {t("proline.footerBrochure")}
+</button>
             <Link to="/privacy">{t("footer.policy.privacy")}</Link>
             <Link to="/contatti">{t("nav.contatti")}</Link>
           </div>
