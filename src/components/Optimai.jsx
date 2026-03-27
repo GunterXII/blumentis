@@ -7,8 +7,7 @@ import { Zap, Thermometer, Droplet, Factory, Wrench, Satellite } from "lucide-re
 
 const css = `
   .pla-trusted {
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+
     padding: 32px 20px;
   }
   .pla-trusted-label {
@@ -23,7 +22,7 @@ const css = `
   }
   .pla-logo-pill {
     display: flex; align-items: center; gap: 10px;
-    background: var(--surface); border: 1px solid var(--border);
+    background: var(--surface); 
     border-radius: 12px; padding: 12px 22px;
     white-space: nowrap; transition: border-color .22s; cursor: default;
   }
@@ -73,6 +72,8 @@ const css = `
     position: absolute; inset: 0;
     background: linear-gradient(160deg, rgba(8,12,20,.92) 0%, oklch(16% 0.14 240 / 0.65) 100%);
     z-index: 1;
+    width: 100%; height: 80%; object-fit: cover;margin-top: 70px;
+
   }
   .opa-hero-content {
     position: relative; z-index: 2;
@@ -341,6 +342,7 @@ const css = `
 
   @media (max-width: 900px) { .opa-cases { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 700px) {
+    .opa-step-title{ font-size:1.1rem}
     .opa-hero { min-height: 100svh; }
     .opa-hero-sub { font-size: 15px; }
     .opa-stats { flex-direction: column; gap: 10px; }
@@ -427,18 +429,7 @@ export default function Optimai() {
         </div>
       </section>
 
-      {/* ── TRUSTED BY ── */}
-      <div className="pla-trusted">
-        <div className="pla-trusted-label">{t("optimai.trustedLabel")}</div>
-        <div className="pla-trusted-track">
-          {LOGOS.map((l, i) => (
-            <div className="pla-logo-pill" key={i}>
-              <div className="pla-logo-icon">{l.icon}</div>
-              <span className="pla-logo-name">{l.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      
 
       {/* ── STATS + PER CHI ── */}
       <div className="opa-page">
@@ -607,7 +598,18 @@ export default function Optimai() {
           ))}
         </div>
       </div>
-
+          {/* ── TRUSTED BY ── */}
+      <div className="pla-trusted">
+        <div className="pla-trusted-label">{t("optimai.trustedLabel")}</div>
+        <div className="pla-trusted-track">
+          {LOGOS.map((l, i) => (
+            <div className="pla-logo-pill" key={i}>
+              <div className="pla-logo-icon">{l.icon}</div>
+              <span className="pla-logo-name">{l.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
       {/* ── CTA ── */}
       <section className="opa-cta">
         <div className="opa-cta-inner">

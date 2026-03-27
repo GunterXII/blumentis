@@ -341,12 +341,12 @@ export default function Contatti() {
                   />
                 </div>
 
-                <div className="ct-submit-row">
+                <div className="ct-submit-row"id="collaborazioni">
                   <button className="ct-submit" type="submit" disabled={!valid || loading}>
                     {loading ? t("contatti.form.submitting") : t("contatti.form.submit")}
                     {!loading && " →"}
                   </button>
-                  <span className="ct-submit-note">{t("contatti.form.submit_note")}</span>
+                  
                 </div>
               </form>
             )}

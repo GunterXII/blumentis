@@ -116,7 +116,7 @@ const css = `
   .pr-tab.active.orange { color: oklch(78% 0.18 50); border-color: oklch(68% 0.26 50); }
   .pr-tab.active.blue   { color: oklch(75% 0.18 240); border-color: oklch(60% 0.22 255); }
   .pr-tab-icon { font-size: 1rem; }
-  .pr-tab-badge { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.1rem 0.4rem; border-radius: 999px; background: oklch(68% 0.26 50 / 0.15); color: oklch(78% 0.18 50); border: 1px solid oklch(68% 0.26 50 / 0.25); }
+  .pr-tab-badge { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.1rem 0.4rem; border-radius: 999px;  ; border: 1px solid  }
 
   .pr-content { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
   .pr-featured { display: grid; grid-template-columns: auto 1fr; gap: 4rem; align-items: start; margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid var(--bg-border); }
@@ -254,14 +254,14 @@ const Prodotti = () => {
                 <span className="pr-tab-icon">{p.icon}</span>
                 <span className="pr-tab-name-full">{p.name}</span>
                 <span className="pr-tab-name-short">{p.shortName}</span>
-                {p.badge && <span className="pr-tab-badge">{p.badge}</span>}
+                {p.badge && <span className={`pr-tab-badge text-${p.accentClass} bg-${p.accentClass} border-${p.accentColor}` } >{p.badge}</span>}
               </button>
             ))}
           </div>
         </div>
 
         {/* ── PRODOTTO ATTIVO ── */}
-        <div className="pr-content" key={product.id}>
+        <div className="pr-content" key={product.id} id={`${product.id}`}>
           <div className="pr-featured" data-aos="fade-up">
             <Card product={product} isActive={true} onClick={() => {}} />
 

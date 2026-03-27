@@ -99,6 +99,9 @@ const Navbar = () => {
       title: t("nav.prodotti"),
       align: "left",
       options: [
+        {
+          label: t("nav.prodotti"),   href: "/prodotti" 
+        },
         { label: t("nav.links.proline"),   href: "/prodotti#proline" },
         { label: t("nav.links.optimai"),   href: "/prodotti#optimai" },
         { label: t("nav.links.agentiche"), href: "/prodotti#agentiche" },
@@ -122,7 +125,7 @@ const Navbar = () => {
       align: "right",
       options: [
         { label: t("nav.links.contatti_link"),  href: "/contatti" },
-        { label: t("nav.links.collaborazioni"), href: "/contatti" },
+        { label: t("nav.links.collaborazioni"), href: pathname === "/" ? "contatti#collaborazioni"           : "/contatti#collaborazioni" },
       ],
     },
   ];

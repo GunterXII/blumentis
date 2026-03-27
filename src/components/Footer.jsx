@@ -38,7 +38,7 @@ const style = `
   .ft-brand-claim {
     font-size: 13px;
     line-height: 1.8;
-    color: #555;
+    color: #888;
     font-weight: 300;
     max-width: 260px;
     margin-bottom: 24px;
@@ -59,7 +59,7 @@ const style = `
     padding: 5px 12px;
     border: 1px solid #1E1E1E;
     border-radius: 100px;
-    color: #444;
+    color: #888;
   }
 
   /* LinkedIn icon */
@@ -71,7 +71,7 @@ const style = `
     height: 34px;
     border: 1px solid #1E1E1E;
     border-radius: 8px;
-    color: #444;
+    color: #888;
     text-decoration: none;
     transition: border-color 0.2s, color 0.2s, background 0.2s;
     flex-shrink: 0;
@@ -87,7 +87,7 @@ const style = `
     font-size: 10px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #333;
+    color: #999;
     margin-bottom: 20px;
     padding-bottom: 12px;
     border-bottom: 1px solid #141414;
@@ -95,7 +95,7 @@ const style = `
   .ft-col-links { display: flex; flex-direction: column; gap: 10px; }
   .ft-link {
     font-size: 14px;
-    color: #666;
+    color: #888;
     text-decoration: none;
     font-weight: 300;
     transition: color 0.2s;
@@ -131,7 +131,7 @@ const style = `
   .ft-sede-address {
     font-size: 13px;
     line-height: 1.8;
-    color: #555;
+    color: #888;
     font-weight: 300;
     white-space: pre-line;
   }
@@ -152,16 +152,16 @@ const style = `
     gap: 6px 20px;
     align-items: center;
   }
-  .ft-legal-item { font-size: 12px; color: #333; font-weight: 300; }
-  .ft-legal-item a { color: #444; text-decoration: none; transition: color 0.2s; }
+  .ft-legal-item { font-size: 12px; color: #666; font-weight: 300; }
+  .ft-legal-item a { color: #666; text-decoration: none; transition: color 0.2s; }
   .ft-legal-item a:hover { color: #888; }
-  .ft-legal-dot { font-size: 12px; color: #222; }
-  .ft-legal-sub { font-size: 11px; color: #222; font-weight: 300; }
+  .ft-legal-dot { font-size: 12px; color: #666; }
+  .ft-legal-sub { font-size: 11px; color: #666; font-weight: 300; }
 
   .ft-policy-links { display: flex; align-items: center; gap: 20px; }
   .ft-policy-link {
     font-size: 11px;
-    color: #333;
+    color: #666;
     text-decoration: none;
     letter-spacing: 0.5px;
     transition: color 0.2s;

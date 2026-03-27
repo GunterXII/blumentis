@@ -1,5 +1,10 @@
 {
   "it": {
+    "pmi":"Per le PMI, il tempo è la risorsa più preziosa. Grazie all'integrazione delle nostre piattaforme agentiche nei workflow aziendali, numerose piccole e medie imprese hanno automatizzato una quota significativa delle attività quotidiane — liberando energie, riducendo gli errori e restituendo alle persone il tempo per fare ciò che sanno fare meglio. Perché il vero valore di un'azienda non sta nelle attività di routine, ma nelle persone che la guidano.",
+    "automotive":"I principali player del settore automotive hanno scelto ProLine Analytics come soluzione analitica di riferimento. In diversi casi abbiamo fornito anche hardware dedicato per l'ambiente di stabilimento, incluse stazioni operative con sistemi di segnalazione integrati — una soluzione completa end-to-end.",
+    "industriale":"Nel settore industriale integriamo analisi predittiva, ottimizzazione dei processi e monitoraggio real-time delle performance. Le nostre soluzioni si connettono ai sistemi ERP e MES esistenti, riducendo downtime e costi operativi con un approccio modulare e scalabile.",
+    "agromeccanica":"Il settore agromeccanico è tra i più dinamici nel nostro portfolio. I produttori di componenti si affidano a ProLine Analytics per il controllo qualità; chi punta a potenziare il prodotto ha scelto Optimal. Altri player hanno adottato le nostre piattaforme agentiche per il customer service post-vendita e la gestione della conoscenza aziendale.",
+    "nautico":"Le aziende nautiche hanno adottato le nostre piattaforme agentiche per automatizzare la gestione delle richieste clienti e la risoluzione dei casi in after-market. Ai produttori di motori abbiamo affiancato Optimal per la gestione intelligente dell'energetica di bordo — con impatto diretto su consumi e costi operativi.",
     "agentiche": {
   "hero": {
     "badge": "SonIA · OlivIA — Piattaforme Agentiche",
@@ -672,6 +677,12 @@
     }
   },
   "en": {
+      "pmi": "For SMEs, time is the most valuable resource. By integrating our agent-based platforms into business workflows, many small and medium-sized enterprises have automated a significant portion of their daily activities — freeing up energy, reducing errors, and giving people back the time to focus on what they do best. Because the true value of a company lies not in routine tasks, but in the people who drive it.",
+
+     "automotive": "Leading players in the automotive sector have chosen ProLine Analytics as their reference analytics solution. In several cases, we have also provided dedicated hardware for plant environments, including operational stations with integrated signaling systems — a complete end-to-end solution.",
+  "industriale": "In the industrial sector, we integrate predictive analytics, process optimization, and real-time performance monitoring. Our solutions connect to existing ERP and MES systems, reducing downtime and operational costs through a modular and scalable approach.",
+  "agromeccanica": "The agromechanical sector is among the most dynamic in our portfolio. Component manufacturers rely on ProLine Analytics for quality control; those aiming to enhance their products have chosen Optimal. Other players have adopted our agent-based platforms for after-sales customer service and enterprise knowledge management.",
+  "nautico": "Companies in the nautical sector have adopted our agent-based platforms to automate customer request management and after-market case resolution. For engine manufacturers, we have introduced Optimal for intelligent onboard energy management — directly impacting consumption and operational costs.",
     "agentiche": {
   "hero": {
     "badge": "SonIA · OlivIA — Agentic Platforms",
@@ -1344,6 +1355,13 @@
     }
   },
   "zh": {
+      "pmi": "对于中小企业而言，时间是最宝贵的资源。通过将我们的智能代理平台集成到企业工作流程中，许多中小企业已将大量日常工作实现自动化——释放精力、减少错误，并让员工有更多时间专注于他们最擅长的工作。因为企业真正的价值不在于日常事务，而在于推动企业发展的人员。"
+,
+  "automotive": "汽车行业的主要企业已选择 ProLine Analytics 作为其核心分析解决方案。在多个项目中，我们还为工厂环境提供了专用硬件，包括集成信号系统的操作站——实现端到端的一体化解决方案。",
+  "industriale": "在工业领域，我们整合预测分析、流程优化和实时性能监控。我们的解决方案可连接现有的 ERP 和 MES 系统，通过模块化和可扩展的方法降低停机时间和运营成本。",
+  "agromeccanica": "农业机械领域是我们业务组合中最具活力的板块之一。零部件制造商依赖 ProLine Analytics 进行质量控制；致力于产品升级的企业选择了 Optimal。其他企业则采用我们的智能代理平台，用于售后客户服务和企业知识管理。",
+  "nautico": "航海行业的企业已采用我们的智能代理平台，以自动化客户请求管理和售后问题处理。针对发动机制造商，我们引入了 Optimal，用于智能船载能源管理——直接影响能耗和运营成本。"
+,
     "agentiche": {
   "hero": {
     "badge": "SonIA · OlivIA — 智能平台",

@@ -28,8 +28,6 @@ const css = `
   .pla-root h1,.pla-root h2,.pla-root h3,.pla-root h4 { font-family: 'Syne', sans-serif; }
 
   .pla-trusted {
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
     padding: 32px 20px;
   }
   .pla-trusted-label {
@@ -44,7 +42,7 @@ const css = `
   }
   .pla-logo-pill {
     display: flex; align-items: center; gap: 10px;
-    background: var(--surface); border: 1px solid var(--border);
+    background: var(--surface);
     border-radius: 12px; padding: 12px 22px;
     white-space: nowrap; transition: border-color .22s; cursor: default;
   }
@@ -331,12 +329,14 @@ const css = `
   }
 
   @media (max-width: 700px) {
+  
     .pla-hero { min-height: 100svh; }
     .pla-hero-stats { gap: 10px; margin-top: 32px; }
     .pla-hero-stat { padding: 12px 16px; min-width: 90px; }
     .pla-hero-stat-val { font-size: 20px; }
-    .pla-steps { flex-direction: column; align-items: stretch; gap: 16px; }
-    .pla-step-card { width: 100%; min-width: unset; padding: 24px 20px; }
+    .pla-steps { flex-direction: column; align-items: stretch; gap: 16px;  }
+    .pla-step-card { width: 100%; min-width: unset; padding: 34px 20px;font-size:60px }
+    .pla-step-title { font-size:1.2rem}
     .pla-next-btn { width: 100%; text-align: center; }
     .pla-benefits { width: 100%; }
     .pla-benefits li .pla-bubble { display: none; }
@@ -413,18 +413,7 @@ export default function ProLineAnalytics() {
         </div>
       </section>
 
-      {/* ── TRUSTED BY ── */}
-      <div className="pla-trusted">
-        <div className="pla-trusted-label">{t("proline.trustedLabel")}</div>
-        <div className="pla-trusted-track">
-          {LOGOS.map((l, i) => (
-            <div className="pla-logo-pill" key={i}>
-              <div className="pla-logo-icon">{l.icon}</div>
-              <span className="pla-logo-name">{l.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+     
 
       {/* ── PER CHI ── */}
       <div className="pla-page">
@@ -540,7 +529,18 @@ export default function ProLineAnalytics() {
           ))}
         </div>
       </div>
-
+           {/* ── TRUSTED BY ── */}
+      <div className="pla-trusted">
+        <div className="pla-trusted-label">{t("proline.trustedLabel")}</div>
+        <div className="pla-trusted-track">
+          {LOGOS.map((l, i) => (
+            <div className="pla-logo-pill" key={i}>
+              <div className="pla-logo-icon">{l.icon}</div>
+              <span className="pla-logo-name">{l.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
       {/* ── CTA ── */}
       <section className="pla-cta">
         <div className="pla-cta-inner">
