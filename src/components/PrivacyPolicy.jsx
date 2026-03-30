@@ -210,7 +210,9 @@ const PrivacyPolicy = () => (
               admin.blumentis@blumentis.ai
             </a>
           </div>
-          <a href="mailto:admin.blumentis@blumentis.ai" className="pp-contact-cta">
+          <a 
+  href="https://mail.google.com/mail/?view=cm&to=admin.blumentis@blumentis.ai&su=Richiesta&body=Ciao,%20ti%20contatto%20per..."
+  target="_blank"className="pp-contact-cta">
             Contact us →
           </a>
         </div>

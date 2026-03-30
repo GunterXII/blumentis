@@ -317,9 +317,9 @@ const Footer = () => {
             <div className="ft-policy-sep" />
             <a href="/cookie"  className="ft-policy-link">{t("footer.policy.cookie")}</a>
             <div className="ft-policy-sep" />
-            <a href="https://www.blumentis.ai" className="ft-policy-link" target="_blank" rel="noreferrer">
+            <p href="https://www.blumentis.ai" className="ft-policy-link" target="_blank" rel="noreferrer">
               blumentis.ai ↗
-            </a>
+            </p>
           </div>
         </div>
 

@@ -315,7 +315,7 @@
           "features": ["Integrazione onboard", "Funzionamento offline", "ANN allenata con tecniche di Reinforcement Learning", "Training su Digital Twin del tuo dispositivo", "Tempi di messa in opera ridotti"],
           "stats": [
             { "value": "100%", "label": "Dati elaborati in locale" },
-            { "value": "0 ms", "label": "Latenza di rete richiesta" },
+            { "value": "<100 ms", "label": "Latenza di rete richiesta" },
             { "value": "50+", "label": "Variabili gestite in parallelo" }
           ]
         },

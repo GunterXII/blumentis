@@ -326,9 +326,7 @@ export default function SviluppiCustom() {
             <Link to="/contatti" className="svc-cta-primary">
               {t('custom.cta.buttonPrimary')}
             </Link>
-            <button className="svc-cta-secondary">
-              {t('custom.cta.buttonSecondary')}
-            </button>
+          
           </div>
         </div>
       </section>
@@ -342,7 +340,6 @@ export default function SviluppiCustom() {
             <span className="svc-footer-tag">{t('custom.footer.tag')}</span>
           </div>
           <div className="svc-footer-links">
-            <a href="#">{t('custom.footer.brochure')}</a>
             <Link to="/privacy">{t('custom.footer.privacy')}</Link>
             <Link to="/contatti">{t('custom.footer.contact')}</Link>
           </div>

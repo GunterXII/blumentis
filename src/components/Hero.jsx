@@ -118,7 +118,7 @@ const css = `
   .cs-visual-stat { font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800; line-height: 1; margin-bottom: 0.375rem; }
   .cs-visual-stat.orange { color: oklch(68% 0.26 50); }
   .cs-visual-stat.blue   { color: oklch(63% 0.24 240); }
-  .cs-visual-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; }
+  .cs-visual-desc { font-size: 1.3rem; color: #999999; line-height: 1.5; }
   .section-number { font-family: 'Syne', sans-serif; font-size: 5rem; font-weight: 800; color: oklch(22% 0.010 30); position: absolute; top: 1rem; right: 1rem; pointer-events: none; user-select: none; line-height: 1; }
 
   .values-header { max-width: 560px; }

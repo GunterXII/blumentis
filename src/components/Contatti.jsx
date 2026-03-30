@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // src/pages/Contatti.jsx
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
@@ -85,7 +86,7 @@ const style = `
 
   .ct-form-col { padding: 72px 10%; display: flex; flex-direction: column; }
   .ct-form-heading { margin-bottom: 48px; }
-  .ct-form-kicker { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #555; margin-bottom: 12px; }
+  .ct-form-kicker { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 12px; }
   .ct-form-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 3vw, 42px); letter-spacing: 1px; line-height: 1.1; }
 
   .ct-form { display: flex; flex-direction: column; gap: 0; flex: 1; }
@@ -93,7 +94,7 @@ const style = `
   .ct-field:focus-within { border-color: #E63946; }
   .ct-field label {
     display: block; font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-    color: #444; padding-top: 24px; margin-bottom: 6px; transition: color 0.25s;
+    color: #999; padding-top: 24px; margin-bottom: 6px; transition: color 0.25s;
   }
   .ct-field:focus-within label { color: #E63946; }
   .ct-field input, .ct-field textarea, .ct-field select {
@@ -105,9 +106,18 @@ const style = `
   .ct-field select option { background: #161616; color: #F0EDE8; }
   .ct-field select { cursor: pointer; }
   .ct-field textarea { min-height: 100px; }
-  .ct-field input::placeholder, .ct-field textarea::placeholder { color: #333; }
+  .ct-field input::placeholder, .ct-field textarea::placeholder { color: #888; }
   .ct-select-wrap { position: relative; }
   .ct-select-wrap::after { content: "↓"; position: absolute; right: 0; bottom: 20px; color: #444; pointer-events: none; font-size: 14px; }
+
+  /* Hint per la lunghezza minima */
+  .field-hint {
+    font-size: 10px;
+    color: #888;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+  }
 
   .ct-privacy { margin-top: 24px; display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
   .ct-checkbox {
@@ -116,7 +126,7 @@ const style = `
     transition: border-color 0.2s, background 0.2s; cursor: pointer;
   }
   .ct-checkbox.checked { background: #E63946; border-color: #E63946; }
-  .ct-privacy-text { font-size: 12px; color: #555; line-height: 1.6; font-weight: 300; }
+  .ct-privacy-text { font-size: 12px; color: #888; line-height: 1.6; font-weight: 300; }
   .ct-privacy-text a { color: #E63946; text-decoration: none; }
 
   .ct-submit-row { margin-top: 36px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
@@ -165,6 +175,18 @@ const style = `
   }
   .ct-highlight-cta:hover { opacity: 0.7; }
 
+  /* HONEYPOT - nascosto a umani e bot */
+  .ct-honeypot {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
   @media (max-width: 900px) {
     .ct-body { grid-template-columns: 1fr; }
     .ct-info { border-right: none; border-bottom: 1px solid #1A1A1A; padding: 56px 6%; }
@@ -197,49 +219,153 @@ const style = `
 export default function Contatti() {
   const { t } = useTranslation();
 
-  const [form, setForm]       = useState({ nome: "", email: "", azienda: "", tipo: "", messaggio: "" });
+  const [form, setForm] = useState({ nome: "", email: "", azienda: "", tipo: "", messaggio: "" });
   const [privacy, setPrivacy] = useState(false);
-  const [sent, setSent]       = useState(false);
+  const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [glow, setGlow]       = useState(false);
+  const [glow, setGlow] = useState(false);
+  const [honeypot, setHoneypot] = useState(""); // campo anti-spam
 
   useEffect(() => {
     AOS.init({ duration: 700, easing: "ease-out-cubic", once: true, offset: 60 });
     setTimeout(() => setGlow(true), 100);
   }, []);
 
-  const set = (k) => (e) => setForm((p) => ({ ...p, [k]: e.target.value }));
+  const setFormField = (k) => (e) => setForm((p) => ({ ...p, [k]: e.target.value }));
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!privacy) return;
-    setLoading(true);
-
-    emailjs.send(
-      "SERVICE_ID",   // da EmailJS
-      "TEMPLATE_ID",  // da EmailJS
-      { nome: form.nome, email: form.email, azienda: form.azienda, tipo: form.tipo, messaggio: form.messaggio },
-      "PUBLIC_KEY"    // da EmailJS
-    )
-    .then(() => { setLoading(false); setSent(true); })
-    .catch(() => { setLoading(false); alert(t("contatti.form.error")); });
+  // Helper per leggere variabili d'ambiente (CRA / Vite)
+  const getEnvVar = (name) => {
+    if (typeof process !== 'undefined' && process.env && process.env[name]) return process.env[name];
+    if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env[name]) return import.meta.env[name];
+    return undefined;
   };
 
-  const valid = form.nome && form.email && form.messaggio && privacy;
+  // Controllo spam: troppi link nel messaggio
+  const containsTooManyLinks = (text) => {
+    const urlRegex = /(https?:\/\/[^\s]+|www\.[^\s]+|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/\S*)?)/gi;
+    const matches = text.match(urlRegex);
+    return matches && matches.length > 2; // più di 2 link = spam
+  };
+
+  // Rate limiting (localStorage)
+  const isRateLimited = () => {
+    const lastSubmit = localStorage.getItem('lastSubmitTime');
+    if (!lastSubmit) return false;
+    const now = Date.now();
+    const diffSeconds = (now - parseInt(lastSubmit, 10)) / 1000;
+    return diffSeconds < 60; // 60 secondi di cooldown
+  };
+
+  const setRateLimit = () => {
+    localStorage.setItem('lastSubmitTime', Date.now().toString());
+  };
+
+  // ================== EMAILJS HANDLER ==================
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // 1. Honeypot: se compilato -> bot
+    if (honeypot) {
+      console.warn("Honeypot triggered – possibile bot");
+      alert("Si è verificato un errore. Riprova.");
+      return;
+    }
+
+    // 2. Privacy
+    if (!privacy) {
+      alert("Devi accettare la privacy policy per inviare il messaggio.");
+      return;
+    }
+
+    // 3. Campi obbligatori
+    if (!form.nome || !form.email || !form.messaggio) {
+      alert("Per favore, compila tutti i campi obbligatori.");
+      return;
+    }
+
+    // 4. Lunghezza minima del messaggio
+    if (form.messaggio.trim().length < 10) {
+      alert("Il messaggio deve contenere almeno 10 caratteri.");
+      return;
+    }
+
+    // 5. Controllo spam (troppi link)
+    if (containsTooManyLinks(form.messaggio)) {
+      alert("Il messaggio contiene troppi link ed è stato bloccato come possibile spam.");
+      return;
+    }
+
+    // 6. Rate limiting
+    if (isRateLimited()) {
+      alert("Hai inviato un messaggio di recente. Attendi un minuto prima di inviarne un altro.");
+      return;
+    }
+
+    setLoading(true);
+
+    const serviceId = getEnvVar('REACT_APP_EMAILJS_SERVICE_ID') || getEnvVar('VITE_EMAILJS_SERVICE_ID');
+    const templateId = getEnvVar('REACT_APP_EMAILJS_TEMPLATE_ID') || getEnvVar('VITE_EMAILJS_TEMPLATE_ID');
+    const userId = getEnvVar('REACT_APP_EMAILJS_USER_ID') || getEnvVar('VITE_EMAILJS_USER_ID');
+
+    if (!serviceId || !templateId || !userId) {
+      alert("EmailJS non configurato correttamente. Controlla le variabili d'ambiente.");
+      setLoading(false);
+      return;
+    }
+
+    const now = new Date();
+    const formattedTime = now.toLocaleString('it-IT', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+
+    const templateParams = {
+      nome: form.nome,
+      email: form.email,
+      azienda: form.azienda || "Non specificata",
+      categoria: form.tipo || "Generico",
+      messaggio: form.messaggio,
+      time: formattedTime,
+      title: `Nuovo contatto da ${form.nome}`
+    };
+
+    try {
+      const response = await emailjs.send(serviceId, templateId, templateParams, userId);
+      if (response.status === 200) {
+        setSent(true);
+        setForm({ nome: "", email: "", azienda: "", tipo: "", messaggio: "" });
+        setPrivacy(false);
+        setRateLimit();
+      } else {
+        throw new Error("Risposta non valida");
+      }
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      alert("Si è verificato un errore nell'invio. Riprova più tardi.");
+    } finally {
+      setLoading(false);
+    }
+  };
+  // =====================================================
+
+  // Validazione lato client (influenza lo stato del bottone)
+  const valid = form.nome && form.email && form.messaggio && privacy && form.messaggio.trim().length >= 10;
 
   // Dati dal JSON
-  const sedi       = t("contatti.info.sedi", { returnObjects: true });
+  const sedi = t("contatti.info.sedi", { returnObjects: true });
   const highlights = t("contatti.highlights", { returnObjects: true });
-  const tipi       = t("contatti.form.tipi", { returnObjects: true });
+  const tipi = t("contatti.form.tipi", { returnObjects: true });
 
   return (
     <>
       <style>{style}</style>
       <div className="ct-root">
-
-        {/* ── HERO ── */}
+        {/* HERO */}
         <section className="ct-hero">
-          {/* Parola di sfondo — viene dal JSON così ogni lingua ha la sua */}
           <span className="ct-hero-bg-word" aria-hidden="true">
             {t("contatti.hero.bg_word")}
           </span>
@@ -252,13 +378,9 @@ export default function Contatti() {
           </h1>
         </section>
 
-        {/* ── BODY ── */}
         <div className="ct-body">
-
           {/* INFO SX */}
           <div className="ct-info">
-
-            {/* Sedi */}
             <div data-aos="fade-right" data-aos-delay="100">
               <div className="ct-info-label">{t("contatti.info.sedi_label")}</div>
               {Array.isArray(sedi) && sedi.map((sede, i) => (
@@ -268,8 +390,6 @@ export default function Contatti() {
                 </div>
               ))}
             </div>
-
-            {/* Contatti diretti */}
             <div data-aos="fade-right" data-aos-delay="200">
               <div className="ct-info-label">{t("contatti.info.contatti_label")}</div>
               <a href="mailto:info@blumentis.ai" className="ct-contact-item">
@@ -298,22 +418,36 @@ export default function Contatti() {
               </div>
             ) : (
               <form className="ct-form" onSubmit={handleSubmit}>
+                {/* HONEYPOT - campo invisibile agli umani */}
+                <div className="ct-honeypot">
+                  <label htmlFor="website">website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    tabIndex="-1"
+                    autoComplete="off"
+                  />
+                </div>
+
                 <div className="ct-field">
                   <label>{t("contatti.form.fields.nome")}</label>
-                  <input type="text"  value={form.nome}     onChange={set("nome")} />
+                  <input type="text" value={form.nome} onChange={setFormField("nome")} required />
                 </div>
                 <div className="ct-field">
                   <label>{t("contatti.form.fields.email")}</label>
-                  <input type="email" value={form.email}    onChange={set("email")} />
+                  <input type="email" value={form.email} onChange={setFormField("email")} required />
                 </div>
                 <div className="ct-field">
                   <label>{t("contatti.form.fields.azienda")}</label>
-                  <input type="text"  value={form.azienda}  onChange={set("azienda")} />
+                  <input type="text" value={form.azienda} onChange={setFormField("azienda")} />
                 </div>
                 <div className="ct-field">
                   <label>{t("contatti.form.fields.argomento")}</label>
                   <div className="ct-select-wrap">
-                    <select value={form.tipo} onChange={set("tipo")}>
+                    <select value={form.tipo} onChange={setFormField("tipo")}>
                       {Array.isArray(tipi) && tipi.map((voce, i) => (
                         <option key={voce} value={i === 0 ? "" : voce}>{voce}</option>
                       ))}
@@ -325,8 +459,10 @@ export default function Contatti() {
                   <textarea
                     placeholder={t("contatti.form.fields.messaggio_placeholder")}
                     value={form.messaggio}
-                    onChange={set("messaggio")}
+                    onChange={setFormField("messaggio")}
+                    required
                   />
+                  <div className="field-hint">Minimo 10 caratteri</div>
                 </div>
 
                 {/* Privacy */}
@@ -334,26 +470,24 @@ export default function Contatti() {
                   <div className={`ct-checkbox${privacy ? " checked" : ""}`}>
                     {privacy && <span style={{ color: "#fff", fontSize: 12 }}>✓</span>}
                   </div>
-                  {/* dangerouslySetInnerHTML per il link <a> inline nella stringa JSON */}
                   <p
                     className="ct-privacy-text"
                     dangerouslySetInnerHTML={{ __html: t("contatti.form.privacy") }}
                   />
                 </div>
 
-                <div className="ct-submit-row"id="collaborazioni">
+                <div className="ct-submit-row" id="collaborazioni">
                   <button className="ct-submit" type="submit" disabled={!valid || loading}>
                     {loading ? t("contatti.form.submitting") : t("contatti.form.submit")}
                     {!loading && " →"}
                   </button>
-                  
                 </div>
               </form>
             )}
           </div>
         </div>
 
-        {/* ── HIGHLIGHT BLOCKS ── */}
+        {/* HIGHLIGHT BLOCKS */}
         <div className="ct-highlight-blocks">
           {Array.isArray(highlights) && highlights.map((h, i) => (
             <div key={i} className="ct-highlight" data-aos="fade-up" data-aos-delay={i * 100}>
