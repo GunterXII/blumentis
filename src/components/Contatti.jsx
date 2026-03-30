@@ -462,7 +462,7 @@ export default function Contatti() {
                     onChange={setFormField("messaggio")}
                     required
                   />
-                  <div className="field-hint">Minimo 10 caratteri</div>
+                  
                 </div>
 
                 {/* Privacy */}

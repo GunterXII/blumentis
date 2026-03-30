@@ -599,7 +599,7 @@ export default function Optimai() {
         </div>
       </div>
           {/* ── TRUSTED BY ── */}
-      <div className="pla-trusted">
+     {/* <div className="pla-trusted">
         <div className="pla-trusted-label">{t("optimai.trustedLabel")}</div>
         <div className="pla-trusted-track">
           {LOGOS.map((l, i) => (
@@ -609,7 +609,7 @@ export default function Optimai() {
             </div>
           ))}
         </div>
-      </div>
+      </div>}
       {/* ── CTA ── */}
       <section className="opa-cta">
         <div className="opa-cta-inner">
@@ -629,7 +629,7 @@ export default function Optimai() {
       <footer className="opa-footer">
         <div className="opa-footer-inner">
           <div className="opa-footer-brand">
-            <h3>OptimAI</h3>
+            <h3>OptimaL</h3>
             <p>{t("optimai.footerDesc")}</p>
             <span className="opa-footer-tag">{t("optimai.footerTag")}</span>
           </div>

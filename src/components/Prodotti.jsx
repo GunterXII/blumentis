@@ -12,11 +12,11 @@ import { BotIcon, ChartNetworkIcon, Computer, FolderCode, Wrench } from "lucide-
 // ─── Metadati fissi per prodotto (non traducibili) ────────────────────────────
 // Ordine DEVE corrispondere all'ordine degli item nel JSON
 const PRODUCT_META = [
-  { id: "proline",   icon: <FolderCode />,       accent: "orange", accentClass: "orange", href: "/prodotti/proline" },
-  { id: "optimai",   icon: <ChartNetworkIcon />,  accent: "blue",   accentClass: "blue",   href: "/prodotti/optimai" },
-  { id: "agentiche", icon: <BotIcon />,           accent: "orange", accentClass: "teal",   href: "/prodotti/agentiche" },
-  { id: "custom",    icon: <Wrench strokeWidth={1.5} />, accent: "blue", accentClass: "gold", href: "/prodotti/custom" },
-  { id: "hardware",  icon: <Computer />,          accent: "orange", accentClass: "steel",  href: "/prodotti/hardware" },
+  { id: "proline",   icon: <FolderCode size={80} strokeWidth={1.5} />,       accent: "orange", accentClass: "orange", href: "/prodotti/proline" },
+  { id: "optimai",   icon: <ChartNetworkIcon size={80} strokeWidth={1.5} />,  accent: "blue",   accentClass: "blue",   href: "/prodotti/optimai" },
+  { id: "agentiche", icon: <BotIcon size={80} strokeWidth={1.5} />,           accent: "orange", accentClass: "teal",   href: "/prodotti/agentiche" },
+  { id: "custom",    icon: <Wrench strokeWidth={1.5} size={80}  />, accent: "blue", accentClass: "gold", href: "/prodotti/custom" },
+  { id: "hardware",  icon: <Computer size={80} strokeWidth={1.5} />,          accent: "orange", accentClass: "steel",  href: "/prodotti/hardware" },
 ];
 
 const accentColor = (accentClass) => {
@@ -115,7 +115,7 @@ const css = `
   .pr-tab:hover { color: var(--text-secondary); }
   .pr-tab.active.orange { color: oklch(78% 0.18 50); border-color: oklch(68% 0.26 50); }
   .pr-tab.active.blue   { color: oklch(75% 0.18 240); border-color: oklch(60% 0.22 255); }
-  .pr-tab-icon { font-size: 1rem; }
+  .pr-tab-icon { font-size: 1rem; ; }
   .pr-tab-badge { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.1rem 0.4rem; border-radius: 999px;  ; border: 1px solid  }
 
   .pr-content { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
@@ -251,7 +251,7 @@ const Prodotti = () => {
                 className={`pr-tab${active === i ? ` active ${p.accentClass}` : ""}`}
                 onClick={() => setActive(i)}
               >
-                <span className="pr-tab-icon">{p.icon}</span>
+                <span className="pr-tab-icon">{p.id=="proline"?<FolderCode></FolderCode>:p.id=="optimai"?<ChartNetworkIcon></ChartNetworkIcon>:p.id=="agentiche"?<BotIcon></BotIcon>:p.id=="custom"?<Wrench></Wrench>:p.id=="hardware"?<Computer></Computer>:null}</span>
                 <span className="pr-tab-name-full">{p.name}</span>
                 <span className="pr-tab-name-short">{p.shortName}</span>
                 {p.badge && <span className={`pr-tab-badge text-${p.accentClass} bg-${p.accentClass} border-${p.accentColor}` } >{p.badge}</span>}

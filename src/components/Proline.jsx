@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import video from "../assets/proline.mp4";
 import Footer from './Footer';
 import { Link } from "react-router-dom";
-import pdfIT from "../assets/ProlineIT.pdf?url";
-import pdfEN from "../assets/ProlineEN.pdf?url";
-import pdfZH from "../assets/ProlineZH.pdf?url";
+import pdfIT from "../assets/BluMentis - ProLine Analytics - Brochure IT.pdf?url";
+import pdfEN from "../assets/BluMentis - ProLine Analytics - Brochure EN.pdf?url";
+import pdfZH from "../assets/BluMentis - ProLine Analytics - Brochure ZH.pdf?url";
 const css = `
   .pla-root {
     --orange:      oklch(68% 0.26 50);
@@ -381,7 +381,7 @@ const handleDownload = () => {
 
   const link = document.createElement("a");
   link.href = file;
-  link.setAttribute("download", "Proline.pdf");
+  link.setAttribute("download", `BluMentis - ProLine Analytics - Brochure ${i18n.language.toUpperCase()}.pdf`);
   link.setAttribute("target", "_blank");        // fallback se il download viene bloccato
   document.body.appendChild(link);              // necessario su Firefox
   link.click();
@@ -553,7 +553,7 @@ const handleDownload = () => {
         </div>
       </div>
            {/* ── TRUSTED BY ── */}
-      <div className="pla-trusted">
+      {/*<div className="pla-trusted">
         <div className="pla-trusted-label">{t("proline.trustedLabel")}</div>
         <div className="pla-trusted-track">
           {LOGOS.map((l, i) => (
@@ -563,7 +563,7 @@ const handleDownload = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div>}
       {/* ── CTA ── */}
       <section className="pla-cta">
         <div className="pla-cta-inner">

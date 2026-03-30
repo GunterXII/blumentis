@@ -276,7 +276,7 @@ const BUBBLE_TEXT = {
                         className="ind-card__cta"
                         onClick={() => setShowBubble((p) => !p)}
                       >
-                        {t("industrie.cta")} {showBubble ? "×" : "→"}
+                        {t("industrie.cta")} {showBubble ? "×" : ""}
                       </button>
                       {showBubble && i === current && (
                         <div className="ind-bubble">

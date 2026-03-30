@@ -165,7 +165,7 @@
         "valori": "Valori",
         "rete_internazionale": "Rete internazionale",
         "proline": "ProLine Analytics",
-        "optimai": "OptimAI",
+        "optimai": "OptimaL",
         "agentiche": "Piattaforme Agentiche",
         "custom": "Sviluppi Custom",
         "hardware": "Hardware",
@@ -306,12 +306,12 @@
         },
         {
           "id": "optimai",
-          "name": "OptimAI",
-          "shortName": "OptimAI",
+          "name": "OptimaL",
+          "shortName": "OptimaL",
           "category": "Tecnologia AI embedded",
           "badge": "Innovativo",
           "tagline": "Ottimizzazione dinamica basata su reti neurali",
-          "description": "OptimAI è un algoritmo a rete neurale artificiale che si integra direttamente a bordo di macchine e dispositivi, ottimizzando il funzionamento in tempo reale senza necessità di connessione Internet. Gestisce simultaneamente numerose variabili in continua evoluzione, scegliendo in ogni momento la decisione migliore per le condizioni operative e ambientali del momento.",
+          "description": "OptimaL è un algoritmo a rete neurale artificiale che si integra direttamente a bordo di macchine e dispositivi, ottimizzando il funzionamento in tempo reale senza necessità di connessione Internet. Gestisce simultaneamente numerose variabili in continua evoluzione, scegliendo in ogni momento la decisione migliore per le condizioni operative e ambientali del momento.",
           "features": ["Integrazione onboard", "Funzionamento offline", "ANN allenata con tecniche di Reinforcement Learning", "Training su Digital Twin del tuo dispositivo", "Tempi di messa in opera ridotti"],
           "stats": [
             { "value": "100%", "label": "Dati elaborati in locale" },
@@ -575,7 +575,7 @@
         "variables": "Variabili gestite simultaneamente"
       },
       "trustedLabel": "Già scelto da",
-      "perchiTitle": ["Per chi è ", "OptimAI", "?"],
+      "perchiTitle": ["Per chi è ", "OptimaL", "?"],
       "perchiText": "Progettato per sistemi complessi in cui le variabili in gioco sono numerose, la funzione da ottimizzare è troppo articolata per un approccio tradizionale e impossibile da gestire manualmente in tempo reale.",
       "checks": ["Funzionamento completamente offline", "Integrazione onboard su hardware leggero", "Decisioni trasparenti e tracciabili", "Parametri di ottimizzazione definiti dal cliente", "Conforme AI Act e normative vigenti"],
       "pills": ["Ottimizzazione Real-time", "100% Locale", "AI Trasparente", "AI Act Compliant", "Multi-obiettivo"],
@@ -583,14 +583,14 @@
       "steps": [
         { "label": "STEP 1", "title": "DEFINIZIONE", "desc": "Il cliente identifica cosa vuole ottimizzare e fornisce le funzioni che descrivono l'evoluzione delle variabili del sistema." },
         { "label": "STEP 2", "title": "PROGETTAZIONE", "desc": "Il team traduce i requisiti in parametri tecnici, progettando e addestrando una ANN su misura tramite Reinforcement Learning su Digital Twin." },
-        { "label": "STEP 3", "title": "INTEGRAZIONE", "desc": "OptimAI viene installato a bordo su un piccolo computer di bordo, leggero e facilmente integrabile. I sensori raccolgono i dati in tempo reale." },
+        { "label": "STEP 3", "title": "INTEGRAZIONE", "desc": "OptimaL viene installato a bordo su un piccolo computer di bordo, leggero e facilmente integrabile. I sensori raccolgono i dati in tempo reale." },
         { "label": "STEP 4", "title": "OTTIMIZZAZIONE", "desc": "L'algoritmo lavora in autonomia senza necessità di connessione Internet: legge le variabili istante per istante e prende la decisione ottimale in tempo reale, continuamente." }
       ],
       "next": "Prossimo →",
       "beneficiTitle": ["Benefici ", "Concreti"],
       "benefits": [
         { "title": "Prestazioni al massimo", "desc": "Sempre al limite ottimale possibile", "detail": "Il sistema si adatta in tempo reale alle condizioni operative e ambientali, lavorando sempre al punto di ottimo senza intervento umano." },
-        { "title": "Obiettivi multipli", "desc": "Tutti sotto controllo simultaneamente", "detail": "Riduci consumi, emissioni e costi operativi senza rinunciare alle prestazioni. OptimAI bilancia tutti i parametri in ogni istante." },
+        { "title": "Obiettivi multipli", "desc": "Tutti sotto controllo simultaneamente", "detail": "Riduci consumi, emissioni e costi operativi senza rinunciare alle prestazioni. OptimaL bilancia tutti i parametri in ogni istante." },
         { "title": "Sicurezza dei dati", "desc": "Elaborazione 100% locale", "detail": "Nessun dato viene trasmesso all'esterno. Elaborazione completamente onboard, piena conformità normativa garantita." },
         { "title": "AI trasparente", "desc": "Auditabile e tracciabile", "detail": "Ogni decisione dell'algoritmo è tracciata e consultabile nella dashboard dedicata, in linea con i requisiti dell'AI Act europeo." },
         { "title": "Integrazione semplice", "desc": "Hardware compatto e non invasivo", "detail": "Richiede solo un Single Board Computer leggero. Il team BluMentis supporta il cliente in tutte le fasi di installazione." }
@@ -615,14 +615,14 @@
       ],
       "faqTitle": ["Domande ", "frequenti"],
       "faqs": [
-        { "q": "I dati vengono trasmessi all'esterno?", "a": "No. OptimAI elabora tutti i dati interamente in locale, a bordo del dispositivo. Nessuna connessione Internet richiesta, nessun dato condiviso con terzi." },
-        { "q": "Che hardware serve per installare OptimAI?", "a": "Un piccolo computer di bordo compatto e leggero, facilmente integrabile su macchine e dispositivi (Single Board Computer). BluMentis fornisce supporto tecnico dedicato." },
+        { "q": "I dati vengono trasmessi all'esterno?", "a": "No. OptimaL elabora tutti i dati interamente in locale, a bordo del dispositivo. Nessuna connessione Internet richiesta, nessun dato condiviso con terzi." },
+        { "q": "Che hardware serve per installare OptimaL?", "a": "Un piccolo computer di bordo compatto e leggero, facilmente integrabile su macchine e dispositivi (Single Board Computer). BluMentis fornisce supporto tecnico dedicato." },
         { "q": "Posso scegliere io cosa ottimizzare?", "a": "Sì. Sei tu a definire i parametri e gli obiettivi di ottimizzazione. Il team di BluMentis li traduce nella progettazione della rete neurale richiesta per il tuo caso." },
         { "q": "Quanto tempo richiede la messa in opera?", "a": "I tempi dipendono dalla complessità del sistema. Grazie al training su Digital Twin e al simulatore proprietario, i tempi di adattamento sono ridotti al minimo." },
-        { "q": "È conforme all'AI Act?", "a": "Sì. OptimAI è progettato nel rispetto dell'AI Act europeo e delle normative vigenti in materia di intelligenza artificiale." }
+        { "q": "È conforme all'AI Act?", "a": "Sì. OptimaL è progettato nel rispetto dell'AI Act europeo e delle normative vigenti in materia di intelligenza artificiale." }
       ],
       "ctaTitle": ["Vuoi ottimizzare le prestazioni", "del tuo sistema?"],
-      "ctaSub": "Contattaci per scoprire come OptimAI può essere integrato nel tuo dispositivo o macchinario. Il team di BluMentis analizzerà il tuo caso d'uso e ti proporrà la soluzione più idonea.",
+      "ctaSub": "Contattaci per scoprire come OptimaL può essere integrato nel tuo dispositivo o macchinario. Il team di BluMentis analizzerà il tuo caso d'uso e ti proporrà la soluzione più idonea.",
       "ctaPrimary": "Richiedi una Consulenza",
       "ctaSecondary": "Contattaci",
       "footerDesc": "Algoritmo AI embedded per l'ottimizzazione continua e autonoma di macchine e dispositivi complessi, in tempo reale.",
@@ -843,7 +843,7 @@
         "valori": "Values",
         "rete_internazionale": "International network",
         "proline": "ProLine Analytics",
-        "optimai": "OptimAI",
+        "optimai": "OptimaL",
         "agentiche": "Agentic Platforms",
         "custom": "Custom Development",
         "hardware": "Hardware",
@@ -984,12 +984,12 @@
         },
         {
           "id": "optimai",
-          "name": "OptimAI",
-          "shortName": "OptimAI",
+          "name": "OptimaL",
+          "shortName": "OptimaL",
           "category": "Embedded AI technology",
           "badge": "Innovative",
           "tagline": "Dynamic optimisation based on neural networks",
-          "description": "OptimAI is an artificial neural network algorithm that integrates directly on board machines and devices, optimising operation in real time without requiring an internet connection. It simultaneously manages numerous continuously evolving variables, choosing at every moment the best decision for current operational and environmental conditions.",
+          "description": "OptimaL is an artificial neural network algorithm that integrates directly on board machines and devices, optimising operation in real time without requiring an internet connection. It simultaneously manages numerous continuously evolving variables, choosing at every moment the best decision for current operational and environmental conditions.",
           "features": ["Onboard integration", "Offline operation", "ANN trained with Reinforcement Learning techniques", "Training on your device's Digital Twin", "Reduced deployment times"],
           "stats": [
             { "value": "100%", "label": "Data processed locally" },
@@ -1253,7 +1253,7 @@
         "variables": "Variables managed simultaneously"
       },
       "trustedLabel": "Already chosen by",
-      "perchiTitle": ["Who is ", "OptimAI", " for?"],
+      "perchiTitle": ["Who is ", "OptimaL", " for?"],
       "perchiText": "Designed for complex systems where the variables are numerous, the function to optimise is too intricate for a traditional approach and impossible to manage manually in real time.",
       "checks": ["Fully offline operation", "Onboard integration on lightweight hardware", "Transparent and traceable decisions", "Optimisation parameters defined by the client", "AI Act and regulatory compliant"],
       "pills": ["Real-time Optimisation", "100% Local", "Transparent AI", "AI Act Compliant", "Multi-objective"],
@@ -1261,14 +1261,14 @@
       "steps": [
         { "label": "STEP 1", "title": "DEFINITION", "desc": "The client identifies what they want to optimise and provides the functions that describe the evolution of the system's variables." },
         { "label": "STEP 2", "title": "DESIGN", "desc": "The team translates requirements into technical parameters, designing and training a bespoke ANN via Reinforcement Learning on a Digital Twin." },
-        { "label": "STEP 3", "title": "INTEGRATION", "desc": "OptimAI is installed onboard a small, lightweight computer, easily integrable. Sensors collect data in real time." },
+        { "label": "STEP 3", "title": "INTEGRATION", "desc": "OptimaL is installed onboard a small, lightweight computer, easily integrable. Sensors collect data in real time." },
         { "label": "STEP 4", "title": "OPTIMISATION", "desc": "The algorithm works autonomously without internet connectivity: it reads variables instant by instant and takes the optimal decision in real time, continuously." }
       ],
       "next": "Next →",
       "beneficiTitle": ["Concrete ", "Benefits"],
       "benefits": [
         { "title": "Peak performance", "desc": "Always at the optimal limit", "detail": "The system adapts in real time to operational and environmental conditions, always working at the optimum point without human intervention." },
-        { "title": "Multiple objectives", "desc": "All under simultaneous control", "detail": "Reduce consumption, emissions and operating costs without sacrificing performance. OptimAI balances all parameters at every instant." },
+        { "title": "Multiple objectives", "desc": "All under simultaneous control", "detail": "Reduce consumption, emissions and operating costs without sacrificing performance. OptimaL balances all parameters at every instant." },
         { "title": "Data security", "desc": "100% local processing", "detail": "No data is transmitted externally. Fully onboard processing, full regulatory compliance guaranteed." },
         { "title": "Transparent AI", "desc": "Auditable and traceable", "detail": "Every algorithm decision is tracked and viewable in the dedicated dashboard, in line with European AI Act requirements." },
         { "title": "Simple integration", "desc": "Compact, non-invasive hardware", "detail": "Requires only a lightweight Single Board Computer. The BluMentis team supports the client at all installation stages." }
@@ -1293,14 +1293,14 @@
       ],
       "faqTitle": ["Frequently Asked ", "Questions"],
       "faqs": [
-        { "q": "Is data transmitted externally?", "a": "No. OptimAI processes all data entirely locally, onboard the device. No internet connection required, no data shared with third parties." },
-        { "q": "What hardware is needed to install OptimAI?", "a": "A small, compact and lightweight onboard computer (Single Board Computer), easily integrable on machines and devices. BluMentis provides dedicated technical support." },
+        { "q": "Is data transmitted externally?", "a": "No. OptimaL processes all data entirely locally, onboard the device. No internet connection required, no data shared with third parties." },
+        { "q": "What hardware is needed to install OptimaL?", "a": "A small, compact and lightweight onboard computer (Single Board Computer), easily integrable on machines and devices. BluMentis provides dedicated technical support." },
         { "q": "Can I choose what to optimise?", "a": "Yes. You define the parameters and optimisation objectives. The BluMentis team translates them into the neural network design required for your case." },
         { "q": "How long does deployment take?", "a": "Timescales depend on system complexity. Thanks to Digital Twin training and the proprietary simulator, adaptation times are minimised." },
-        { "q": "Is it AI Act compliant?", "a": "Yes. OptimAI is designed in compliance with the European AI Act and current artificial intelligence regulations." }
+        { "q": "Is it AI Act compliant?", "a": "Yes. OptimaL is designed in compliance with the European AI Act and current artificial intelligence regulations." }
       ],
       "ctaTitle": ["Want to optimise the performance", "of your system?"],
-      "ctaSub": "Contact us to discover how OptimAI can be integrated into your device or machinery. The BluMentis team will analyse your use case and propose the most suitable solution.",
+      "ctaSub": "Contact us to discover how OptimaL can be integrated into your device or machinery. The BluMentis team will analyse your use case and propose the most suitable solution.",
       "ctaPrimary": "Request a Consultation",
       "ctaSecondary": "Contact us",
       "footerDesc": "Embedded AI algorithm for continuous, autonomous real-time optimisation of complex machines and devices.",
@@ -1523,7 +1523,7 @@
         "valori": "价值观",
         "rete_internazionale": "国际网络",
         "proline": "ProLine Analytics",
-        "optimai": "OptimAI",
+        "optimai": "OptimaL",
         "agentiche": "智能平台",
         "custom": "定制开发",
         "hardware": "硬件",
@@ -1664,12 +1664,12 @@
         },
         {
           "id": "optimai",
-          "name": "OptimAI",
-          "shortName": "OptimAI",
+          "name": "OptimaL",
+          "shortName": "OptimaL",
           "category": "嵌入式AI技术",
           "badge": "创新",
           "tagline": "基于神经网络的动态优化",
-          "description": "OptimAI是一种人工神经网络算法，直接集成在机器和设备上，无需互联网连接即可实时优化运行。它同时管理众多不断变化的变量，在每个时刻为当前运行和环境条件选择最佳决策。",
+          "description": "OptimaL是一种人工神经网络算法，直接集成在机器和设备上，无需互联网连接即可实时优化运行。它同时管理众多不断变化的变量，在每个时刻为当前运行和环境条件选择最佳决策。",
           "features": ["板载集成", "离线运行", "使用强化学习技术训练的ANN", "在设备数字孪生上训练", "缩短部署时间"],
           "stats": [
             { "value": "100%", "label": "本地数据处理" },
@@ -1933,7 +1933,7 @@
         "variables": "同时管理变量"
       },
       "trustedLabel": "已被以下客户选用",
-      "perchiTitle": ["谁适合使用 ", "OptimAI", "？"],
+      "perchiTitle": ["谁适合使用 ", "OptimaL", "？"],
       "perchiText": "专为变量众多的复杂系统设计，优化函数过于复杂无法采用传统方法，也无法实时手动管理。",
       "checks": ["完全离线运行", "集成在轻量级硬件上", "透明且可追溯的决策", "优化参数由客户定义", "符合 AI 法案及现行法规"],
       "pills": ["实时优化", "100% 本地", "透明AI", "AI法案合规", "多目标"],
@@ -1941,14 +1941,14 @@
       "steps": [
         { "label": "第 1 步", "title": "定义", "desc": "客户确定要优化的目标，并提供描述系统变量演变的函数。" },
         { "label": "第 2 步", "title": "设计", "desc": "团队将需求转化为技术参数，通过数字孪生上的强化学习设计并训练定制化ANN。" },
-        { "label": "第 3 步", "title": "集成", "desc": "OptimAI 安装在小型轻量级车载计算机上，易于集成。传感器实时采集数据。" },
+        { "label": "第 3 步", "title": "集成", "desc": "OptimaL 安装在小型轻量级车载计算机上，易于集成。传感器实时采集数据。" },
         { "label": "第 4 步", "title": "优化", "desc": "算法无需互联网连接自主运行：逐时读取变量，持续实时做出最优决策。" }
       ],
       "next": "下一步 →",
       "beneficiTitle": ["具体 ", "收益"],
       "benefits": [
         { "title": "峰值性能", "desc": "始终处于最优极限", "detail": "系统实时适应运行和环境条件，无需人工干预，始终在最优点运行。" },
-        { "title": "多目标", "desc": "同时全面掌控", "detail": "在不牺牲性能的前提下降低能耗、排放和运营成本。OptimAI 在每个时刻平衡所有参数。" },
+        { "title": "多目标", "desc": "同时全面掌控", "detail": "在不牺牲性能的前提下降低能耗、排放和运营成本。OptimaL 在每个时刻平衡所有参数。" },
         { "title": "数据安全", "desc": "100% 本地处理", "detail": "不向外部传输任何数据。完全板载处理，完全符合法规要求。" },
         { "title": "透明AI", "desc": "可审计且可追溯", "detail": "每个算法决策都被追踪，可在专用仪表板中查看，符合欧洲AI法案要求。" },
         { "title": "简易集成", "desc": "紧凑且非侵入式硬件", "detail": "只需轻量级单板计算机。BluMentis 团队在所有安装阶段为客户提供支持。" }
@@ -1973,14 +1973,14 @@
       ],
       "faqTitle": ["常见 ", "问题"],
       "faqs": [
-        { "q": "数据是否会被传输到外部？", "a": "不会。OptimAI 完全在本地设备上处理所有数据。不需要互联网连接，不与第三方共享数据。" },
-        { "q": "安装 OptimAI 需要什么硬件？", "a": "小型、紧凑且轻量级的车载计算机（单板计算机），易于集成到机器和设备上。BluMentis 提供专业技术支持。" },
+        { "q": "数据是否会被传输到外部？", "a": "不会。OptimaL 完全在本地设备上处理所有数据。不需要互联网连接，不与第三方共享数据。" },
+        { "q": "安装 OptimaL 需要什么硬件？", "a": "小型、紧凑且轻量级的车载计算机（单板计算机），易于集成到机器和设备上。BluMentis 提供专业技术支持。" },
         { "q": "我可以选择优化什么吗？", "a": "可以。您定义参数和优化目标，BluMentis 团队将其转化为您案例所需的神经网络设计。" },
         { "q": "部署需要多长时间？", "a": "时间取决于系统复杂性。借助数字孪生训练和专有模拟器，适配时间被最小化。" },
-        { "q": "它符合AI法案吗？", "a": "是的。OptimAI 按照欧洲AI法案和现行人工智能法规设计。" }
+        { "q": "它符合AI法案吗？", "a": "是的。OptimaL 按照欧洲AI法案和现行人工智能法规设计。" }
       ],
       "ctaTitle": ["想要优化您的系统", "性能吗？"],
-      "ctaSub": "联系我们，了解 OptimAI 如何集成到您的设备或机械中。BluMentis 团队将分析您的使用案例并提出最合适的解决方案。",
+      "ctaSub": "联系我们，了解 OptimaL 如何集成到您的设备或机械中。BluMentis 团队将分析您的使用案例并提出最合适的解决方案。",
       "ctaPrimary": "申请咨询",
       "ctaSecondary": "联系我们",
       "footerDesc": "嵌入式AI算法，用于复杂机器和设备的持续、自主实时优化。",

@@ -254,7 +254,7 @@ const Footer = () => {
             <div className="ft-col-title">{t("footer.prodotti")}</div>
             <div className="ft-col-links">
               <a href="/prodotti#proline"    className="ft-link">ProLine Analytics</a>
-              <a href="/prodotti#optimai"    className="ft-link">OptimAI</a>
+              <a href="/prodotti#optimai"    className="ft-link">OptimaL</a>
               <a href="/prodotti#agentiche"  className="ft-link">{t("nav.links.agentiche")}</a>
               <a href="/prodotti#custom"     className="ft-link">{t("nav.links.custom")}</a>
               <a href="/prodotti#hardware"   className="ft-link">Hardware</a>
@@ -268,7 +268,7 @@ const Footer = () => {
               <a href="mailto:blumentis@pec.it" className="ft-link-accent">blumentis@pec.it</a>
               <a href="tel:+390584148124"        className="ft-link">+39 0584 1481242</a>
               <a href="/contatti"                className="ft-link" style={{ marginTop: 8 }}>{t("footer.links.scrivici")}</a>
-              <a href="/carriere"                className="ft-link">{t("footer.links.carriere")}</a>
+              <a href="/contatti"                className="ft-link">{t("footer.links.carriere")}</a>
             </div>
           </div>
         </div>
