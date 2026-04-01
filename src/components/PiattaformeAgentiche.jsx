@@ -3,7 +3,9 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Footer from './Footer';
 import { Users, CheckCircle, ArrowUpRight, Globe, Link as LinkIcon, Lock } from "lucide-react";
-
+import pdfIT from "../assets/BluMentis - ProLine Analytics - Brochure IT.pdf?url";
+import pdfEN from "../assets/BluMentis - ProLine Analytics - Brochure EN.pdf?url";
+import pdfZH from "../assets/BluMentis - ProLine Analytics - Brochure ZH.pdf?url";
 const css = `
   .aga-root {
     --teal:      oklch(66% 0.18 185);
@@ -192,7 +194,14 @@ const css = `
     color: var(--teal); display: flex; align-items: center; justify-content: center;
     font-size: 10px; font-weight: 700;
   }
-
+  .aga-cta-secondary {
+    background: transparent; color: white;
+    padding: 14px 28px; border-radius: var(--radius); font-weight: 500;
+    border: 2px solid rgba(255,255,255,.22); cursor: pointer; transition: .22s;
+    font-family: 'DM Sans', sans-serif; font-size: 15px; text-decoration: none;
+    display: inline-flex; align-items: center;
+  }
+  .aga-cta-secondary:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.5); }
   /* ── BENEFITS ── */
   .aga-benefits {
     list-style: none; display: flex; flex-direction: column; gap: 0; width: 460px;
@@ -343,10 +352,28 @@ const css = `
 `;
 
 export default function PiattaformeAgentiche() {
-  const { t } = useTranslation();
+  const { t,i18n } = useTranslation();
   const [openBenefit, setOpenBenefit] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+ const getBrochure = () => {
+    const lang = i18n.language;
+  
+    if (lang.startsWith("it")) return pdfIT;
+    if (lang.startsWith("zh")) return pdfZH;
+    return pdfEN; // fallback
+  };
+const handleDownload = () => {
 
+  const file = getBrochure();
+
+  const link = document.createElement("a");
+  link.href = file;
+  link.setAttribute("download", `BluMentis - ProLine Analytics - Brochure ${i18n.language.toUpperCase()}.pdf`);
+  link.setAttribute("target", "_blank");        // fallback se il download viene bloccato
+  document.body.appendChild(link);              // necessario su Firefox
+  link.click();
+  document.body.removeChild(link);
+};
   useEffect(() => {
     function handleResize() {
       setIsMobile(window.innerWidth <= 768);
@@ -539,6 +566,9 @@ export default function PiattaformeAgentiche() {
           <p className="aga-cta-sub">{t('agentiche.cta.sub')}</p>
           <div className="aga-cta-btns">
             <button className="aga-cta-primary">{t('agentiche.cta.button')}</button>
+            <button className="aga-cta-secondary" onClick={handleDownload}>
+  {t("proline.footerBrochure")}
+</button>
           </div>
         </div>
       </section>

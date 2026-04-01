@@ -392,7 +392,10 @@ export default function Contatti() {
             </div>
             <div data-aos="fade-right" data-aos-delay="200">
               <div className="ct-info-label">{t("contatti.info.contatti_label")}</div>
-              <a href="mailto:info@blumentis.ai" className="ct-contact-item">
+             <a 
+  href="mailto:info@blumentis.ai?subject=Informazioni%20opportunità%20disponibili" 
+  className="ct-contact-item"
+>
                 <span className="ct-contact-icon">✉</span>
                 info@blumentis.ai
               </a>
@@ -495,7 +498,13 @@ export default function Contatti() {
               <div>
                 <div className="ct-highlight-title">{h.title}</div>
                 <p className="ct-highlight-text">{h.text}</p>
-                <a href={h.href} className="ct-highlight-cta">{h.cta}</a>
+                <a 
+  href="https://mail.google.com/mail/?view=cm&to=info@blumentis.ai&su=Informazioni%20opportunità%20disponibili&body=Ciao,%20ti%20contatto%20per..." 
+  target="_blank" 
+  className="ct-highlight-cta"
+>
+  {h.cta}
+</a>
               </div>
             </div>
           ))}

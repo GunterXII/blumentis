@@ -561,7 +561,7 @@
       "ctaSecondary": "Scarica Brochure",
       "footerDesc": "Quality Intelligence Platform per ambienti produttivi che non accettano compromessi sulla qualità dei propri processi.",
       "footerTag": "On-premise · 24/7 · Made in Italy",
-      "footerBrochure": "↓ Scarica Brochure PDF",
+      "footerBrochure": "↓ Scarica Brochure ",
       "madeIn": "Made in Italy 🇮🇹"
     },
     "optimai": {
@@ -627,7 +627,7 @@
       "ctaSecondary": "Contattaci",
       "footerDesc": "Algoritmo AI embedded per l'ottimizzazione continua e autonoma di macchine e dispositivi complessi, in tempo reale.",
       "footerTag": "Offline · Real-time · AI Act Compliant",
-      "footerBrochure": "↓ Scarica Brochure PDF",
+      "footerBrochure": "↓ Scarica Brochure ",
       "madeIn": "Made in Italy 🇮🇹"
     },
     "hardware": {
@@ -1239,7 +1239,7 @@
       "ctaSecondary": "Download Brochure",
       "footerDesc": "Quality Intelligence Platform for production environments that accept no compromise on process quality.",
       "footerTag": "On-premise · 24/7 · Made in Italy",
-      "footerBrochure": "↓ Download PDF Brochure",
+      "footerBrochure": "↓ Download  Brochure",
       "madeIn": "Made in Italy 🇮🇹"
     },
     "optimai": {
@@ -1305,7 +1305,7 @@
       "ctaSecondary": "Contact us",
       "footerDesc": "Embedded AI algorithm for continuous, autonomous real-time optimisation of complex machines and devices.",
       "footerTag": "Offline · Real-time · AI Act Compliant",
-      "footerBrochure": "↓ Download PDF Brochure",
+      "footerBrochure": "↓ Download  Brochure",
       "madeIn": "Made in Italy 🇮🇹"
     },
     "hardware": {
@@ -1919,7 +1919,7 @@
       "ctaSecondary": "下载手册",
       "footerDesc": "面向对流程质量绝不妥协的生产环境的质量智能平台。",
       "footerTag": "本地部署 · 24/7 · 意大利制造",
-      "footerBrochure": "↓ 下载 PDF 手册",
+      "footerBrochure": "↓ 下载  手册",
       "madeIn": "意大利制造 🇮🇹"
     },
     "optimai": {
@@ -1985,7 +1985,7 @@
       "ctaSecondary": "联系我们",
       "footerDesc": "嵌入式AI算法，用于复杂机器和设备的持续、自主实时优化。",
       "footerTag": "离线 · 实时 · AI法案合规",
-      "footerBrochure": "↓ 下载 PDF 手册",
+      "footerBrochure": "↓ 下载  手册",
       "madeIn": "意大利制造 🇮🇹"
     },
     "hardware": {
