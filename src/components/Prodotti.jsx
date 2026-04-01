@@ -315,7 +315,7 @@ const Prodotti = () => {
                   onClick={() => { setActive(PRODUCTS.indexOf(p)); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                 >
                   <div className="pr-other-top">
-                    <span className="pr-other-icon">{p.icon}</span>
+                    <span className="pr-tab-icon">{p.id=="proline"?<FolderCode></FolderCode>:p.id=="optimai"?<ChartNetworkIcon></ChartNetworkIcon>:p.id=="agentiche"?<BotIcon></BotIcon>:p.id=="custom"?<Wrench></Wrench>:p.id=="hardware"?<Computer></Computer>:null}</span>
                     <span className={`pr-other-cat ${p.accentClass}`}>{p.category}</span>
                   </div>
                   <div className="pr-other-name">{p.name}</div>

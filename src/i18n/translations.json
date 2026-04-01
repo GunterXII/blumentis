@@ -70,7 +70,7 @@
   "cta": {
     "title": "Pronto a innovare la tua azienda<br /><span class=\"aga-accent\">con assistenti virtuali?</span>",
     "sub": "Richiedi una demo personalizzata e scopri quale piattaforma agentica si adatta meglio ai tuoi processi.",
-    "button": "Richiedi una Demo"
+    "button": "Richiedi Demo"
   },
   "footer": {
     "brand": "Piattaforme Agentiche",
@@ -623,7 +623,7 @@
       ],
       "ctaTitle": ["Vuoi ottimizzare le prestazioni", "del tuo sistema?"],
       "ctaSub": "Contattaci per scoprire come OptimaL può essere integrato nel tuo dispositivo o macchinario. Il team di BluMentis analizzerà il tuo caso d'uso e ti proporrà la soluzione più idonea.",
-      "ctaPrimary": "Richiedi una Consulenza",
+      "ctaPrimary": "Richiedi Demo",
       "ctaSecondary": "Contattaci",
       "footerDesc": "Algoritmo AI embedded per l'ottimizzazione continua e autonoma di macchine e dispositivi complessi, in tempo reale.",
       "footerTag": "Offline · Real-time · AI Act Compliant",
@@ -1301,7 +1301,7 @@
       ],
       "ctaTitle": ["Want to optimise the performance", "of your system?"],
       "ctaSub": "Contact us to discover how OptimaL can be integrated into your device or machinery. The BluMentis team will analyse your use case and propose the most suitable solution.",
-      "ctaPrimary": "Request a Consultation",
+      "ctaPrimary": "Request Demo",
       "ctaSecondary": "Contact us",
       "footerDesc": "Embedded AI algorithm for continuous, autonomous real-time optimisation of complex machines and devices.",
       "footerTag": "Offline · Real-time · AI Act Compliant",

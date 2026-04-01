@@ -4,7 +4,9 @@ import video from "../assets/optimal.mp4";
 import Footer from './Footer';
 import { Link } from "react-router-dom";
 import { Zap, Thermometer, Droplet, Factory, Wrench, Satellite } from "lucide-react";
-
+import pdfIT from "../assets/BluMentis - ProLine Analytics - Brochure IT.pdf?url";
+import pdfEN from "../assets/BluMentis - ProLine Analytics - Brochure EN.pdf?url";
+import pdfZH from "../assets/BluMentis - ProLine Analytics - Brochure ZH.pdf?url";
 const css = `
   .pla-trusted {
 
@@ -381,12 +383,30 @@ const CASE_ICONS = [
 ];
 
 export default function Optimai() {
-  const { t } = useTranslation();
+  const { t,i18n } = useTranslation();
   const [step, setStep]               = useState(0);
   const [openFaq, setOpenFaq]         = useState(null);
   const [openBenefit, setOpenBenefit] = useState(null);
   const [isMobile, setIsMobile]       = useState(window.innerWidth <= 768);
+    const getBrochure = () => {
+    const lang = i18n.language;
+  
+    if (lang.startsWith("it")) return pdfIT;
+    if (lang.startsWith("zh")) return pdfZH;
+    return pdfEN; // fallback
+  };
+const handleDownload = () => {
 
+  const file = getBrochure();
+
+  const link = document.createElement("a");
+  link.href = file;
+  link.setAttribute("download", `BluMentis - ProLine Analytics - Brochure ${i18n.language.toUpperCase()}.pdf`);
+  link.setAttribute("target", "_blank");        // fallback se il download viene bloccato
+  document.body.appendChild(link);              // necessario su Firefox
+  link.click();
+  document.body.removeChild(link);
+};
   useEffect(() => {
     const fn = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", fn);
@@ -620,7 +640,9 @@ export default function Optimai() {
           <p className="opa-cta-sub">{t("optimai.ctaSub")}</p>
           <div className="opa-cta-btns">
             <button className="opa-cta-primary">{t("optimai.ctaPrimary")}</button>
-            <Link to="/contatti" className="opa-cta-secondary">{t("optimai.ctaSecondary")}</Link>
+              <button className="opa-cta-secondary" onClick={handleDownload}>
+  {t("proline.footerBrochure")}
+</button>
           </div>
         </div>
       </section>
