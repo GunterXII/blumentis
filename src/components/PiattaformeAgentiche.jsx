@@ -565,7 +565,7 @@ const handleDownload = () => {
               dangerouslySetInnerHTML={{ __html: t('agentiche.cta.title') }} />
           <p className="aga-cta-sub">{t('agentiche.cta.sub')}</p>
           <div className="aga-cta-btns">
-            <button className="aga-cta-primary">{t('agentiche.cta.button')}</button>
+            <a href="https://mail.google.com/mail/?view=cm&to=admin.blumentis@blumentis.ai&su=Richiesta Demo SonIA OlivIA&body=Ciao,%20ti%20contatto%20per..." target="_blank" className="aga-cta-primary">{t('agentiche.cta.button')}</a>
             <button className="aga-cta-secondary" onClick={handleDownload}>
   {t("proline.footerBrochure")}
 </button>

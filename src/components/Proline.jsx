@@ -573,7 +573,9 @@ const handleDownload = () => {
           </h2>
           <p className="pla-cta-sub">{t("proline.ctaSub")}</p>
           <div className="pla-cta-btns">
-            <button className="pla-cta-primary">{t("proline.ctaPrimary")}</button>
+            <a href="https://mail.google.com/mail/?view=cm&to=admin.blumentis@blumentis.ai&su=Richiesta Demo ProLine Analytics&body=Ciao,%20ti%20contatto%20per..."
+  target="_blank"className="pla-cta-primary">{t("proline.ctaPrimary")}</a>
+            
             <button className="pla-cta-secondary" onClick={handleDownload}>{t("proline.ctaSecondary")}</button>
           </div>
         </div>
