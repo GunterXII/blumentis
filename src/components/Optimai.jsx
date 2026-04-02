@@ -639,7 +639,7 @@ const handleDownload = () => {
           </h2>
           <p className="opa-cta-sub">{t("optimai.ctaSub")}</p>
           <div className="opa-cta-btns">
-            <a  href="https://mail.google.com/mail/?view=cm&to=admin.blumentis@blumentis.ai&su=Richiesta Demo OptimaL&body=Ciao,%20ti%20contatto%20per..."
+            <a  href="https://mail.google.com/mail/?view=cm&to=info@blumentis.ai&su=Richiesta Demo OptimaL&body=Ciao,%20ti%20contatto%20per..."
   target="_blank"className="opa-cta-primary">{t("optimai.ctaPrimary")}</a>
               <button className="opa-cta-secondary" onClick={handleDownload}>
   {t("proline.footerBrochure")}
