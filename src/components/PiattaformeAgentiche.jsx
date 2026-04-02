@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Footer from './Footer';
 import { Users, CheckCircle, ArrowUpRight, Globe, Link as LinkIcon, Lock } from "lucide-react";
-import pdfIT from "../assets/BluMentis - ProLine Analytics - Brochure IT.pdf?url";
-import pdfEN from "../assets/BluMentis - ProLine Analytics - Brochure EN.pdf?url";
-import pdfZH from "../assets/BluMentis - ProLine Analytics - Brochure ZH.pdf?url";
+import pdfIT from "../assets/BluMentis - SonIA OlivIA - Brochure IT.pdf?url";
+import pdfEN from "../assets/BluMentis - SonIA OlivIA - Brochure EN.pdf?url";
+import pdfZH from "../assets/BluMentis - SonIA OlivIA - Brochure ZH.pdf?url";
 const css = `
   .aga-root {
     --teal:      oklch(66% 0.18 185);
@@ -368,7 +368,7 @@ const handleDownload = () => {
 
   const link = document.createElement("a");
   link.href = file;
-  link.setAttribute("download", `BluMentis - ProLine Analytics - Brochure ${i18n.language.toUpperCase()}.pdf`);
+  link.setAttribute("download", `BluMentis - SonIA OlivIA - Brochure ${i18n.language.toUpperCase()}.pdf`);
   link.setAttribute("target", "_blank");        // fallback se il download viene bloccato
   document.body.appendChild(link);              // necessario su Firefox
   link.click();
@@ -582,7 +582,7 @@ const handleDownload = () => {
             <span className="aga-footer-tag">{t('agentiche.footer.tag')}</span>
           </div>
           <div className="aga-footer-links">
-            <a href="#">{t('agentiche.footer.brochure')}</a>
+            <button onClick={handleDownload}>{t('agentiche.footer.brochure')}</button>
             <Link to="/privacy">{t('agentiche.footer.privacy')}</Link>
             <Link to="/contatti">{t('agentiche.footer.contact')}</Link>
           </div>

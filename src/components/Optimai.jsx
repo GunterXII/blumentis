@@ -4,9 +4,9 @@ import video from "../assets/optimal.mp4";
 import Footer from './Footer';
 import { Link } from "react-router-dom";
 import { Zap, Thermometer, Droplet, Factory, Wrench, Satellite } from "lucide-react";
-import pdfIT from "../assets/BluMentis - ProLine Analytics - Brochure IT.pdf?url";
-import pdfEN from "../assets/BluMentis - ProLine Analytics - Brochure EN.pdf?url";
-import pdfZH from "../assets/BluMentis - ProLine Analytics - Brochure ZH.pdf?url";
+import pdfIT from "../assets/BluMentis - OptimaL - Brochure IT.pdf?url";
+import pdfEN from "../assets/BluMentis - OptimaL - Brochure EN.pdf?url";
+import pdfZH from "../assets/BluMentis - OptimaL - Brochure ZH.pdf?url";
 const css = `
   .pla-trusted {
 
@@ -401,7 +401,7 @@ const handleDownload = () => {
 
   const link = document.createElement("a");
   link.href = file;
-  link.setAttribute("download", `BluMentis - ProLine Analytics - Brochure ${i18n.language.toUpperCase()}.pdf`);
+  link.setAttribute("download", `BluMentis - OptimaL - Brochure ${i18n.language.toUpperCase()}.pdf`);
   link.setAttribute("target", "_blank");        // fallback se il download viene bloccato
   document.body.appendChild(link);              // necessario su Firefox
   link.click();
@@ -656,7 +656,7 @@ const handleDownload = () => {
             <span className="opa-footer-tag">{t("optimai.footerTag")}</span>
           </div>
           <div className="opa-footer-links">
-            <a href="#">{t("optimai.footerBrochure")}</a>
+            <button onClick={handleDownload}>{t("optimai.footerBrochure")}</button>
             <Link to="/privacy">{t("footer.policy.privacy")}</Link>
             <Link to="/contatti">{t("nav.contatti")}</Link>
           </div>
