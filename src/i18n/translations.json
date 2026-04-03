@@ -2255,7 +2255,7 @@
         "brand": "智能平台",
         "desc": "SonIA和OlivIA  运营内部的自主智能，实现自动运行的流程。",
         "tag": "私有云 · 7x24 · 意大利制造",
-        "brochure": "↓ 下载PDF手册",
+        "brochure": "↓ 下载手册",
         "privacy": "隐私政策",
         "contact": "联系我们",
         "copyright": "© {{year}} BluMentis. 保留所有权利。",
@@ -2314,13 +2314,13 @@
         "title": "有项目想法？<br /><span class=\"svc-accent\">告诉我们。</span>",
         "sub": "我们一起评估最合适的解决方案不承担任何义务。BluMentis团队随时准备倾听。",
         "buttonPrimary": "让我们谈谈",
-        "buttonSecondary": "↓ 下载PDF手册"
+        "buttonSecondary": "↓ 下载手册"
       },
       "footer": {
         "brand": "定制开发 · BluMentis",
         "desc": "您的愿景。我们的技术。为持久而构建的定制AI解决方案。",
         "tag": "定制 · 迭代 · 意大利制造",
-        "brochure": "↓ 下载PDF手册",
+        "brochure": "↓ 下载手册",
         "privacy": "隐私政策",
         "contact": "联系我们",
         "copyright": "© {{year}} BluMentis. 保留所有权利。",
