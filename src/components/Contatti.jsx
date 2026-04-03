@@ -480,7 +480,7 @@ export default function Contatti() {
                 </div>
 
                 <div className="ct-submit-row" id="collaborazioni">
-                  <button className="ct-submit" type="submit" disabled={!valid || loading}>
+                  <button className="ct-submit" type="submit" disabled={ loading}>
                     {loading ? t("contatti.form.submitting") : t("contatti.form.submit")}
                     {!loading && " →"}
                   </button>
