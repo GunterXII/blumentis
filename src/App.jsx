@@ -6,6 +6,7 @@ import Prodotti from "./components/Prodotti"
 import Industrie from "./components/Industrie"
 import Contatti from "./components/Contatti"
 import PrivacyPolicy from "./components/PrivacyPolicy"
+import PrivacyPolicySonia from "./components/PrivacyPolicySonia"
 import CookiePolicy  from "./components/CookiePolicy"
 import ProLineAnalytics from "./components/Proline" // ← aggiunto
 import Optimai from "./components/Optimai"
@@ -46,6 +47,7 @@ const App = () => {
         <Route path="/industrie"          element={<Industrie />} />
         <Route path="/contatti"           element={<Contatti />} />
         <Route path="/privacy"            element={<PrivacyPolicy />} />
+        <Route path="/privacy-sonia"      element={<PrivacyPolicySonia />} />
         <Route path="/cookie"             element={<CookiePolicy />} />
       </Routes>
     </div>

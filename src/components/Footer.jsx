@@ -315,6 +315,8 @@ const Footer = () => {
           <div className="ft-policy-links">
             <a href="/privacy" className="ft-policy-link">{t("footer.policy.privacy")}</a>
             <div className="ft-policy-sep" />
+            <a href="/privacy-sonia" className="ft-policy-link">SonIA Privacy Policy</a>
+            <div className="ft-policy-sep" />
             <a href="/cookie"  className="ft-policy-link">{t("footer.policy.cookie")}</a>
             <div className="ft-policy-sep" />
             <p href="https://www.blumentis.ai" className="ft-policy-link" target="_blank" rel="noreferrer">
