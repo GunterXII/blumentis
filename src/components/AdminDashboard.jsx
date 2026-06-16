@@ -8,14 +8,31 @@ import { getAdminToken, clearAdminToken } from '../lib/adminAuth'
 
 const COLORS = ['#E63946', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#F8A5C2']
 const EVENT_LABELS = {
-  form_submit:    'Form inviati',
-  email_click:    'Click email',
-  phone_click:    'Click telefono',
-  pdf_download:   'Download PDF',
-  cta_click:      'Click CTA',
-  linkedin_click: 'Click LinkedIn',
-  contact_page_view: 'Vista Contatti',
-  service_page_view: 'Vista Servizi',
+  form_submit:       'Form contatti inviato',
+  email_click:       'Clic su email',
+  phone_click:       'Clic su telefono',
+  pdf_download:      'Download brochure PDF',
+  cta_click:         'Clic su pulsante CTA',
+  linkedin_click:    'Clic su LinkedIn',
+  contact_page_view: 'Visita pagina Contatti',
+  service_page_view: 'Visita pagina Servizi',
+  home_view:         'Visita homepage',
+  scroll_50:         'Scroll 50% pagina',
+  form_open:         'Form aperto (focus)',
+}
+
+const EVENT_DESCRIPTIONS = {
+  form_submit:       'L\'utente ha compilato e inviato il form in /contatti — è un lead diretto',
+  email_click:       'Click su un indirizzo email (info@blumentis.ai o PEC) — intento di contatto',
+  phone_click:       'Click sul numero di telefono — indica interesse immediato all\'acquisto',
+  pdf_download:      'Download di una brochure prodotto (SonIA/OlivIA, OptimaL, ProLine) — il campo "Dettaglio" mostra lingua e prodotto',
+  cta_click:         'Click su un pulsante di call-to-action ("Scopri di più", "Contattaci", ecc.) — il campo "Dettaglio" mostra quale pulsante e in quale pagina',
+  linkedin_click:    'Click sull\'icona LinkedIn nel footer — interesse al profilo aziendale',
+  contact_page_view: 'L\'utente ha aperto la pagina /contatti',
+  service_page_view: 'L\'utente ha aperto una pagina di servizio (SonIA, OptimaL, ProLine)',
+  home_view:         'L\'utente ha caricato la homepage — è il primo step del funnel di conversione',
+  scroll_50:         'L\'utente ha scrollato oltre il 50% della pagina — indica engagement con il contenuto',
+  form_open:         'L\'utente ha cliccato sul form (focus) ma non lo ha ancora inviato — utile per misurare l\'abbandono',
 }
 const RANGES = [
   { key: '1d',  label: 'Oggi' },
@@ -66,6 +83,7 @@ const css = `
   .ad-kpi-val { font-family:'Bebas Neue',sans-serif; font-size:38px; line-height:1; color:#F0EDE8; }
   .ad-kpi-val.red { color:#E63946; }
   .ad-kpi-sub { font-size:11px; color:#666; margin-top:4px; }
+  .ad-kpi-desc { font-size:10px; color:#444; margin-top:6px; line-height:1.4; }
 
   .ad-grid-2 { display:grid; grid-template-columns:2fr 1fr; gap:12px; margin-bottom:12px; }
   .ad-grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px; }
@@ -73,7 +91,8 @@ const css = `
   @media(max-width:1000px) { .ad-grid-2,.ad-grid-3,.ad-grid-equal { grid-template-columns:1fr; } }
 
   .ad-card { background:#0D0D0D; border:1px solid #141414; border-radius:12px; padding:22px; margin-bottom:0; }
-  .ad-card-title { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#888; margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid #1A1A1A; display:flex; align-items:center; justify-content:space-between; }
+  .ad-card-title { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#888; margin-bottom:4px; display:flex; align-items:center; justify-content:space-between; }
+  .ad-card-desc { font-size:11px; color:#555; font-weight:300; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid #1A1A1A; line-height:1.5; }
   .ad-card-badge { font-size:9px; letter-spacing:1px; padding:3px 8px; border-radius:100px; background:#E6394611; color:#E63946; border:1px solid #E6394633; }
   .ad-card-badge.green { background:#4ECDC411; color:#4ECDC4; border-color:#4ECDC433; }
 
@@ -115,7 +134,7 @@ const css = `
   .ad-funnel-count { font-family:'Bebas Neue',sans-serif; font-size:22px; color:#F0EDE8; text-align:right; line-height:1; }
   .ad-funnel-bar-wrap { background:#0A0A0A; border-radius:4px; height:8px; overflow:hidden; }
   .ad-funnel-bar { height:8px; border-radius:4px; transition:width 0.6s ease; }
-  .ad-funnel-pct { font-size:11px; color:#333; text-align:right; white-space:nowrap; }
+  .ad-funnel-pct { font-size:11px; color:#777; text-align:right; white-space:nowrap; }
   .ad-funnel-pct.drop { color:#E63946; }
 
   /* UTM */
@@ -267,25 +286,54 @@ export default function AdminDashboard() {
             <>
               {/* KPI */}
               <div className="ad-kpi-grid">
-                <div className="ad-kpi"><div className="ad-kpi-label">Totale eventi</div><div className="ad-kpi-val red">{data.totals.all}</div><div className="ad-kpi-sub">nel periodo</div></div>
-                <div className="ad-kpi"><div className="ad-kpi-label">Form inviati</div><div className="ad-kpi-val">{data.totals.form_submit}</div><div className="ad-kpi-sub">richieste contatto</div></div>
-                <div className="ad-kpi"><div className="ad-kpi-label">Click email</div><div className="ad-kpi-val">{data.totals.email_click}</div><div className="ad-kpi-sub">interesse commerciale</div></div>
-                <div className="ad-kpi"><div className="ad-kpi-label">Click telefono</div><div className="ad-kpi-val">{data.totals.phone_click}</div><div className="ad-kpi-sub">interesse commerciale</div></div>
-                <div className="ad-kpi"><div className="ad-kpi-label">Download PDF</div><div className="ad-kpi-val">{data.totals.pdf_download}</div><div className="ad-kpi-sub">brochure</div></div>
-                <div className="ad-kpi"><div className="ad-kpi-label">Click CTA</div><div className="ad-kpi-val">{data.totals.cta_click}</div><div className="ad-kpi-sub">call-to-action</div></div>
-                <div className="ad-kpi"><div className="ad-kpi-label">LinkedIn</div><div className="ad-kpi-val">{data.totals.linkedin_click}</div><div className="ad-kpi-sub">click profilo</div></div>
+                <div className="ad-kpi">
+                  <div className="ad-kpi-label">Totale eventi</div>
+                  <div className="ad-kpi-val red">{data.totals.all}</div>
+                  <div className="ad-kpi-desc">Tutte le azioni tracciate sul sito: click, form, download, visite</div>
+                </div>
+                <div className="ad-kpi">
+                  <div className="ad-kpi-label">Form inviati</div>
+                  <div className="ad-kpi-val">{data.totals.form_submit}</div>
+                  <div className="ad-kpi-desc">Compilazioni del form in /contatti — ogni invio è un lead diretto</div>
+                </div>
+                <div className="ad-kpi">
+                  <div className="ad-kpi-label">Click email</div>
+                  <div className="ad-kpi-val">{data.totals.email_click}</div>
+                  <div className="ad-kpi-desc">Clic su info@blumentis.ai o blumentis@pec.it — intento di contatto</div>
+                </div>
+                <div className="ad-kpi">
+                  <div className="ad-kpi-label">Click telefono</div>
+                  <div className="ad-kpi-val">{data.totals.phone_click}</div>
+                  <div className="ad-kpi-desc">Clic sul numero di telefono — indica interesse immediato</div>
+                </div>
+                <div className="ad-kpi">
+                  <div className="ad-kpi-label">Download PDF</div>
+                  <div className="ad-kpi-val">{data.totals.pdf_download}</div>
+                  <div className="ad-kpi-desc">Download brochure prodotto (SonIA, OptimaL, ProLine) in IT/EN/ZH</div>
+                </div>
+                <div className="ad-kpi">
+                  <div className="ad-kpi-label">Click CTA</div>
+                  <div className="ad-kpi-val">{data.totals.cta_click}</div>
+                  <div className="ad-kpi-desc">Clic sui pulsanti "Scopri di più", "Contattaci", "Richiedi demo"</div>
+                </div>
+                <div className="ad-kpi">
+                  <div className="ad-kpi-label">LinkedIn</div>
+                  <div className="ad-kpi-val">{data.totals.linkedin_click}</div>
+                  <div className="ad-kpi-desc">Clic sull'icona LinkedIn nel footer del sito</div>
+                </div>
               </div>
 
               {/* LINE CHART + PIE */}
               <div className="ad-grid-2">
                 <div className="ad-card">
                   <div className="ad-card-title">Andamento eventi</div>
+                  <div className="ad-card-desc">Numero totale di eventi tracciati per giorno nel periodo selezionato — utile per identificare picchi di traffico o campagne</div>
                   {data.timeline.length > 0 ? (
                     <ResponsiveContainer width="100%" height={220}>
                       <LineChart data={data.timeline} margin={{ top:4, right:4, bottom:0, left:-20 }}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#0F0F0F" />
-                        <XAxis dataKey="date" tickFormatter={d => d.slice(5)} tick={{ fill:'#333', fontSize:11 }} axisLine={false} tickLine={false} />
-                        <YAxis tick={{ fill:'#333', fontSize:11 }} axisLine={false} tickLine={false} allowDecimals={false} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#1A1A1A" />
+                        <XAxis dataKey="date" tickFormatter={d => d.slice(5)} tick={{ fill:'#777', fontSize:11 }} axisLine={false} tickLine={false} />
+                        <YAxis tick={{ fill:'#777', fontSize:11 }} axisLine={false} tickLine={false} allowDecimals={false} />
                         <Tooltip content={<DarkTooltip />} />
                         <Line type="monotone" dataKey="count" stroke="#E63946" strokeWidth={2} dot={false} activeDot={{ r:4, fill:'#E63946' }} />
                       </LineChart>
@@ -295,6 +343,7 @@ export default function AdminDashboard() {
 
                 <div className="ad-card">
                   <div className="ad-card-title">Distribuzione</div>
+                  <div className="ad-card-desc">Proporzione di ogni tipo di azione rispetto al totale — mostra quali interazioni sono più frequenti</div>
                   {data.byType.length > 0 ? (
                     <>
                       <ResponsiveContainer width="100%" height={160}>
@@ -307,7 +356,7 @@ export default function AdminDashboard() {
                       </ResponsiveContainer>
                       <div style={{ display:'flex', flexDirection:'column', gap:5, marginTop:8 }}>
                         {data.byType.map((item, i) => (
-                          <div key={i} style={{ display:'flex', alignItems:'center', gap:8, fontSize:12, color:'#444' }}>
+                          <div key={i} style={{ display:'flex', alignItems:'center', gap:8, fontSize:12, color:'#aaa' }}>
                             <div style={{ width:7, height:7, borderRadius:'50%', background:COLORS[i % COLORS.length], flexShrink:0 }} />
                             <span style={{ flex:1 }}>{EVENT_LABELS[item.name] || item.name}</span>
                             <span style={{ color:'#888' }}>{item.value}</span>
@@ -323,6 +372,7 @@ export default function AdminDashboard() {
               <div className="ad-grid-equal">
                 <div className="ad-card">
                   <div className="ad-card-title">Paesi visitatori</div>
+                  <div className="ad-card-desc">Paese rilevato automaticamente dal server Vercel — nessuna API esterna, zero costo</div>
                   {data.byCountry.length > 0 ? (
                     <table className="ad-table">
                       <thead><tr><th>Paese</th><th className="num">Eventi</th><th style={{ width:100 }}></th></tr></thead>
@@ -350,6 +400,7 @@ export default function AdminDashboard() {
 
                 <div className="ad-card">
                   <div className="ad-card-title">Top sorgenti traffico</div>
+                  <div className="ad-card-desc">Sito web di provenienza prima di arrivare su blumentis.ai — "Direct" significa link diretto, email o app mobile</div>
                   {data.byReferrer.length > 0 ? (
                     <table className="ad-table">
                       <thead><tr><th>Sorgente</th><th className="num">Click</th><th style={{ width:100 }}></th></tr></thead>
@@ -454,6 +505,7 @@ export default function AdminDashboard() {
               {funnel?.steps && (
                 <div className="ad-card" style={{ marginBottom:12 }}>
                   <div className="ad-card-title">Funnel di conversione</div>
+                  <div className="ad-card-desc">Percentuale di utenti che completano ogni step — dalla visita homepage all'invio del form contatti. Il drop-off in rosso indica dove si perdono i visitatori</div>
                   <div className="ad-funnel">
                     {funnel.steps.map((step, i) => {
                       const barColors = ['#E63946','#E87B43','#E6C229','#4ECDC4','#45B7D1']
@@ -519,34 +571,38 @@ export default function AdminDashboard() {
               )}
 
               {/* RECENT EVENTS TABLE */}
-              <div className="ad-card">
+              <div className="ad-card" style={{ marginBottom:12 }}>
                 <div className="ad-card-title">
                   Ultimi eventi
                   {data.recent.length > 0 && (
                     <button className="ad-btn-sm green" onClick={() => exportCSV(data)} style={{ fontSize:10, padding:'3px 10px' }}>↓ Esporta CSV</button>
                   )}
                 </div>
+                <div className="ad-card-desc">Log cronologico delle ultime 50 azioni tracciate — "Dettaglio" mostra quale PDF è stato scaricato, quale CTA è stato cliccato, quale email</div>
                 {data.recent.length > 0 ? (
-                  <table className="ad-table">
-                    <thead>
-                      <tr>
-                        <th>Evento</th><th>Pagina</th><th>Paese</th><th>Sorgente</th><th>Data</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {data.recent.map(ev => (
-                        <tr key={ev.id}>
-                          <td><span className="ad-event-tag">{EVENT_LABELS[ev.event_name] || ev.event_name}</span></td>
-                          <td style={{ color:'#555', fontSize:12 }}>{ev.page || '—'}</td>
-                          <td>{ev.country ? (COUNTRY_NAMES[ev.country] || ev.country) : '—'}</td>
-                          <td style={{ color:'#555', fontSize:12 }}>{ev.referrer ? ev.referrer.slice(0, 40) : 'Direct'}</td>
-                          <td style={{ fontSize:11, color:'#333' }}>
-                            {new Date(ev.created_at).toLocaleString('it-IT', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' })}
-                          </td>
+                  <div style={{ overflowX:'auto' }}>
+                    <table className="ad-table">
+                      <thead>
+                        <tr>
+                          <th>Evento</th><th>Dettaglio</th><th>Pagina</th><th>Paese</th><th>Sorgente</th><th>Data</th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        {data.recent.map(ev => (
+                          <tr key={ev.id}>
+                            <td><span className="ad-event-tag">{EVENT_LABELS[ev.event_name] || ev.event_name}</span></td>
+                            <td style={{ color:'#F0EDE8', fontSize:12 }}>{ev.label || '—'}</td>
+                            <td style={{ color:'#777', fontSize:12 }}>{ev.page || '—'}</td>
+                            <td style={{ color:'#bbb' }}>{ev.country ? (COUNTRY_NAMES[ev.country] || ev.country) : '—'}</td>
+                            <td style={{ color:'#777', fontSize:12 }}>{ev.referrer ? ev.referrer.slice(0, 35) : 'Direct'}</td>
+                            <td style={{ fontSize:11, color:'#666' }}>
+                              {new Date(ev.created_at).toLocaleString('it-IT', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' })}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 ) : (
                   <div className="ad-empty">
                     Nessun evento tracciato ancora.<br />
@@ -555,6 +611,22 @@ export default function AdminDashboard() {
                     </span>
                   </div>
                 )}
+              </div>
+
+              {/* GLOSSARIO EVENTI */}
+              <div className="ad-card">
+                <div className="ad-card-title">Glossario eventi tracciati</div>
+                <div className="ad-card-desc">Cosa significa ogni evento registrato nel sistema — utile per interpretare i dati sopra</div>
+                <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))', gap:'12px 24px' }}>
+                  {Object.entries(EVENT_DESCRIPTIONS).map(([key, desc]) => (
+                    <div key={key} style={{ borderLeft:'2px solid #1A1A1A', paddingLeft:12 }}>
+                      <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:4 }}>
+                        <span className="ad-event-tag" style={{ fontSize:9 }}>{EVENT_LABELS[key] || key}</span>
+                      </div>
+                      <div style={{ fontSize:11, color:'#666', lineHeight:1.6 }}>{desc}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
             </>
