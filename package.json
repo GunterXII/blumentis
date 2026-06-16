@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.108.2",
     "@tailwindcss/vite": "^4.2.1",
     "aos": "^2.3.4",
     "emailjs-com": "^3.2.0",
@@ -20,6 +21,7 @@
     "react-dom": "^19.2.0",
     "react-i18next": "^16.6.6",
     "react-router-dom": "^7.13.1",
+    "recharts": "^3.8.1",
     "tailwindcss": "^4.2.1"
   },
   "devDependencies": {

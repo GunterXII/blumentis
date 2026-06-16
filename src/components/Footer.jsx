@@ -2,6 +2,7 @@
 import { useTranslation } from "react-i18next";
 import logo from "../assets/LOGO.png";
 import { Linkedin } from "lucide-react";
+import { track } from "../lib/analytics";
 
 const style = `
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap');
@@ -231,6 +232,7 @@ const Footer = () => {
                 rel="noreferrer"
                 className="ft-linkedin"
                 aria-label={t("footer.aria.linkedin")}
+                onClick={() => track.linkedinClick()}
               >
                 <Linkedin size={16} />
               </a>
@@ -265,7 +267,7 @@ const Footer = () => {
           <div>
             <div className="ft-col-title">{t("footer.contatti")}</div>
             <div className="ft-col-links">
-              <a href="mailto:blumentis@pec.it" className="ft-link-accent">blumentis@pec.it</a>
+              <a href="mailto:blumentis@pec.it" className="ft-link-accent" onClick={() => track.emailClick("blumentis@pec.it")}>blumentis@pec.it</a>
               <a href="tel:+390584148124"        className="ft-link">+39 0584 1481242</a>
               <a href="/contatti"                className="ft-link" style={{ marginTop: 8 }}>{t("footer.links.scrivici")}</a>
               <a href="/contatti"                className="ft-link">{t("footer.links.carriere")}</a>

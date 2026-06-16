@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "./Footer";
 import emailjs from "emailjs-com";
+import { track } from "../lib/analytics";
 
 const style = `
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
@@ -224,12 +225,17 @@ export default function Contatti() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [glow, setGlow] = useState(false);
-  const [honeypot, setHoneypot] = useState(""); // campo anti-spam
+  const [honeypot, setHoneypot] = useState("");
+  const [formTracked, setFormTracked] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 700, easing: "ease-out-cubic", once: true, offset: 60 });
     setTimeout(() => setGlow(true), 100);
   }, []);
+
+  const handleFormFocus = () => {
+    if (!formTracked) { setFormTracked(true); track.formOpen(); }
+  };
 
   const setFormField = (k) => (e) => setForm((p) => ({ ...p, [k]: e.target.value }));
 
@@ -339,6 +345,7 @@ export default function Contatti() {
         setSent(true);
         setForm({ nome: "", email: "", azienda: "", tipo: "", messaggio: "" });
         setPrivacy(false);
+        track.formSubmit(form.tipo || "Generico");
         setRateLimit();
       } else {
         throw new Error("Risposta non valida");
@@ -392,14 +399,15 @@ export default function Contatti() {
             </div>
             <div data-aos="fade-right" data-aos-delay="200">
               <div className="ct-info-label">{t("contatti.info.contatti_label")}</div>
-             <a 
-  href="mailto:info@blumentis.ai?subject=Informazioni%20opportunità%20disponibili" 
+             <a
+  href="mailto:info@blumentis.ai?subject=Informazioni%20opportunità%20disponibili"
   className="ct-contact-item"
+  onClick={() => track.emailClick("info@blumentis.ai")}
 >
                 <span className="ct-contact-icon">✉</span>
                 info@blumentis.ai
               </a>
-              <a href="tel:+390584148124" className="ct-contact-item">
+              <a href="tel:+390584148124" className="ct-contact-item" onClick={() => track.phoneClick()}>
                 <span className="ct-contact-icon">↗</span>
                 +39 0584 1481242
               </a>
@@ -420,7 +428,7 @@ export default function Contatti() {
                 <p className="ct-success-text">{t("contatti.form.success.text")}</p>
               </div>
             ) : (
-              <form className="ct-form" onSubmit={handleSubmit}>
+              <form className="ct-form" onSubmit={handleSubmit} onFocus={handleFormFocus}>
                 {/* HONEYPOT - campo invisibile agli umani */}
                 <div className="ct-honeypot">
                   <label htmlFor="website">website</label>
