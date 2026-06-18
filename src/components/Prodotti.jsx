@@ -297,7 +297,7 @@ const Prodotti = () => {
                     to={product.href}
                     className="pr-scopri-btn"
                     style={{ background: bg, color: text, "--btn-glow": glow }}
-                    onClick={() => track.ctaClick(`Scopri ${product.id}`, '/prodotti')}
+                    onClick={() => track.discoverMoreClick(product.id, '/prodotti')}
                   >
                     {t("prodotti.scopri")}
                   </Link>

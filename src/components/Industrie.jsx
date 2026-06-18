@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import Footer from "./Footer";
 import { useLocation } from "react-router-dom";
 import { Cog, Factory, Anchor, Building2, Leaf } from "lucide-react";
+import { track } from "../lib/analytics";
 
 const INDUSTRY_META = [
   { id: "automotive",    icon: <Factory   color="#6B7280" size={50} strokeWidth={1.5} />, accent: "#E63946" },
@@ -244,7 +245,7 @@ const BUBBLE_TEXT = {
               id={ind.id}
               key={ind.id}
               className={`ind-tab${i === current ? " active" : ""}`}
-              onClick={() => go(i)}
+              onClick={() => { go(i); track.marketClick(ind.id) }}
               style={i === current ? { "--accent": ind.accent } : {}}
             >
               {ind.name}

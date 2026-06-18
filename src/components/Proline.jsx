@@ -378,7 +378,7 @@ export default function ProLineAnalytics() {
 
 const handleDownload = () => {
   const lang = i18n.language.startsWith('it') ? 'IT' : i18n.language.startsWith('zh') ? 'ZH' : 'EN'
-  track.pdfDownload(`ProLine · ${lang}`)
+  track.brochureDownloadClick('proline', lang)
   const file = getBrochure();
   const link = document.createElement("a");
   link.href = file;

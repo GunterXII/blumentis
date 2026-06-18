@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Dropdown from "./Dropdown";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/LOGO.png";
+import { track } from "../lib/analytics";
 
 // ─── Lingue disponibili ───────────────────────────────────────────────────────
 const LANGS = [
@@ -16,7 +17,7 @@ const LANGS = [
 const LangSelector = ({ isOpen, onToggle, onClose }) => {
   const { t, i18n } = useTranslation();
   const ref = useRef(null);
-  const cur = LANGS.find((l) => l.code === i18n.language) ?? LANGS[0];
+  const cur = LANGS.find((l) => l.code === i18n.language) ?? LANGS[1];
 
   // Chiude il dropdown se si clicca fuori
   useEffect(() => {
@@ -99,33 +100,31 @@ const Navbar = () => {
       title: t("nav.prodotti"),
       align: "left",
       options: [
-        {
-          label: t("nav.prodotti"),   href: "/prodotti" 
-        },
-        { label: t("nav.links.proline"),   href: "/prodotti#proline" },
-        { label: t("nav.links.optimai"),   href: "/prodotti#optimai" },
-        { label: t("nav.links.agentiche"), href: "/prodotti#agentiche" },
-        { label: t("nav.links.custom"),    href: "/prodotti#custom" },
-        { label: t("nav.links.hardware"),  href: "/prodotti#hardware" },
+        { label: t("nav.prodotti"),            href: "/prodotti",           onClick: () => track.productMenuClick('prodotti') },
+        { label: t("nav.links.proline"),       href: "/prodotti#proline",   onClick: () => track.productMenuClick('proline_analytics') },
+        { label: t("nav.links.optimai"),       href: "/prodotti#optimai",   onClick: () => track.productMenuClick('optimal') },
+        { label: t("nav.links.agentiche"),     href: "/prodotti#agentiche", onClick: () => track.productMenuClick('piattaforme_agentiche') },
+        { label: t("nav.links.custom"),        href: "/prodotti#custom",    onClick: () => track.productMenuClick('sviluppi_custom') },
+        { label: t("nav.links.hardware"),      href: "/prodotti#hardware",  onClick: () => track.productMenuClick('hardware') },
       ],
     },
     {
       title: t("nav.industrie"),
       align: "left",
       options: [
-        { label: t("nav.links.automotive"),    href: "/industrie#automotive" },
-        { label: t("nav.links.industriale"),   href: "/industrie#industriale" },
-        { label: t("nav.links.agromeccanica"), href: "/industrie#agromeccanica" },
-        { label: t("nav.links.nautico"),       href: "/industrie#nautico" },
-        { label: t("nav.links.pmi"),           href: "/industrie#pmi" },
+        { label: t("nav.links.automotive"),    href: "/industrie#automotive",    onClick: () => track.marketClick('automotive') },
+        { label: t("nav.links.industriale"),   href: "/industrie#industriale",   onClick: () => track.marketClick('industriale') },
+        { label: t("nav.links.agromeccanica"), href: "/industrie#agromeccanica", onClick: () => track.marketClick('agromeccanica') },
+        { label: t("nav.links.nautico"),       href: "/industrie#nautico",       onClick: () => track.marketClick('nautico') },
+        { label: t("nav.links.pmi"),           href: "/industrie#pmi",           onClick: () => track.marketClick('pmi') },
       ],
     },
     {
       title: t("nav.contatti"),
       align: "right",
       options: [
-        { label: t("nav.links.contatti_link"),  href: "/contatti" },
-        { label: t("nav.links.collaborazioni"), href: pathname === "/" ? "contatti#collaborazioni"           : "/contatti#collaborazioni" },
+        { label: t("nav.links.contatti_link"),  href: "/contatti",                                                          onClick: () => track.contactPageView() },
+        { label: t("nav.links.collaborazioni"), href: pathname === "/" ? "contatti#collaborazioni" : "/contatti#collaborazioni", onClick: () => track.careersMenuClick() },
       ],
     },
   ];
@@ -219,7 +218,7 @@ const Navbar = () => {
                   key={opt.label}
                   to={opt.href}
                   className="mob-item"
-                  onClick={() => setMobile(false)}
+                  onClick={() => { if (opt.onClick) opt.onClick(); setMobile(false) }}
                 >
                   {opt.label}
                 </Link>

@@ -365,7 +365,7 @@ export default function PiattaformeAgentiche() {
   };
 const handleDownload = () => {
   const lang = i18n.language.startsWith('it') ? 'IT' : i18n.language.startsWith('zh') ? 'ZH' : 'EN'
-  track.pdfDownload(`SonIA/OlivIA · ${lang}`)
+  track.brochureDownloadClick('agentiche', lang)
   const file = getBrochure();
   const link = document.createElement("a");
   link.href = file;

@@ -231,6 +231,7 @@ export default function Contatti() {
   useEffect(() => {
     AOS.init({ duration: 700, easing: "ease-out-cubic", once: true, offset: 60 });
     setTimeout(() => setGlow(true), 100);
+    track.contactPageView();
   }, []);
 
   const handleFormFocus = () => {

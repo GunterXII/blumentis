@@ -29,7 +29,8 @@ const Dropdown = ({ title, options, align = "left", isOpen, onToggle, onClose })
   // Gestisce il click su un item:
   // - se è un anchor (#id) usa scrollIntoView per uno scroll smooth preciso
   // - altrimenti lascia fare al browser il suo lavoro
-  const handleClick = (e, href) => {
+  const handleClick = (e, href, optClick) => {
+    if (optClick) optClick()
     if (href.startsWith("#")) {
       e.preventDefault();
       const target = document.getElementById(href.slice(1));
@@ -68,7 +69,7 @@ const Dropdown = ({ title, options, align = "left", isOpen, onToggle, onClose })
           className={`dropdown${align === "right" ? " align-right" : ""}`}
           role="menu"
         >
-          {options.map(({ label, href }) => {
+          {options.map(({ label, href, onClick: optClick }) => {
   const isHash = href.startsWith("#");
 
   if (isHash) {
@@ -77,7 +78,7 @@ const Dropdown = ({ title, options, align = "left", isOpen, onToggle, onClose })
         key={label}
         className="drop-item"
         role="menuitem"
-        onClick={(e) => handleClick(e, href)}
+        onClick={(e) => handleClick(e, href, optClick)}
       >
         {label}
       </button>
@@ -90,7 +91,7 @@ const Dropdown = ({ title, options, align = "left", isOpen, onToggle, onClose })
       to={href}
       className="drop-item"
       role="menuitem"
-      onClick={onClose}
+      onClick={(e) => handleClick(e, href, optClick)}
     >
       {label}
     </Link>

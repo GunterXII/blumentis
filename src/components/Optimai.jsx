@@ -398,7 +398,7 @@ export default function Optimai() {
   };
 const handleDownload = () => {
   const lang = i18n.language.startsWith('it') ? 'IT' : i18n.language.startsWith('zh') ? 'ZH' : 'EN'
-  track.pdfDownload(`OptimaL · ${lang}`)
+  track.brochureDownloadClick('optimai', lang)
   const file = getBrochure();
   const link = document.createElement("a");
   link.href = file;
