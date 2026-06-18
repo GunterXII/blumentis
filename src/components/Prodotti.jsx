@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { track } from "../lib/analytics";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Card from "./Card";
@@ -296,6 +297,7 @@ const Prodotti = () => {
                     to={product.href}
                     className="pr-scopri-btn"
                     style={{ background: bg, color: text, "--btn-glow": glow }}
+                    onClick={() => track.ctaClick(`Scopri ${product.id}`, '/prodotti')}
                   >
                     {t("prodotti.scopri")}
                   </Link>

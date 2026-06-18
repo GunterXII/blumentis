@@ -57,7 +57,7 @@ export const track = {
   linkedinClick: ()            => trackBoth('linkedin_click', {}),
   homeView:      ()            => saveEvent('home_view'),
   formOpen:      ()            => saveEvent('form_open'),
-  servicePageView: (service)   => gtag('event', 'service_page_view', { service }),
+  servicePageView: (service)   => trackBoth('service_page_view', { label: service }),
   contactPageView: ()          => gtag('event', 'contact_page_view'),
 }
 

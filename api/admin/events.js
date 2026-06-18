@@ -57,6 +57,9 @@ export default async function handler(req, res) {
   const byDay = {}
   const byCountry = {}
   const byReferrer = {}
+  const pdfByProduct = {}
+  const pageByProduct = {}
+  const ctaByProduct = {}
 
   for (const ev of events) {
     byType[ev.event_name] = (byType[ev.event_name] || 0) + 1
@@ -70,6 +73,18 @@ export default async function handler(req, res) {
 
     const ref = parseReferrer(ev.referrer)
     byReferrer[ref] = (byReferrer[ref] || 0) + 1
+
+    if (ev.label) {
+      if (ev.event_name === 'pdf_download') {
+        pdfByProduct[ev.label] = (pdfByProduct[ev.label] || 0) + 1
+      }
+      if (ev.event_name === 'service_page_view') {
+        pageByProduct[ev.label] = (pageByProduct[ev.label] || 0) + 1
+      }
+      if (ev.event_name === 'cta_click') {
+        ctaByProduct[ev.label] = (ctaByProduct[ev.label] || 0) + 1
+      }
+    }
   }
 
   // Timeline: riempie i giorni senza eventi con 0
@@ -92,11 +107,16 @@ export default async function handler(req, res) {
     linkedin_click: byType['linkedin_click'] || 0,
   }
 
+  const toSorted = obj => Object.entries(obj).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value)
+
   return res.status(200).json({
     totals,
-    byType:    Object.entries(byType).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value),
-    byCountry: Object.entries(byCountry).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value).slice(0, 10),
-    byReferrer: Object.entries(byReferrer).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value).slice(0, 10),
+    byType:       toSorted(byType),
+    byCountry:    toSorted(byCountry).slice(0, 10),
+    byReferrer:   toSorted(byReferrer).slice(0, 10),
+    pdfByProduct: toSorted(pdfByProduct),
+    pageByProduct: toSorted(pageByProduct),
+    ctaByProduct: toSorted(ctaByProduct),
     timeline,
     recent: events.slice(0, 50),
   })

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Footer from './Footer';
+import { track } from "../lib/analytics";
 import { Users, CheckCircle, ArrowUpRight, Globe, Link as LinkIcon, Lock } from "lucide-react";
 import pdfIT from "../assets/BluMentis - SonIA OlivIA - Brochure IT.pdf?url";
 import pdfEN from "../assets/BluMentis - SonIA OlivIA - Brochure EN.pdf?url";
@@ -363,17 +364,19 @@ export default function PiattaformeAgentiche() {
     return pdfEN; // fallback
   };
 const handleDownload = () => {
-
+  const lang = i18n.language.startsWith('it') ? 'IT' : i18n.language.startsWith('zh') ? 'ZH' : 'EN'
+  track.pdfDownload(`SonIA/OlivIA · ${lang}`)
   const file = getBrochure();
-
   const link = document.createElement("a");
   link.href = file;
-  link.setAttribute("download", `BluMentis - SonIA OlivIA - Brochure ${i18n.language.toUpperCase()}.pdf`);
-  link.setAttribute("target", "_blank");        // fallback se il download viene bloccato
-  document.body.appendChild(link);              // necessario su Firefox
+  link.setAttribute("download", `BluMentis - SonIA OlivIA - Brochure ${lang}.pdf`);
+  link.setAttribute("target", "_blank");
+  document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 };
+  useEffect(() => { track.servicePageView('SonIA/OlivIA') }, []);
+
   useEffect(() => {
     function handleResize() {
       setIsMobile(window.innerWidth <= 768);

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import video from "../assets/proline.mp4";
 import Footer from './Footer';
+import { track } from "../lib/analytics";
 import { Link } from "react-router-dom";
 import pdfIT from "../assets/BluMentis - ProLine Analytics - Brochure IT.pdf?url";
 import pdfEN from "../assets/BluMentis - ProLine Analytics - Brochure EN.pdf?url";
@@ -376,14 +377,14 @@ export default function ProLineAnalytics() {
 };
 
 const handleDownload = () => {
-
+  const lang = i18n.language.startsWith('it') ? 'IT' : i18n.language.startsWith('zh') ? 'ZH' : 'EN'
+  track.pdfDownload(`ProLine · ${lang}`)
   const file = getBrochure();
-
   const link = document.createElement("a");
   link.href = file;
-  link.setAttribute("download", `BluMentis - ProLine Analytics - Brochure ${i18n.language.toUpperCase()}.pdf`);
-  link.setAttribute("target", "_blank");        // fallback se il download viene bloccato
-  document.body.appendChild(link);              // necessario su Firefox
+  link.setAttribute("download", `BluMentis - ProLine Analytics - Brochure ${lang}.pdf`);
+  link.setAttribute("target", "_blank");
+  document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 };
@@ -392,6 +393,8 @@ const handleDownload = () => {
     window.addEventListener("resize", fn);
     return () => window.removeEventListener("resize", fn);
   }, []);
+
+  useEffect(() => { track.servicePageView('ProLine') }, []);
 
   // t() con returnObjects:true restituisce l'array dal file di traduzione
   const steps    = t("proline.steps",    { returnObjects: true });

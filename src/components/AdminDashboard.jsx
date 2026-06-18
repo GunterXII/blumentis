@@ -532,6 +532,67 @@ export default function AdminDashboard() {
                 </div>
               )}
 
+              {/* ANALISI PER PRODOTTO */}
+              {(data.pdfByProduct?.length > 0 || data.pageByProduct?.length > 0 || data.ctaByProduct?.length > 0) && (
+                <div className="ad-grid-3" style={{ marginBottom:12 }}>
+
+                  {data.pageByProduct?.length > 0 && (
+                    <div className="ad-card">
+                      <div className="ad-card-title">Visite pagine prodotto</div>
+                      <div className="ad-card-desc">Quante volte ogni pagina prodotto è stata aperta — indica quale prodotto interessa di più</div>
+                      <table className="ad-table">
+                        <thead><tr><th>Prodotto</th><th className="num">Visite</th></tr></thead>
+                        <tbody>
+                          {data.pageByProduct.map((r, i) => (
+                            <tr key={i}>
+                              <td>{r.name}</td>
+                              <td className="num">{r.value}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+
+                  {data.pdfByProduct?.length > 0 && (
+                    <div className="ad-card">
+                      <div className="ad-card-title">Download brochure per prodotto</div>
+                      <div className="ad-card-desc">Quale brochure è stata scaricata e in quale lingua — es. "SonIA/OlivIA · IT"</div>
+                      <table className="ad-table">
+                        <thead><tr><th>Brochure</th><th className="num">Download</th></tr></thead>
+                        <tbody>
+                          {data.pdfByProduct.map((r, i) => (
+                            <tr key={i}>
+                              <td>{r.name}</td>
+                              <td className="num">{r.value}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+
+                  {data.ctaByProduct?.length > 0 && (
+                    <div className="ad-card">
+                      <div className="ad-card-title">Click CTA per prodotto</div>
+                      <div className="ad-card-desc">Quale pulsante è stato cliccato — "Scopri optimai" = pulsante nella pagina prodotti</div>
+                      <table className="ad-table">
+                        <thead><tr><th>CTA</th><th className="num">Click</th></tr></thead>
+                        <tbody>
+                          {data.ctaByProduct.map((r, i) => (
+                            <tr key={i}>
+                              <td>{r.name}</td>
+                              <td className="num">{r.value}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+
+                </div>
+              )}
+
               {/* UTM BREAKDOWN */}
               {data.recent.some(e => e.utm_source) && (
                 <div className="ad-card" style={{ marginBottom:12 }}>

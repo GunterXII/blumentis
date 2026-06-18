@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import video from "../assets/optimal.mp4";
 import Footer from './Footer';
 import { Link } from "react-router-dom";
+import { track } from "../lib/analytics";
 import { Zap, Thermometer, Droplet, Factory, Wrench, Satellite } from "lucide-react";
 import pdfIT from "../assets/BluMentis - OptimaL - Brochure IT.pdf?url";
 import pdfEN from "../assets/BluMentis - OptimaL - Brochure EN.pdf?url";
@@ -396,14 +397,14 @@ export default function Optimai() {
     return pdfEN; // fallback
   };
 const handleDownload = () => {
-
+  const lang = i18n.language.startsWith('it') ? 'IT' : i18n.language.startsWith('zh') ? 'ZH' : 'EN'
+  track.pdfDownload(`OptimaL · ${lang}`)
   const file = getBrochure();
-
   const link = document.createElement("a");
   link.href = file;
-  link.setAttribute("download", `BluMentis - OptimaL - Brochure ${i18n.language.toUpperCase()}.pdf`);
-  link.setAttribute("target", "_blank");        // fallback se il download viene bloccato
-  document.body.appendChild(link);              // necessario su Firefox
+  link.setAttribute("download", `BluMentis - OptimaL - Brochure ${lang}.pdf`);
+  link.setAttribute("target", "_blank");
+  document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 };
@@ -412,6 +413,8 @@ const handleDownload = () => {
     window.addEventListener("resize", fn);
     return () => window.removeEventListener("resize", fn);
   }, []);
+
+  useEffect(() => { track.servicePageView('OptimaL') }, []);
 
   // Array tradotti
   const steps    = t("optimai.steps",    { returnObjects: true });
