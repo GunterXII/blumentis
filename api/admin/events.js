@@ -26,7 +26,7 @@ export default async function handler(req, res) {
 
   if (req.method === 'OPTIONS') return res.status(200).end()
   if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' })
-  // if (!requireAdmin(req, res)) return  // auth disabilitata temporaneamente
+  if (!requireAdmin(req, res)) return
 
   const supabase = createClient(
     process.env.SUPABASE_URL,

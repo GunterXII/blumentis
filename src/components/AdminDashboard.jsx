@@ -190,13 +190,15 @@ export default function AdminDashboard() {
   const [error, setError]       = useState('')
   const navigate = useNavigate()
 
-  const authHeaders = useCallback(() => ({}), [])
+  const authHeaders = useCallback(() => ({
+    headers: { Authorization: `Bearer ${getAdminToken()}` },
+  }), [])
 
   const fetchData = useCallback(async () => {
     setLoading(true); setError('')
     try {
       const res = await fetch(`/api/admin/events?range=${range}`, authHeaders())
-      if (res.status === 401) { navigate('/admin', { replace: true }); return }
+      if (res.status === 401) { navigate('/admin/login', { replace: true }); return }
       if (!res.ok) throw new Error('Errore server')
       setData(await res.json())
     } catch (e) {

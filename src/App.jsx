@@ -55,7 +55,8 @@ const App = () => {
     <div className="min-h-screen w-full overflow-x-hidden">
       <Routes>
         {/* Admin routes — Navbar non mostrata */}
-        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<ProtectedAdminRoute><AdminDashboard /></ProtectedAdminRoute>} />
 
         {/* Sito pubblico */}
         <Route path="/*" element={
