@@ -57,7 +57,7 @@ const css = `
     position:sticky; top:0; z-index:100;
   }
   .ad-topbar-logo { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:3px; }
-  .ad-topbar-logo span { color:#E63946; }
+  .ad-topbar-logo span { color:#3984e6; }
   .ad-topbar-right { display:flex; align-items:center; gap:12px; }
   .ad-badge { font-size:10px; letter-spacing:2px; text-transform:uppercase; padding:4px 10px; border:1px solid #2A2A2A; border-radius:100px; color:#888; }
   .ad-btn-sm { background:none; border:1px solid #2A2A2A; border-radius:8px; color:#888; padding:6px 14px; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:1px; transition:all 0.2s; }
